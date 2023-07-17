@@ -1,5 +1,11 @@
-import React from "react";
+import ProductCard from "../common/ProductCard.jsx";
 
-export default function Products() {
-  return <div>Products</div>;
-}
+const Products = () => {
+    return (
+        <>
+            <ProductCard/>
+        </>
+    );
+};
+
+export default Products;
