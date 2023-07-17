@@ -1,0 +1,122 @@
+.topbar{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin: 0 auto;
+width: 60%;
+flex: 1 4 1
+}
+.logo-container {
+display: flex;
+
+}
+.topbar span {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: gray;
+    vertical-align: middle;
+}
+.logo{
+    max-width:30px;
+    height:30px;
+}
+.topbar .search {
+    display: flex;
+    flex-basis: 55%;
+
+}
+.circleBtn{
+    background-color: unset;
+    border:unset;
+    color:black;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+    display: inline;
+    font-size: 1rem;
+    padding: 5px
+}
+.circle{
+    padding: 5px;
+}
+.circleBtn .bgOrange {
+    background-color:rgb(255, 226, 173) ;
+    border-radius: 30px;
+    color:rgb(255, 149, 0);
+    padding: 5px;
+    transition: all 0.25s;
+}
+.circleBtn .bgOrange:hover {
+    background-color:orange ;
+    border-radius: 30px;
+    color:white;
+    padding: 5px
+}
+.search .wrapper {
+    position:relative;
+    width: 100%;
+  }
+  
+  .search .icon {
+    height: .7rem;
+    width: .7rem;
+    color: darkgray;
+    padding: 10px;
+    position: absolute;
+    box-sizing:border-box;
+    top:50%;
+    left:2px;
+    transform: translateY(-50%);
+  }
+  
+  .search .input {
+    height: 30px;
+    box-sizing:border-box;
+    padding-left: 2rem;
+    color: black;
+    background-color:#ffffff;
+    border-radius: 20px;  
+    border: 1px solid #cbd0dd;
+    width: 100%;
+  }
+  
+  .input:focus {
+    outline: unset;
+    border: 1px solid #0a45db;
+  }
+ .searchResult{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: start;
+    align-items: flex-start;
+    background-color: #ffffff;
+    position: absolute;
+    padding: 20px;
+    top:45px;
+    width: 30%;
+    border-radius: 5px;
+ }
+ .product-search-result{
+    text-align: start;
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+    width: 100%;
+    background-color: #f8faff;
+    padding: 5px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .product-search-result span{
+    font-size: 1rem;
+    color:black;
+    padding-left: 5px;
+ }
+  .product-search-result:hover{
+   background-color: rgb(215, 215, 215);
+    
+ }
