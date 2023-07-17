@@ -18,7 +18,15 @@ export default function RightNavButtons({ changeTheme }) {
 
   const WishListItems = wishlist
     .slice(0, 10)
-    .map((itemid) => <WishlitItem key={itemid} id={itemid} />);
+    .map((itemid) => (
+      <WishlitItem
+        setWishList={setWishList}
+        wishlist={wishlist}
+        setWishListOpen={setWishListOpen}
+        key={itemid}
+        id={itemid}
+      />
+    ));
 
   return (
     <>
