@@ -1,4 +1,4 @@
-export default [
+let products = [
   {
     id: 1,
     title: "Acme Home, Blanket",
@@ -315,3 +315,9 @@ export default [
     price: 22,
   },
 ];
+
+const getProductById = (id) => {
+  return products.filter((product) => product.id === id)[0];
+};
+export default products;
+export { getProductById };

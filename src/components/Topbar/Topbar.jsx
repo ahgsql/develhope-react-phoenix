@@ -26,6 +26,7 @@ export default function Topbar() {
           .includes(search.toLocaleLowerCase())
       );
     })
+    .slice(0, 15)
     .map((product) => (
       <ProductSearchResult key={product.id} product={product} />
     ));

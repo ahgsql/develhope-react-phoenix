@@ -96,6 +96,9 @@ display: flex;
     top:45px;
     width: 30%;
     border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
  }
  .product-search-result{
     text-align: start;
@@ -118,5 +121,40 @@ display: flex;
  }
   .product-search-result:hover{
    background-color: rgb(215, 215, 215);
-    
  }
+ .wishListDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: start;
+  align-items: flex-start;
+  background-color: #ffffff;
+  position: absolute;
+  padding: 10px;
+  top:45px;
+  width: 15%;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+ }
+ .wishlist-item {
+  text-align: start;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+  width:95%;
+  background-color: #f8faff;
+  padding: 5px;
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }.wishlist-item span{
+  font-size: 1rem;
+  color:black;
+  padding-left: 5px;
+}
+.wishlist-item:hover{
+ background-color: rgb(215, 215, 215);
+}

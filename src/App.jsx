@@ -6,17 +6,20 @@ import Grid from "./components/Grid/Grid.jsx";
 import Products from "./components/Products/Products.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import WishlistProvider from "./context/WishlistProvider";
 
 function App() {
   return (
     <>
-      <Topbar />
-      <Navbar />
-      <Categories />
-      <Grid />
-      <Products />
-      <Hero />
-      <Footer />
+      <WishlistProvider>
+        <Topbar />
+        <Navbar />
+        <Categories />
+        <Grid />
+        <Products />
+        <Hero />
+        <Footer />
+      </WishlistProvider>
     </>
   );
 }

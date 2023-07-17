@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useRef } from "react";
 import IconButton from "./IconButton";
 import {
   faBell,
@@ -6,8 +6,20 @@ import {
   faSun,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
-
+import { WishlistContext } from "../../context/WishlistProvider";
+import WishlitItem from "./WishlitItem";
+import useClickOutside from "../../hooks/useClickOutside";
 export default function RightNavButtons({ changeTheme }) {
+  let { wishlist, setWishList } = useContext(WishlistContext);
+  const [wishListOpen, setWishListOpen] = useState(false);
+
+  const wishlistResultDivRef = useRef();
+  useClickOutside(wishlistResultDivRef, () => setWishListOpen(false));
+
+  const WishListItems = wishlist
+    .slice(0, 10)
+    .map((itemid) => <WishlitItem key={itemid} id={itemid} />);
+
   return (
     <>
       <IconButton
@@ -15,9 +27,22 @@ export default function RightNavButtons({ changeTheme }) {
         className="circle bgOrange hover"
         onClick={() => changeTheme()}
       />
-      <IconButton iconname={faHeart} className="circle" />
+      <IconButton
+        iconname={faHeart}
+        onClick={() => setWishListOpen(!wishListOpen)}
+        className="circle"
+      />
       <IconButton iconname={faBell} className="circle" />
-      <IconButton iconname={faUser} className="circle" />
+      <IconButton
+        onClick={() => setWishList([...wishlist, 3])}
+        iconname={faUser}
+        className="circle"
+      />
+      {wishListOpen && (
+        <div className="wishListDiv" ref={wishlistResultDivRef}>
+          {WishListItems.length < 1 ? "No Items In Wishlist" : WishListItems}
+        </div>
+      )}
     </>
   );
 }
