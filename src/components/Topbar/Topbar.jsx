@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import "./Topbar.css";
 import logo from "../../assets/logo.png";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-import products from "./products";
+import products from "../../data/products";
 import InputWithIcon from "./InputWithIcon.jsx";
 import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
