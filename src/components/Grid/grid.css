@@ -1,0 +1,35 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat( 2, 1fr);
+    grid-template-rows: repeat(2, 1fr );
+    gap:15px;
+}
+
+.featured-card {
+    grid-column: 1/-1;
+    height: 420px !important;
+}
+
+.card {
+    height: 370px;
+    border-radius: 10px;
+    background-color: black;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    color: white
+}
+
+.card > div {
+    flex-direction: column;
+    display: flex;
+    gap: 50px;
+
+}
+
+.dir {
+    flex-direction: column;
+}
+
