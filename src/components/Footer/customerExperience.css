@@ -1,0 +1,23 @@
+.contenedor {
+   display: flex;
+   justify-content: center;
+}
+
+.texto {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   font-family: "Nunito Sans";
+
+}
+
+.first-paragraph {
+   margin-bottom: 0;
+   font-size: 25px;
+
+}
+
+.second-paragraph{
+   font-size: 48.82px;
+   margin: 0%;
+}
