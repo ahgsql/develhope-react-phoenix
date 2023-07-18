@@ -1,0 +1,43 @@
+.mainCategories{
+    background-color: #f5f7fa;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+.categories-ul {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    list-style: none;
+    width: 75%;
+}
+.category-li {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    cursor: pointer;
+   
+}
+.category-li-container:hover{
+    background-color: #7a98dc;
+}
+.category-li-container{
+    background-color: #e5edff;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+.svg{
+    width: 30px;
+    height: 30px;
+}
