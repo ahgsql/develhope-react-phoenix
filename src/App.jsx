@@ -16,6 +16,7 @@ function App() {
         <Navbar />
         <Categories />
         <Grid />
+        <Products />
         <Hero />
         <Footer />
       </WishlistProvider>

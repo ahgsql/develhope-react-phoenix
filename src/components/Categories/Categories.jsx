@@ -20,8 +20,8 @@ export default function Categories() {
   return (
     <div className="mainCategories">
       <ul className="categories-ul">
-        {categories.map((category) => (
-          <li className="category-li">
+        {categories.map((category, i) => (
+          <li key={i} className="category-li">
             <div className="category-li-container">
               <img className="svg" src={images[category.toLowerCase()]} />
             </div>

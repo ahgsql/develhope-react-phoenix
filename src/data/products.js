@@ -2,7 +2,8 @@ let products = [
   {
     id: 1,
     title: "Acme Home Blanket",
-    description: "A cozy and warm blanket for cold nights. This blanket is made of high-quality material and provides excellent comfort.",
+    description:
+      "A cozy and warm blanket for cold nights. This blanket is made of high-quality material and provides excellent comfort.",
     price: 100,
     photo: "https://picsum.photos/id/1/60",
     photoFull: "https://picsum.photos/id/1/400",
@@ -15,7 +16,8 @@ let products = [
   {
     id: 2,
     title: "Casa Deco Chair",
-    description: "A comfortable chair for your living room. It features a modern design and ergonomic support for long sitting sessions.",
+    description:
+      "A comfortable chair for your living room. It features a modern design and ergonomic support for long sitting sessions.",
     photo: "https://picsum.photos/id/3/60",
     photoFull: "https://picsum.photos/id/3/400",
     rating: 3,
@@ -28,7 +30,8 @@ let products = [
   {
     id: 3,
     title: "EcoWood Table",
-    description: "A sturdy table for various uses. This table is perfect for dining, working, or as a decorative piece in your home.",
+    description:
+      "A sturdy table for various uses. This table is perfect for dining, working, or as a decorative piece in your home.",
     photo: "https://picsum.photos/id/2/60",
     photoFull: "https://picsum.photos/id/2/400",
     rating: 5,
@@ -41,7 +44,8 @@ let products = [
   {
     id: 4,
     title: "LuxeLamp Lamp",
-    description: "A stylish lamp to brighten up any room. The lamp's warm glow creates a cozy atmosphere.",
+    description:
+      "A stylish lamp to brighten up any room. The lamp's warm glow creates a cozy atmosphere.",
     photo: "https://picsum.photos/id/5/60",
     photoFull: "https://picsum.photos/id/5/400",
     rating: 4,
@@ -54,7 +58,8 @@ let products = [
   {
     id: 5,
     title: "ComfortZone Cushion",
-    description: "Soft and fluffy cushion for your couch or bed. It comes in various colors to match your interior.",
+    description:
+      "Soft and fluffy cushion for your couch or bed. It comes in various colors to match your interior.",
     photo: "https://picsum.photos/id/6/60",
     photoFull: "https://picsum.photos/id/6/400",
     rating: 5,
@@ -67,7 +72,8 @@ let products = [
   {
     id: 6,
     title: "Chic Reflections Mirror",
-    description: "A decorative mirror to add a touch of elegance to your living space. Its sleek design complements any decor.",
+    description:
+      "A decorative mirror to add a touch of elegance to your living space. Its sleek design complements any decor.",
     photo: "https://picsum.photos/id/7/60",
     photoFull: "https://picsum.photos/id/7/400",
     rating: 3,
@@ -80,7 +86,8 @@ let products = [
   {
     id: 7,
     title: "BookWorm Bookshelf",
-    description: "A spacious bookshelf to organize your books and display your favorite items. It's both functional and visually appealing.",
+    description:
+      "A spacious bookshelf to organize your books and display your favorite items. It's both functional and visually appealing.",
     photo: "https://picsum.photos/id/8/60",
     photoFull: "https://picsum.photos/id/8/400",
     rating: 4,
@@ -93,7 +100,8 @@ let products = [
   {
     id: 8,
     title: "SoftStep Rug",
-    description: "A soft and durable rug that enhances the comfort of your room while protecting your floors.",
+    description:
+      "A soft and durable rug that enhances the comfort of your room while protecting your floors.",
     photo: "https://picsum.photos/id/9/60",
     photoFull: "https://picsum.photos/id/9/400",
     rating: 4,
@@ -106,7 +114,8 @@ let products = [
   {
     id: 9,
     title: "Timeless Classics Clock",
-    description: "A stylish wall clock that adds a contemporary touch to your home decor.",
+    description:
+      "A stylish wall clock that adds a contemporary touch to your home decor.",
     photo: "https://picsum.photos/id/10/60",
     photoFull: "https://picsum.photos/id/10/400",
     rating: 5,
@@ -119,7 +128,8 @@ let products = [
   {
     id: 10,
     title: "Bloom & Bliss Vase",
-    description: "An elegant vase to display your fresh flowers or artificial arrangements.",
+    description:
+      "An elegant vase to display your fresh flowers or artificial arrangements.",
     photo: "https://picsum.photos/id/11/60",
     photoFull: "https://picsum.photos/id/11/400",
     rating: 3,
@@ -132,7 +142,8 @@ let products = [
   {
     id: 11,
     title: "Craftsman's Desk",
-    description: "A spacious and sturdy desk for your office or study room. It provides ample space for your work essentials.",
+    description:
+      "A spacious and sturdy desk for your office or study room. It provides ample space for your work essentials.",
     photo: "https://picsum.photos/id/12/60",
     photoFull: "https://picsum.photos/id/12/400",
     rating: 5,
@@ -145,7 +156,8 @@ let products = [
   {
     id: 12,
     title: "Elegance Drapes",
-    description: "High-quality curtains that block out light and provide privacy. They come in various sizes and colors.",
+    description:
+      "High-quality curtains that block out light and provide privacy. They come in various sizes and colors.",
     photo: "https://picsum.photos/id/13/60",
     photoFull: "https://picsum.photos/id/13/400",
     rating: 4,
@@ -158,7 +170,8 @@ let products = [
   {
     id: 13,
     title: "SofaSense Sofa",
-    description: "A comfortable and stylish sofa for your living room. It's designed to accommodate multiple people.",
+    description:
+      "A comfortable and stylish sofa for your living room. It's designed to accommodate multiple people.",
     photo: "https://picsum.photos/id/14/60",
     photoFull: "https://picsum.photos/id/14/400",
     rating: 4,
@@ -171,7 +184,8 @@ let products = [
   {
     id: 14,
     title: "Urban Side Side Table",
-    description: "A compact side table that complements your seating area. It provides a convenient surface for drinks and snacks.",
+    description:
+      "A compact side table that complements your seating area. It provides a convenient surface for drinks and snacks.",
     photo: "https://picsum.photos/id/15/60",
     photoFull: "https://picsum.photos/id/15/400",
     rating: 3,
@@ -184,7 +198,8 @@ let products = [
   {
     id: 15,
     title: "Home Harmony Shelf",
-    description: "A versatile shelf that can be used in the living room, bedroom, or hallway to display your favorite items.",
+    description:
+      "A versatile shelf that can be used in the living room, bedroom, or hallway to display your favorite items.",
     photo: "https://picsum.photos/id/16/60",
     photoFull: "https://picsum.photos/id/16/400",
     rating: 4,
@@ -197,7 +212,8 @@ let products = [
   {
     id: 16,
     title: "EcoBloom Indoor Plant",
-    description: "A beautiful indoor plant that adds a touch of greenery to your home. Low-maintenance and air-purifying.",
+    description:
+      "A beautiful indoor plant that adds a touch of greenery to your home. Low-maintenance and air-purifying.",
     photo: "https://picsum.photos/id/17/60",
     photoFull: "https://picsum.photos/id/17/400",
     rating: 5,
@@ -210,7 +226,8 @@ let products = [
   {
     id: 17,
     title: "CuisineCraft Chef's Knife",
-    description: "A high-quality chef's knife for all your culinary needs. Razor-sharp and ergonomic design.",
+    description:
+      "A high-quality chef's knife for all your culinary needs. Razor-sharp and ergonomic design.",
     photo: "https://picsum.photos/id/18/60",
     photoFull: "https://picsum.photos/id/18/400",
     rating: 4,
@@ -223,7 +240,8 @@ let products = [
   {
     id: 18,
     title: "DreamCloud Queen Mattress",
-    description: "Experience a restful sleep with this luxurious queen-sized mattress. Medium-firm and temperature-regulating.",
+    description:
+      "Experience a restful sleep with this luxurious queen-sized mattress. Medium-firm and temperature-regulating.",
     photo: "https://picsum.photos/id/19/60",
     photoFull: "https://picsum.photos/id/19/400",
     rating: 5,
@@ -236,7 +254,8 @@ let products = [
   {
     id: 19,
     title: "PetPamper Cat Bed",
-    description: "Spoil your feline friend with this cozy cat bed. Plush and machine-washable.",
+    description:
+      "Spoil your feline friend with this cozy cat bed. Plush and machine-washable.",
     photo: "https://picsum.photos/id/20/60",
     photoFull: "https://picsum.photos/id/20/400",
     rating: 3,
@@ -249,7 +268,8 @@ let products = [
   {
     id: 20,
     title: "Gamer's Haven Gaming Chair",
-    description: "Improve your gaming experience with this ergonomic gaming chair. Adjustable and supportive.",
+    description:
+      "Improve your gaming experience with this ergonomic gaming chair. Adjustable and supportive.",
     photo: "https://picsum.photos/id/21/60",
     photoFull: "https://picsum.photos/id/21/400",
     rating: 4,
@@ -262,7 +282,8 @@ let products = [
   {
     id: 21,
     title: "Artistic Abode Wall Art",
-    description: "Enhance your walls with this captivating wall art. Modern and vibrant.",
+    description:
+      "Enhance your walls with this captivating wall art. Modern and vibrant.",
     photo: "https://picsum.photos/id/22/60",
     photoFull: "https://picsum.photos/id/22/400",
     rating: 5,
@@ -275,7 +296,8 @@ let products = [
   {
     id: 22,
     title: "AquaFresh Water Filter",
-    description: "Ensure clean and purified water with this efficient water filter. Easy to install and maintain.",
+    description:
+      "Ensure clean and purified water with this efficient water filter. Easy to install and maintain.",
     photo: "https://picsum.photos/id/23/60",
     photoFull: "https://picsum.photos/id/23/400",
     rating: 4,
@@ -288,7 +310,8 @@ let products = [
   {
     id: 23,
     title: "Gourmet Griller BBQ Grill",
-    description: "Host perfect BBQ parties with this high-performance grill. Durable and spacious.",
+    description:
+      "Host perfect BBQ parties with this high-performance grill. Durable and spacious.",
     photo: "https://picsum.photos/id/24/60",
     photoFull: "https://picsum.photos/id/24/400",
     rating: 5,
@@ -301,7 +324,8 @@ let products = [
   {
     id: 24,
     title: "FitTrack Fitness Tracker",
-    description: "Monitor your health and fitness goals with this advanced fitness tracker. Sleek and feature-packed.",
+    description:
+      "Monitor your health and fitness goals with this advanced fitness tracker. Sleek and feature-packed.",
     photo: "https://picsum.photos/id/25/60",
     photoFull: "https://picsum.photos/id/25/400",
     rating: 3,
@@ -314,7 +338,8 @@ let products = [
   {
     id: 25,
     title: "AromaZen Essential Oils Set",
-    description: "Create a calming atmosphere with this set of essential oils. Pure and aromatic.",
+    description:
+      "Create a calming atmosphere with this set of essential oils. Pure and aromatic.",
     photo: "https://picsum.photos/id/26/60",
     photoFull: "https://picsum.photos/id/26/400",
     rating: 5,
@@ -327,7 +352,8 @@ let products = [
   {
     id: 26,
     title: "StudySmart Desk Lamp",
-    description: "Illuminate your workspace with this energy-efficient desk lamp. Adjustable brightness levels.",
+    description:
+      "Illuminate your workspace with this energy-efficient desk lamp. Adjustable brightness levels.",
     photo: "https://picsum.photos/id/27/60",
     photoFull: "https://picsum.photos/id/27/400",
     rating: 4,
@@ -340,7 +366,8 @@ let products = [
   {
     id: 27,
     title: "CuddleZone Throw Blanket",
-    description: "Stay warm and cozy with this soft throw blanket. Perfect for chilly evenings.",
+    description:
+      "Stay warm and cozy with this soft throw blanket. Perfect for chilly evenings.",
     photo: "https://picsum.photos/id/28/60",
     photoFull: "https://picsum.photos/id/28/400",
     rating: 4,
@@ -353,7 +380,8 @@ let products = [
   {
     id: 28,
     title: "AquaGlow LED Showerhead",
-    description: "Transform your shower experience with this color-changing LED showerhead. Easy to install.",
+    description:
+      "Transform your shower experience with this color-changing LED showerhead. Easy to install.",
     photo: "https://picsum.photos/id/29/60",
     photoFull: "https://picsum.photos/id/29/400",
     rating: 3,
@@ -366,7 +394,8 @@ let products = [
   {
     id: 29,
     title: "PamperPaws Dog Grooming Kit",
-    description: "Keep your furry friend looking their best with this grooming kit. Includes various grooming tools.",
+    description:
+      "Keep your furry friend looking their best with this grooming kit. Includes various grooming tools.",
     photo: "https://picsum.photos/id/30/60",
     photoFull: "https://picsum.photos/id/30/400",
     rating: 5,
@@ -379,7 +408,8 @@ let products = [
   {
     id: 30,
     title: "HomeHarmony Aromatherapy Diffuser",
-    description: "Enjoy the therapeutic benefits of aromatherapy with this stylish diffuser. Auto-shutoff feature.",
+    description:
+      "Enjoy the therapeutic benefits of aromatherapy with this stylish diffuser. Auto-shutoff feature.",
     photo: "https://picsum.photos/id/31/60",
     photoFull: "https://picsum.photos/id/31/400",
     rating: 4,
@@ -392,7 +422,8 @@ let products = [
   {
     id: 31,
     title: "Nature's Song Wind Chimes",
-    description: "Add a melodic touch to your outdoor space with these harmonious wind chimes.",
+    description:
+      "Add a melodic touch to your outdoor space with these harmonious wind chimes.",
     photo: "https://picsum.photos/id/32/60",
     photoFull: "https://picsum.photos/id/32/400",
     rating: 5,
@@ -405,7 +436,8 @@ let products = [
   {
     id: 32,
     title: "EcoClean Eco-friendly Cleaning Set",
-    description: "Make your home spotless with this eco-friendly cleaning set. Includes natural cleaning agents.",
+    description:
+      "Make your home spotless with this eco-friendly cleaning set. Includes natural cleaning agents.",
     photo: "https://picsum.photos/id/33/60",
     photoFull: "https://picsum.photos/id/33/400",
     rating: 4,
@@ -418,7 +450,8 @@ let products = [
   {
     id: 33,
     title: "Sunrise Yoga Mat",
-    description: "Start your day with a refreshing yoga session using this anti-slip yoga mat.",
+    description:
+      "Start your day with a refreshing yoga session using this anti-slip yoga mat.",
     photo: "https://picsum.photos/id/34/60",
     photoFull: "https://picsum.photos/id/34/400",
     rating: 5,
@@ -431,7 +464,8 @@ let products = [
   {
     id: 34,
     title: "FreshBreeze Air Purifier",
-    description: "Improve your indoor air quality with this high-performance air purifier. Quiet and efficient.",
+    description:
+      "Improve your indoor air quality with this high-performance air purifier. Quiet and efficient.",
     photo: "https://picsum.photos/id/35/60",
     photoFull: "https://picsum.photos/id/35/400",
     rating: 4,
@@ -444,7 +478,8 @@ let products = [
   {
     id: 35,
     title: "TranquilSounds White Noise Machine",
-    description: "Create a soothing ambiance for sleep or relaxation with this white noise machine.",
+    description:
+      "Create a soothing ambiance for sleep or relaxation with this white noise machine.",
     photo: "https://picsum.photos/id/36/60",
     photoFull: "https://picsum.photos/id/36/400",
     rating: 3,
