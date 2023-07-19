@@ -5,6 +5,8 @@ export default function Button({ radius = 40, bgColor = "#ffa500", children, sty
   const [isHovered, setIsHovered] = useState(false);
   var bgHoverColor = useColorLuminance(bgColor, -0.2);
   const buttonStyle = {
+    height: "50px",
+    maxWidth: "150px",
     borderRadius: `${radius}px`,
     backgroundColor: `${isHovered ? bgHoverColor : bgColor}`,
     color: "white",
