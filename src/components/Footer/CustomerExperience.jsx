@@ -9,7 +9,7 @@ import React from 'react'
 export default function CustomerExperience() {
     return (
         <>
-            <div className="contenedor">
+            <div className="container">
                 <img width={"305px"} height={"250px"} src={light_30} alt="" />
                 <div className="texto">
                     <p className="first-paragraph">Want to have the <span className="negrita">ultimate customer experience?</span> </p>

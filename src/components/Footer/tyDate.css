@@ -1,0 +1,15 @@
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Nunito Sans";
+  }
+  
+  .fecha {
+    display: flex;
+    align-items: center;
+  }
+  
+  .version {
+    margin-left: auto;
+  }
+  
