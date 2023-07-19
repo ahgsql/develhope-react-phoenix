@@ -1,6 +1,7 @@
 import React from "react";
 import CustomerExperience from "./CustomerExperience";
 import ColumnContainer from "./ColumnContainer";
+import TyDate from "./TyDate";
 
 
 export default function Footer() {
@@ -10,6 +11,8 @@ export default function Footer() {
       <CustomerExperience />    
       <ColumnContainer/>
       <hr />
+      <TyDate/>
+      
     </>
   );
 }
