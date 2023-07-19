@@ -24,8 +24,9 @@ export default function WishlitItem({
         />
         <span>{product.title}</span>
         <i
+          style={{ border: "1px solid blue" }}
           className="wishlist-remove"
-          onClick={() => {
+          onClick={(e) => {
             setWishList(wishlist.filter((i) => i !== id));
           }}
         >

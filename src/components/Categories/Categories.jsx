@@ -1,6 +1,6 @@
 import React from "react";
 import images from "./index";
-
+import "./styleCategories.css";
 export default function Categories() {
   const categories = [
     "Star",
@@ -15,8 +15,8 @@ export default function Categories() {
     "Travel",
     "Others",
   ];
-  
-  console.log(images["tool"])
+
+  console.log(images["tool"]);
   return (
     <div className="mainCategories">
       <ul className="categories-ul">

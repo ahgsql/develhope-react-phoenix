@@ -15,6 +15,7 @@ export default function Topbar() {
   const [searchResultsOpen, setSearchResultsOpen] = useState(false);
   const resultRef = useRef();
   clickOutside(resultRef, () => setSearchResultsOpen(false));
+
   const searchList = products
     .filter((product) => {
       return (
