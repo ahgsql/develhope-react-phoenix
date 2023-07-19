@@ -4,10 +4,10 @@ import './column.css';
 const Column = ({ title, items }) => {
     return (
         <div className="column">
-            <h3><p>{title}</p></h3>
+            <p style={{fontSize:"16px"}}>{title}</p>
             <ul className="custom-list">
                 {items.map((item, index) => (
-                    <li key={index}>{item}</li>
+                    <li key={index} style={{fontSize:"12.8px"}}>{item}</li>
                 ))}
             </ul>
         </div>
