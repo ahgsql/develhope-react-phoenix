@@ -16,13 +16,13 @@ export default function Categories() {
     "Others",
   ];
 
-  console.log(images["tool"]);
+ 
   return (
     <div className="mainCategories">
       <ul className="categories-ul">
         {categories.map((category, i) => (
           <li key={i} className="category-li">
-            <div className="category-li-container">
+             <div className="category-li-container">
               <img className="svg" src={images[category.toLowerCase()]} />
             </div>
             {category}
