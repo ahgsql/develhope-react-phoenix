@@ -17,9 +17,9 @@ const shuffleArray = (array) => {
   return array;
 };
 const Products = () => {
-  const shuffledProduct0 = shuffleArray(products).slice(0, 5);
-  const shuffledProduct1 = shuffleArray(products).slice(0, 6);
-  const shuffledProduct2 = shuffleArray(products).slice(0, 6);
+  const shuffledProduct0 = products.slice(0, 5);
+  const shuffledProduct1 = products.slice(6, 12);
+  const shuffledProduct2 = products.slice(12, 18);
 
   return (
     <>

@@ -17,7 +17,6 @@ function App() {
         <Categories />
         <Grid />
         <Products />
-        <Hero />
         <Footer />
       </WishlistProvider>
     </>

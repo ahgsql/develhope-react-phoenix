@@ -8,6 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useContext, useState } from "react";
 import { WishlistContext } from "../../context/WishlistProvider.jsx";
+import RatingStar from "./RatingStar.jsx";
 
 const ProductCard = ({
   id,
@@ -53,12 +54,12 @@ const ProductCard = ({
       </div>
       <div className="productDescription">
         <h4 className="productName">
-          <a href="#">{title}</a>
+          <a href="#" style={{ fontWeight: "bold" }}>
+            {title}
+          </a>
         </h4>
         <div className="productRating">
-          {[...Array(rating)].map((index, i) => (
-            <FontAwesomeIcon key={i} icon={faStar} />
-          ))}
+          <RatingStar rating={rating} />
           <span>({ratedPeople} people rated)</span>
         </div>
         <p className="extraKnowledge">{eKnowledge}</p>

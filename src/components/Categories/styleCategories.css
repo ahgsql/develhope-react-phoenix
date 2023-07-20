@@ -12,7 +12,7 @@
     justify-content: space-between; 
     align-items: center;
     list-style: none;
-    width: 75%;
+    width: 65%;
 }
 .category-li {
     font-size: 14px;
@@ -24,8 +24,15 @@
     cursor: pointer;
    
 }
-.category-li-container:hover{
-    background-color: #7a98dc;
+.category-li-container:hover {
+    background-color: #3874ff;
+    color: white;
+   
+}
+.category-li-container:hover  img{
+   filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+   
 }
 .category-li-container{
     background-color: #e5edff;
