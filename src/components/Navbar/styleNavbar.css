@@ -43,3 +43,40 @@
 .toggle-menu-area {
     cursor: pointer;
 }
+.more{
+    display: none;
+}
+@media (max-width: 800px){
+    .menu-list > li:nth-last-child(2){
+        display: none;
+    }
+    .more{
+        display: block;
+        cursor: pointer;
+    }
+}
+@media (max-width: 700px){
+    .menu-list > li:nth-last-child(3){
+        display: none;
+    }
+}
+@media (max-width: 640px){
+    .menu-list > li:nth-last-child(4){
+        display: none;
+    }
+}
+@media (max-width: 550px){
+    .menu-list > li:nth-last-child(5){
+        display: none;
+    }
+}
+@media (max-width: 430px){
+    .menu-list > li:nth-last-child(6){
+        display: none;
+    }
+}
+@media (max-width: 550px){
+    .menu-list > li:nth-last-child(7){
+        display: none;
+    }
+}

@@ -27,6 +27,7 @@ export default function Navbar() {
               <div className="menu-li">{el}</div>
             </li>
           ))}
+        <div className="more">More</div>
         </ul>
       </div>
     </div>
