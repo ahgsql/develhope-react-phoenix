@@ -14,7 +14,7 @@ export default function CustomerExperience() {
                 <div className="texto">
                     <p className="first-paragraph">Want to have the <span className="negrita">ultimate customer experience?</span> </p>
                     <p className="second-paragraph">Become a <span style={{ color: "#3874ff" }}>member</span> today!</p>
-                    <Button bgColor="#3874ff" radius={8} style={{ fontFamily: "Nunito Sans", fontSize: 20, padding: "10px 40px" }} >Sign up <FontAwesomeIcon icon={faAngleRight} /> </Button>
+                    <Button bgColor="#3874ff" radius={8} style={{ fontFamily: "Nunito Sans", fontSize: 20, padding: "10px 30px" }} >Sign up <FontAwesomeIcon icon={faAngleRight} /> </Button>
 
                 </div>
             </div>
