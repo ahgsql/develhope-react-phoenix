@@ -22,8 +22,8 @@ export default function Navbar() {
       </div>
       <div className="mainNav-right-side">
         <ul className="menu-list">
-          {navbarMenu.map((el) => (
-            <li>
+          {navbarMenu.map((el, i) => (
+            <li key={i}>
               <div className="menu-li">{el}</div>
             </li>
           ))}

@@ -11,8 +11,8 @@ export default function GradientText({
     fontSize: `${fontSize}px`,
     backgroundImage: `linear-gradient(${degree}deg, ${color1}, ${color2})`,
     backgroundClip: "text",
-    webkitTextFillColor: "transparent",
-    webkitBackgroundClip: "text",
+    WebkitTextFillColor: "transparent",
+    WebkitBackgroundClip: "text",
     fontWeight: "inherit",
   };
   return <span style={style}>{text}</span>;
