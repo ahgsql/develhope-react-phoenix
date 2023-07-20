@@ -6,8 +6,8 @@ export default function TyDate() {
     return (
         <div className='contenedor'>
             <div className="fecha">
-                <p>Thank you for creating with Phoenix|{currentYear} ©</p>
-                <a href="https://themewagon.com/">Themewagon</a>
+                <p>All rights reserved. |  {currentYear} © Random Group Int8 Develhope.  </p>
+                
             </div>
             <div className="version">v1.13.0</div>
         </div>
