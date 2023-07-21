@@ -1,156 +1,179 @@
-.team-section{
-    display:flex;
-    width:100%;
-    justify-content: center;
-    padding: 10px;
-    margin:20px;
+.team-section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  margin: 20px;
 }
 .team-btn {
-    font-size: 20px;
-    background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
-    background-size: 400%;
-    -webkit-animation: anime 12s alternate infinite;
-            animation: anime 12s alternate infinite;
+  font-size: 20px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 400%;
+  -webkit-animation: anime 12s alternate infinite;
+  animation: anime 12s alternate infinite;
 }
-.team-btn:hover  {
-    -webkit-animation: anime 3s alternate infinite;
-            animation: anime 3s alternate infinite;
+.team-btn:hover {
+  -webkit-animation: anime 3s alternate infinite;
+  animation: anime 3s alternate infinite;
 }
 @-webkit-keyframes anime {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  0% {
+    background-position: 0% 50%;
   }
-  @keyframes anime {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  50% {
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
-  .modal-window {
-    position: fixed;
-    background-color: rgba(147, 147, 147, 0.262);
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 999;
-    visibility: visible;
-    opacity: 1;
-    pointer-events: auto;
-    transition: all 0.3s;
-  }
-  
+.modal-window {
+  position: fixed;
+  background-color: rgba(147, 147, 147, 0.262);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.3s;
+}
+
+.modal-window > div {
+  width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3em;
+  background: white;
+}
+.modal-window header {
+  font-weight: bold;
+}
+.modal-window h1 {
+  font-size: 150%;
+  margin: 0 0 15px;
+}
+
+.modal-close {
+  color: #767676;
+  line-height: 50px;
+  font-size: 25px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  text-decoration: none;
+  background: unset;
+  margin: 10px;
+  margin-top: unset;
+  border: unset;
+  transition: all 0.2s;
+  outline: unset;
+  cursor: pointer;
+}
+.modal-close:hover {
+  color: black;
+  transform: translateY(-2px);
+}
+.team-member {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: flex-start;
+  padding: 5px;
+}
+.team-member-main {
+  display: flex;
+  flex-direction: column;
+}
+.team-member img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
+}
+.team-member .seperator {
+  width: 90%;
+  border: 0.5px solid #eee;
+  align-self: center;
+}
+.team-member .details {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  justify-content: flex-start;
+}
+.team-member .details a {
+  color: rgb(0, 0, 14);
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.team-member .details a:hover {
+  color: rgb(0, 57, 228);
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+.team-member .info {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 10px;
+  text-align: left;
+}
+@media (max-width: 992px) {
   .modal-window > div {
-    width: 800px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 3em;
-    background: white;
+    width: 600px;
+    padding: 1em;
   }
-  .modal-window header {
-    font-weight: bold;
-  }
-  .modal-window h1 {
-    font-size: 150%;
-    margin: 0 0 15px;
-  }
-  
-  .modal-close {
-    color: #767676;
-    line-height: 50px;
-    font-size: 25px;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    top: 0;
-    text-decoration: none;
-    background: unset;
-    margin: 10px;
-    margin-top: unset;
-    border: unset;
-    transition: all 0.2s;
-    outline: unset;
-    cursor: pointer;
-  }
-  .modal-close:hover {
-    color: black;
-    transform: translateY(-2px);
-  }
-  .team-member {
-    margin-top: 10px;
-    width: 100%;
-    background-color:#f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #eee;
-    display: flex;
-    justify-content: flex-start;
-    padding:5px;
-  }
-  .team-member-main{
-    display: flex;
-    flex-direction: column;
-   
-  }
-  .team-member img{
-    width: 90px;
-    height: 90px;
-    border-radius:10px;
-  }
-  .team-member .seperator {
-    width: 90%;
-    border: 0.5px solid #eee;
-    align-self: center;
-  }
-  .team-member .details {
-    display: flex;
-    flex-direction: column; 
-    padding-left: 20px;
-    justify-content: flex-start;
-  }
-  .team-member .details a{
-    color:rgb(0, 0, 14);
-    text-decoration: none;
-    transition: all 0.2s;
-
-  }
-  .team-member .details a:hover{
-    color:rgb(0, 57, 228);
-    text-decoration: none;
-    transform: translateY(-1px);
-
-  } 
-  .team-member .info {
-    display: flex;
-    flex-direction: row; 
-    justify-content: flex-start;
-    padding:10px;
-    text-align: left;
-  }
-  @media (max-width: 992px) {
-    .modal-window > div {
-      width: 600px;
-      padding: 1em;
-    }
 }
 @media (max-width: 768px) {
   .modal-window > div {
     width: 500px;
     padding: 5px;
-    
+  }
+}
+.loader-wheel {
+  width: 90px;
+  animation: spin 0.7s infinite linear;
+  border: 2px solid rgba(30, 30, 30, 0.5);
+  border-left: 4px solid rgb(109, 109, 109);
+  border-radius: 50%;
+  height: 90px;
+}
+
+.loader-text {
+  color: #fff;
+  font-family: arial, sans-serif;
+}
+
+.loader-text:after {
+  content: "Loading";
+  animation: load 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

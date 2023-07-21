@@ -46,13 +46,32 @@ export default memo(function TeamMember({ github }) {
             and
             <a href={info.repos_url} target="_blank">
               {" "}
-              {info.public_repos - 4} more repos{" "}
+              {info.public_repos - 4} more repos
             </a>
           </div>
         </div>
       </div>
     </div>
   ) : (
-    ""
+    <div className="team-member">
+      <div className="loader-wheel"></div>
+      <div className="details">
+        <a href="">
+          <h3>
+            Loading <FontAwesomeIcon icon={faGithub} /> ({github})
+          </h3>
+        </a>
+        <hr className="seperator" />
+        <div className="info">
+          <div className="detail">
+            <FontAwesomeIcon icon={faCode} /> &nbsp; and
+            <a href="#" target="_blank">
+              {" "}
+              more repos{" "}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 });
