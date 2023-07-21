@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmarkCircle } from "@fortawesome/free-solid-svg-icons";
+import { faXmarkCircle, faRefresh } from "@fortawesome/free-solid-svg-icons";
 
 import TeamMember from "./TeamMember";
 export default function TeamModal({ style, setModalOpen }) {
+  const [key, setKey] = useState(0);
+
   return (
     <div className="modal-window" style={{ ...style }}>
       <div>
@@ -15,12 +17,19 @@ export default function TeamModal({ style, setModalOpen }) {
         >
           <FontAwesomeIcon icon={faXmarkCircle} />
         </button>
-        <h1>Random Group Team Members</h1>
-        <TeamMember github="thaliagit" />
-        <TeamMember github="Oaks93" />
-        <TeamMember github="mhborazan" />
-        <TeamMember github="AlptekinOcakdan" />
-        <TeamMember github="ahgsql" />
+        <h1>
+          Random Group Team Members{" "}
+          <button onClick={() => setKey(key + 1)}>
+            <FontAwesomeIcon icon={faRefresh} />
+          </button>
+        </h1>
+        <div key={key}>
+          <TeamMember github="thaliagit" />
+          <TeamMember github="Oaks93" />
+          <TeamMember github="mhborazan" />
+          <TeamMember github="AlptekinOcakdan" />
+          <TeamMember github="ahgsql" />
+        </div>
       </div>
     </div>
   );
