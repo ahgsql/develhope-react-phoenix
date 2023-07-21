@@ -1,7 +1,5 @@
 import React from "react";
 import Button from "../common/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./grid.css";
 import Card from "./Card";
 import GradientText from "./GradientText";
@@ -25,7 +23,10 @@ export default function Grid() {
     <section className="grid-container">
       <Card flexDirection="row" featured={true} bg={card1}>
         <div>
-          <span style={{ color: "#ffcc85", fontSize: 50, fontWeight: "800" }}>
+          <span
+            className="featured-text"
+            style={{ color: "#ffcc85", fontWeight: "800" }}
+          >
             Whooping
             <GradientText
               text=" 60% "
@@ -40,13 +41,13 @@ export default function Grid() {
             Shop Now
           </Button>
         </div>
-        <img
-          width={550}
-          src="https://prium.github.io/phoenix/v1.13.0/assets/img/e-commerce/whooping_banner_product.png"
-        />
+        <img src="https://prium.github.io/phoenix/v1.13.0/assets/img/e-commerce/whooping_banner_product.png" />
       </Card>
       <Card bg={card2} flexDirection={"column"}>
-        <span style={{ color: "white", fontSize: 35, fontWeight: "800" }}>
+        <span
+          className="card-text"
+          style={{ color: "white", fontWeight: "800" }}
+        >
           Get{" "}
           <GradientText
             text="10% Off"
@@ -64,7 +65,10 @@ export default function Grid() {
       </Card>
       <Card bg={card3}>
         <div>
-          <span style={{ fontSize: 35, textAlign: "left", fontWeight: "bold" }}>
+          <span
+            className="card-text"
+            style={{ textAlign: "left", fontWeight: "bold" }}
+          >
             MI 11 Pro <br />
             Best in the market
           </span>
@@ -72,15 +76,8 @@ export default function Grid() {
             Buy Now
           </Button>
         </div>
-        <img
-          src="https://prium.github.io/phoenix/v1.13.0/assets/img/e-commerce/5.png"
-          height={300}
-        />
+        <img src="https://prium.github.io/phoenix/v1.13.0/assets/img/e-commerce/5.png" />
       </Card>
     </section>
   );
 }
-
-<Button radius={10} bgColor="#0000ff">
-  Buy Now <FontAwesomeIcon icon={faHeart} />
-</Button>;
