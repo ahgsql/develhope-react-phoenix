@@ -1,27 +1,49 @@
 .container {
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .texto {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   font-family: "Nunito Sans";
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: "Nunito Sans";
 }
 
 .first-paragraph {
-   margin-bottom: 0;
-   font-size: 25px;
-
+  margin-bottom: 0;
+  font-size: 25px;
 }
 
-.second-paragraph{
-   font-size: 48.82px;
-   margin: 0%;
+.second-paragraph {
+  font-size: 48.82px;
+  margin: 0%;
 }
 
-.negrita{
-   font-weight: bold;
+.negrita {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .first-paragraph {
+    font-size: 20px;
+  }
+
+  .second-paragraph {
+    font-size: 36.82px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .first-paragraph {
+    font-size: 18px;
+  }
+
+  .second-paragraph {
+    font-size: 28.82px;
+  }
+
+  .texto {
+    align-items: center;
+  }
 }
