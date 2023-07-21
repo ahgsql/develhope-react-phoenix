@@ -7,6 +7,8 @@ export default function Button({
   bgColor = "#ffa500",
   children,
   style,
+  className = "",
+  onClick = null,
 }) {
   const [isHovered, setIsHovered] = useState(false);
   var bgHoverColor = useColorLuminance(bgColor, -0.2);
@@ -18,7 +20,8 @@ export default function Button({
 
   return (
     <button
-      className="button"
+      onClick={onClick}
+      className={"button " + className}
       style={buttonStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

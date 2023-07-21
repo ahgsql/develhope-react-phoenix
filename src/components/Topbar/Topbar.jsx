@@ -49,7 +49,7 @@ export default function Topbar() {
           </div>
         )}
       </div>
-      <div>
+      <div className="right-nav">
         <RightNavButtons changeTheme={changeTheme} />
       </div>
     </section>
