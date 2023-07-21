@@ -1,7 +1,5 @@
 import React from "react";
 import Button from "../common/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import "./grid.css";
 import Card from "./Card";
 import GradientText from "./GradientText";
@@ -83,7 +81,3 @@ export default function Grid() {
     </section>
   );
 }
-
-<Button radius={10} bgColor="#0000ff">
-  Buy Now <FontAwesomeIcon icon={faHeart} />
-</Button>;
