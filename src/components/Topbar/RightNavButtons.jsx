@@ -47,11 +47,7 @@ export default function RightNavButtons({ changeTheme }) {
         className="circle"
       />
       {wishListOpen && (
-        <div
-          style={{ border: "1px solid red" }}
-          className="wishListDiv"
-          ref={wishlistResultDivRef}
-        >
+        <div className="wishListDiv" ref={wishlistResultDivRef}>
           {WishListItems.length < 1 ? "No Items In Wishlist" : WishListItems}
         </div>
       )}

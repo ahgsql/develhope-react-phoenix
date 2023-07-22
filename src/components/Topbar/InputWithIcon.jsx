@@ -1,5 +1,4 @@
 import React from "react";
-import "./Topbar.css";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function InputWithIcon({

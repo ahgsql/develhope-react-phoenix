@@ -1,9 +1,36 @@
+:root {
+  --topbar-input-color:black ;
+  --circle-button-color:#141824;
+  --topbar-input-color:#31374a;
+  --topbar-input-bg:#f7f7f8;
+  --topbar-input-border:#cbd0dd;
+  --topbar-logo-text:#6e7891;
+  --topbar-search-bg:#ffffff;
+  --topbar-search-text:#141824;
+  --topbar-search-hover:rgb(215, 215, 215);
+
+}
+[theme="dark"] {
+  --topbar-input-color:white;
+  --circle-button-color:#9fa6bc;
+  --topbar-input-color:#9fa6bc;
+  --topbar-input-bg:#141824;
+  --topbar-input-border:#373e53;
+  --topbar-logo-text:#eff2f6;
+  --topbar-search-bg:#373e53;
+  --topbar-search-text:#eff2f6;
+  --topbar-search-hover:#1c1e29;
+
+}
+
+
 .topbar{
 display: flex;
 justify-content: space-between;
 align-items: center;
 margin: 0 auto;
 margin-top: 10px;
+margin-bottom: 10px;
 width: 60%;
 flex: 1 4 1
 }
@@ -14,8 +41,9 @@ display: flex;
 .topbar span {
     font-weight: 600;
     font-size: 1.5rem;
-    color: gray;
+    color: var(--topbar-logo-text);
     vertical-align: middle;
+    padding-left: 5px;
 }
 .logo{
     max-width:30px;
@@ -29,7 +57,7 @@ display: flex;
 .circleBtn{
     background-color: unset;
     border:unset;
-    color:black;
+    color:var(--circle-button-color);
     cursor: pointer;
     border-radius: 10px;
     padding: 10px;
@@ -89,16 +117,24 @@ display: flex;
     left:2px;
     transform: translateY(-50%);
   }
-  
+  /* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
   .search .input {
     height: 30px;
     box-sizing:border-box;
     padding-left: 2rem;
-    color: black;
-    background-color:#ffffff;
+    color: var(--topbar-input-color);
+    background-color:var(--topbar-input-bg);
     border-radius: 20px;  
-    border: 1px solid #cbd0dd;
+    border: 1px solid var(--topbar-input-border);
     width: 100%;
+    transition: all 0.2s linear;
   }
   
   .input:focus {
@@ -111,7 +147,7 @@ display: flex;
     justify-content: start;
     align-content: start;
     align-items: flex-start;
-    background-color: #ffffff;
+    background-color: var(--topbar-search-bg);
     position: absolute;
     padding: 20px;
     top:45px;
@@ -125,7 +161,7 @@ display: flex;
     text-align: start;
     border-bottom: 1px solid rgba(20, 20, 20, 0.1);
     width: 100%;
-    background-color: #f8faff;
+    background-color: var(--topbar-search-bg);
     padding: 5px;
     transition: all 0.25s ease-out;
     cursor: pointer;
@@ -137,11 +173,11 @@ display: flex;
 
  .product-search-result span{
     font-size: 1rem;
-    color:black;
+    color:var(--topbar-search-text);
     padding-left: 5px;
  }
   .product-search-result:hover{
-   background-color: rgb(215, 215, 215);
+   background-color: var(--topbar-search-hover);
  }
  .wishListDiv{
   display: flex;
@@ -149,7 +185,7 @@ display: flex;
   justify-content: start;
   align-content: start;
   align-items: flex-start;
-  background-color: #ffffff;
+  background-color: var(--topbar-search-bg);
   position: absolute;
   padding: 10px;
   top:45px;
@@ -163,7 +199,7 @@ box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
   text-align: start;
   border-bottom: 1px solid rgba(20, 20, 20, 0.1);
   width:95%;
-  background-color: #f8faff;
+  background-color: var(--topbar-search-bg);
   padding: 5px;
   transition: all 0.25s ease-out;
   cursor: pointer;
@@ -174,11 +210,11 @@ box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
  }
  .wishlist-item span{
   font-size: 1rem;
-  color:black;
+  color:var(--topbar-search-text);
   padding-left: 5px;
 }
 .wishlist-item:hover{
- background-color: rgb(215, 215, 215);
+ background-color: var(--topbar-search-hover);
 }
 .wishlist-remove {
   padding-left: 5px;color: gray;

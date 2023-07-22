@@ -7,10 +7,12 @@ import InputWithIcon from "./InputWithIcon.jsx";
 import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
 import clickOutside from "../../hooks/useClickOutside";
-const changeTheme = () => {
-  console.log("Theme Changing");
-};
-export default function Topbar() {
+
+export default function Topbar({ setTheme }) {
+  const changeTheme = () => {
+    let theme = document.querySelector("body").getAttribute("theme");
+    setTheme(theme == "dark" ? "light" : "dark");
+  };
   const [search, setSearch] = useState("");
   const [searchResultsOpen, setSearchResultsOpen] = useState(false);
   const resultRef = useRef();

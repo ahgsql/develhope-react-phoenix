@@ -7,5 +7,5 @@
 section {
   margin: 0 auto;
   width: 90%;
-  background-color: #f5f7fa;
+  background-color: var(--body-bg-color);
 }
