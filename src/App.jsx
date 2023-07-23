@@ -9,6 +9,13 @@ import Footer from "./components/Footer/Footer.jsx";
 import WishlistProvider from "./context/WishlistProvider";
 import { useState } from "react";
 import ThemeProvider from "./context/ThemeProvider";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+  useNavigate,
+} from "react-router-dom";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -31,8 +38,13 @@ function App() {
           <Topbar setTheme={setTheme} />
           <Navbar />
           <Categories />
-          <Grid />
-          <Products />
+          <Router>
+            <Routes>
+              <Route path="/" element={[<Grid />, <Products />]}></Route>
+              <Route path="/product/:id" element={<ProductDetail />}></Route>
+            </Routes>
+          </Router>
+
           <Footer />
         </WishlistProvider>
       </ThemeProvider>

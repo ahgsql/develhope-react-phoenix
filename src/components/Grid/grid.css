@@ -4,6 +4,7 @@
     grid-template-rows: repeat(2, 1fr );
     gap:15px;
     margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 .featured-card {
