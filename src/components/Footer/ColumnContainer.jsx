@@ -5,12 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
-  const column1Items = [
-    "Careers",
-    "Affiliate Program",
-    "Privacy Policy",
-    "Terms & Conditions",
-  ];
+  const column1Items = ["Careers","Affiliate Program","Privacy Policy","Terms & Conditions"];
   const column2Title = "Stay Connected";
   const column2Items = [
     <li style={{ fontSize: "13px" }}>Blog</li>,
@@ -23,12 +18,7 @@ export default function ColumnContainer() {
   const column3Title = "Customer Service";
   const column3Items = ["Help Desk", "Support, 24/7", "Community of Phoenix"];
   const column4Title = "Payment Method";
-  const column4Items = [
-    "Cash on Delivery",
-    "Online Payment",
-    "PayPal",
-    "Installment",
-  ];
+  const column4Items = ["Cash on Delivery","Online Payment","PayPal","Installment"];
 
   return (
     <div
