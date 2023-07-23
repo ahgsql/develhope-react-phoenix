@@ -1,14 +1,13 @@
-
 .column {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-right: 20px; 
+  margin-right: 20px;
 }
 
 .column:last-child {
-  margin-right: 0; 
+  margin-right: 0;
 }
 
 .column h3 {
@@ -26,6 +25,7 @@
   cursor: pointer;
   text-decoration: none;
   position: relative;
+  padding: 2px;
 }
 
 .custom-list li:hover {
@@ -34,22 +34,22 @@
 
 @media screen and (max-width: 768px) {
   .column {
-    margin-right: 0; 
-    margin-bottom: 20px; 
+    margin-right: 0;
+    margin-bottom: 20px;
   }
 }
 
 
 @media screen and (max-width: 480px) {
   .column {
-    align-items: center; 
+    align-items: center;
   }
 
   .column h3 {
-    text-align: center; 
+    text-align: center;
   }
 
   .custom-list li {
-    text-align: center; 
+    text-align: center;
   }
 }

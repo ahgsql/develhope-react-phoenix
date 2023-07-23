@@ -2,10 +2,15 @@ import React from "react";
 import Column from "./Column";
 import logo from "./assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
-  const column1Items = ["Careers","Affiliate Program","Privacy Policy","Terms & Conditions"];
+  const column1Items = [
+    <li style={{ fontSize: "13px" }}>Careers</li>,
+    <li style={{ fontSize: "13px" }}>Affiliate Program</li>,
+    <li style={{ fontSize: "13px" }}>Privacy Policy</li>,
+    <li style={{ fontSize: "13px" }}>Terms & Conditions</li>,
+  ];
   const column2Title = "Stay Connected";
   const column2Items = [
     <li style={{ fontSize: "13px" }}>Blog</li>,
@@ -13,12 +18,24 @@ export default function ColumnContainer() {
       <FontAwesomeIcon icon={faFacebook} style={{ color: "blue" }} />
       Facebook
     </li>,
-    <li style={{ fontSize: "13px" }}>Twitter</li>,
+    <li style={{ fontSize: "13px" }}>
+      <FontAwesomeIcon icon={faTwitter} style={{ color: "#1d9bf0", }} />
+      Twitter
+    </li>,
   ];
   const column3Title = "Customer Service";
-  const column3Items = ["Help Desk", "Support, 24/7", "Community of Phoenix"];
+  const column3Items = [
+    <li style={{ fontSize: "13px" }}>Help Desk</li>,
+    <li style={{ fontSize: "13px" }}>Support, 24/7</li>,
+    <li style={{ fontSize: "13px" }}>Community of Phoenix</li>
+  ];
   const column4Title = "Payment Method";
-  const column4Items = ["Cash on Delivery","Online Payment","PayPal","Installment"];
+  const column4Items = [
+    <li style={{ fontSize: "13px" }}>Cash on Delivery</li>,
+    <li style={{ fontSize: "13px" }}>Online Payment</li>,
+    <li style={{ fontSize: "13px" }}>PayPal</li>,
+    <li style={{ fontSize: "13px" }}>Installment</li>,
+  ];
 
   return (
     <div
