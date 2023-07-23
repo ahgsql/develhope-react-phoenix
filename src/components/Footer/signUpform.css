@@ -1,0 +1,41 @@
+/* Estilos para el contenedor principal */
+.signUp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Esto asegura que ocupe toda la altura visible del viewport */
+  }
+  
+  /* Estilos para los elementos dentro del contenedor principal */
+  .signUp img {
+    max-width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
+  }
+  
+  .signUp h3, .signUp p {
+    margin: 10px ;
+  }
+  
+  /* Estilos para los botones */
+  .signUp button {
+    margin: 10px 0;
+    padding: 10px;
+  }
+  
+  /* Estilos para el formulario */
+  .userCreator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Estilos para los labels e inputs */
+  .userCreator label, .userCreator input {
+    margin: 5px 0;
+  }
+  
+  /* Estilos para los inputs de tipo password, ocupando la mitad del ancho */
+  .userCreator input[type="password"] {
+    width: 50%;
+  }
+  

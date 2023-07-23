@@ -4,23 +4,13 @@ import logo from "./assets/logo.png";
 
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
-  const column1Items = [
-    "Careers",
-    "Affiliate Program",
-    "Privacy Policy",
-    "Terms & Conditions",
-  ];
+  const column1Items = ["Careers","Affiliate Program","Privacy Policy","Terms & Conditions"];
   const column2Title = "Stay Connected";
   const column2Items = ["Blogs", "Facebook", "Twitter"];
   const column3Title = "Customer Service";
   const column3Items = ["Help Desk", "Support, 24/7", "Community of Phoenix"];
   const column4Title = "Payment Method";
-  const column4Items = [
-    "Cash on Delivery",
-    "Online Payment",
-    "PayPal",
-    "Installment",
-  ];
+  const column4Items = ["Cash on Delivery","Online Payment","PayPal","Installment"];
 
   return (
     <div
