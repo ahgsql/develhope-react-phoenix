@@ -1,20 +1,20 @@
 import React from 'react'
 import logo from "./assets/logo.png"
 import Button from '../common/Button'
-import signUpform from "./signUpform.css"
-import {
-   faFacebook, faGoogle
-  } from "@fortawesome/free-brands-svg-icons";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function SingUpForm() {
+import {faFacebook, faGoogle} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SignUpModal from './SignUpModal';
+
+
+function SignUpForm() {
     return (
         <div className='signUp'>
             <img src={logo} alt="" />
             <h3>Sign Up</h3>
             <p>Create your account today</p>
-            <button><FontAwesomeIcon icon={faGoogle}  style={{color: "#e70d0d", marginRight:"5px"}} /> Sign up with Google</button>
-            <button> <FontAwesomeIcon icon={faFacebook} size='lg' style={{color: "#2760aa", marginRight:"5px"}} />  Sign up with Facebook </button>
+            <button><FontAwesomeIcon icon={faGoogle} style={{ color: "#e70d0d", marginRight: "5px" }} /> Sign up with Google</button>
+            <button> <FontAwesomeIcon icon={faFacebook} size='lg' style={{ color: "#2760aa", marginRight: "5px" }} />  Sign up with Facebook </button>
             <form className='userCreator'>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="" />
@@ -32,4 +32,4 @@ function SingUpForm() {
     )
 }
 
-export default SingUpForm
+export default SignUpForm

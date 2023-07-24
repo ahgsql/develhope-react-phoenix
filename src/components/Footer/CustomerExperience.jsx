@@ -3,10 +3,13 @@ import Button from "../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import customerExperience from "./customerExperience.css";
-
 import React from "react";
+import SignUpModal from "./SignUpModal";
+import { useState } from "react";
+
 
 export default function CustomerExperience() {
+const [visible, setVisible] = useState(false)
   return (
     <>
       <div className="container">
@@ -27,9 +30,11 @@ export default function CustomerExperience() {
               fontSize: 20,
               padding: "10px 30px",
             }}
+            onClick={()=> setVisible(true)}
           >
             Sign up <FontAwesomeIcon icon={faAngleRight} />{" "}
           </Button>
+          <SignUpModal visible={visible} onHide={()=>setVisible(false)}/>
         </div>
       </div>
     </>
