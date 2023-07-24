@@ -6,35 +6,59 @@ import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
   const column1Items = [
-    <li style={{ fontSize: "13px" }}>Careers</li>,
-    <li style={{ fontSize: "13px" }}>Affiliate Program</li>,
-    <li style={{ fontSize: "13px" }}>Privacy Policy</li>,
-    <li style={{ fontSize: "13px" }}>Terms & Conditions</li>,
+    <li key={1} style={{ fontSize: "13px" }}>
+      Careers
+    </li>,
+    <li key={2} style={{ fontSize: "13px" }}>
+      Affiliate Program
+    </li>,
+    <li key={3} style={{ fontSize: "13px" }}>
+      Privacy Policy
+    </li>,
+    <li key={4} style={{ fontSize: "13px" }}>
+      Terms & Conditions
+    </li>,
   ];
   const column2Title = "Stay Connected";
   const column2Items = [
-    <li style={{ fontSize: "13px" }}>Blog</li>,
-    <li style={{ fontSize: "13px" }}>
+    <li key={1} style={{ fontSize: "13px" }}>
+      Blog
+    </li>,
+    <li key={2} style={{ fontSize: "13px" }}>
       <FontAwesomeIcon icon={faFacebook} style={{ color: "blue" }} />
       Facebook
     </li>,
-    <li style={{ fontSize: "13px" }}>
-      <FontAwesomeIcon icon={faTwitter} style={{ color: "#1d9bf0", }} />
+    <li key={3} style={{ fontSize: "13px" }}>
+      <FontAwesomeIcon icon={faTwitter} style={{ color: "#1d9bf0" }} />
       Twitter
     </li>,
   ];
   const column3Title = "Customer Service";
   const column3Items = [
-    <li style={{ fontSize: "13px" }}>Help Desk</li>,
-    <li style={{ fontSize: "13px" }}>Support, 24/7</li>,
-    <li style={{ fontSize: "13px" }}>Community of Phoenix</li>
+    <li key={1} style={{ fontSize: "13px" }}>
+      Help Desk
+    </li>,
+    <li key={2} style={{ fontSize: "13px" }}>
+      Support, 24/7
+    </li>,
+    <li key={3} style={{ fontSize: "13px" }}>
+      Community of Phoenix
+    </li>,
   ];
   const column4Title = "Payment Method";
   const column4Items = [
-    <li style={{ fontSize: "13px" }}>Cash on Delivery</li>,
-    <li style={{ fontSize: "13px" }}>Online Payment</li>,
-    <li style={{ fontSize: "13px" }}>PayPal</li>,
-    <li style={{ fontSize: "13px" }}>Installment</li>,
+    <li key={1} style={{ fontSize: "13px" }}>
+      Cash on Delivery
+    </li>,
+    <li key={2} style={{ fontSize: "13px" }}>
+      Online Payment
+    </li>,
+    <li key={3} style={{ fontSize: "13px" }}>
+      PayPal
+    </li>,
+    <li key={4} style={{ fontSize: "13px" }}>
+      Installment
+    </li>,
   ];
 
   return (

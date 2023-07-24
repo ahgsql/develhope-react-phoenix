@@ -4,6 +4,7 @@ export default function useClickOutside(ref, onClickOutside) {
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
         onClickOutside();
+        console.log("outside run for", ref);
       }
     }
 

@@ -8,7 +8,6 @@ import Hero from "./components/Hero/Hero.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import WishlistProvider from "./context/WishlistProvider";
 import { useState } from "react";
-import ThemeProvider from "./context/ThemeProvider";
 import {
   Route,
   BrowserRouter as Router,
@@ -33,21 +32,19 @@ function App() {
   setTheme(theme);
   return (
     <>
-      <ThemeProvider>
-        <WishlistProvider>
-          <Topbar setTheme={setTheme} />
-          <Navbar />
-          <Categories />
-          <Router>
-            <Routes>
-              <Route path="/" element={[<Grid />, <Products />]}></Route>
-              <Route path="/product/:id" element={<ProductDetail />}></Route>
-            </Routes>
-          </Router>
+      <WishlistProvider>
+        <Topbar setTheme={setTheme} />
+        <Navbar />
+        <Categories />
+        <Router>
+          <Routes>
+            <Route path="/" element={[<Grid />, <Products />]}></Route>
+            <Route path="/product/:id" element={<ProductDetail />}></Route>
+          </Routes>
+        </Router>
 
-          <Footer />
-        </WishlistProvider>
-      </ThemeProvider>
+        <Footer />
+      </WishlistProvider>
     </>
   );
 }
