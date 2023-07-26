@@ -1,4 +1,14 @@
-
+:root {
+    --color-footer-container: #f5f7fa;
+    --color-footer-text: black;
+   
+  }
+  
+  [theme="dark"] {
+    --color-footer-container:#1d2332;
+    --color-footer-text: white;
+    
+  }
 .footerBar{
     background-color: var(--color-footer-container) ;
     color: var(--color-footer-text);
