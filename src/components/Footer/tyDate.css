@@ -1,17 +1,29 @@
+:root {
+  --color-footer-container: #f5f7fa;
+  --color-footer-text: black;
+
+}
+
+[theme="dark"] {
+  --color-footer-container:#1d2332;
+  --color-footer-text: white;
+}
+
 .contenedor {
-    display: flex;
-    justify-content: space-between;
-    font-family: "Nunito Sans";
-    background-color: #f5f7fa ;
-    padding: 20px 40px;
-  }
-  
-  .fecha {
-    display: flex;
-    align-items: center;
-  }
-  
-  .version {
-    margin-left: auto;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  font-family: "Nunito Sans";
+  background-color: var(--color-footer-container);
+  padding: 20px 40px;
+  color: var(--color-footer-text);
+
+}
+
+.fecha {
+  display: flex;
+  align-items: center;
+}
+
+.version {
+  margin-left: auto;
+}

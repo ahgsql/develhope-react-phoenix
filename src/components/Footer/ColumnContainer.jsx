@@ -3,6 +3,7 @@ import Column from "./Column";
 import logo from "./assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import columContainer from "./columContainer.css"
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
   const column1Items = [
@@ -62,10 +63,9 @@ export default function ColumnContainer() {
   ];
 
   return (
-    <div
+    <div className="footerBar"
       style={{
         display: "flex",
-        backgroundColor: " rgb(239, 242, 246)",
         padding: "50px",
         marginTop: "50px",
       }}

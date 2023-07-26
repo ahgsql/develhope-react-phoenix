@@ -13,7 +13,7 @@ const [visible, setVisible] = useState(false)
   return (
     <>
       <div className="container">
-        <img width={"305px"} height={"250px"} src={light_30} alt="" />
+        <div className="imageContainer"></div>
         <div className="texto">
           <p className="first-paragraph">
             Want to have the{" "}
