@@ -6,6 +6,14 @@
     margin: 0 auto;
 }
 
+.productContainer .ads {
+    max-width: 306px;
+    max-height: 579px;
+    width: 100%;
+    height: auto;
+    margin-top:-30px
+}
+
 .productCard {
     position: relative;
     border-radius: .5rem;
@@ -15,18 +23,17 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.productImage{
+.productImage {
     border: 1px solid #e3e6ed;
     border-radius: 10px;
     position: relative;
     padding: 20px;
 }
 
-.productCard img{
+.productCard img {
     max-width: 100%;
     margin-bottom: 5px;
-    padding: 20px;
-    padding-top: 5px;
+    padding: 5px 20px 20px;
     height: auto;
     border-radius: 10%;
 }
@@ -40,7 +47,7 @@
     border: 1px solid rgb(0, 106, 255);
     border-radius: 50%;
     cursor: pointer;
-    font-size:16px;
+    font-size: 16px;
     color: rgb(0, 106, 255);
     transition: background-color 0.3s, color 0.3s;
 }
@@ -50,7 +57,7 @@
     color: white;
 }
 
-.clickedWishlistButton{
+.clickedWishlistButton {
     background-color: blue;
     color: white;
     position: absolute;
@@ -64,79 +71,118 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.productName a{
-    
+.productName a {
     color: black;
     font-weight: 500;
     text-decoration: none;
     font-size: 13px;
 }
 
-.productName{
+.productName {
     text-align: left;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.productHeader h2{
-    text-align: left;
-    margin-left: 6%;
-}
-.productHeader a{
-    text-align: right;
+.productHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 78%;
 }
 
-.faBolt{
+.headerText {
+    margin-left: 8%;
+    display: flex;
+    align-items: center;
+}
+
+.exploreLink {
+    margin-left: auto;
+}
+
+.faBolt {
     color: #ff5900;
 }
 
-.productCard:hover .productName a{
+.productCard:hover .productName a {
     color: blue;
     text-decoration: underline;
 
 }
 
-.productRating{
+.productRating {
     color: #ff5900;
     margin-top: -10px;
     margin-bottom: 20px;
 }
 
-.productRating span{
+.productRating span {
     color: grey;
     font-size: 13px;
 }
 
-.extraKnowledge{
+.extraKnowledge {
     font-size: 13px;
     font-weight: bold;
 }
 
-.prices{
+.prices {
     display: flex;
     align-items: center;
 }
 
-.oldProductPrice{
+.oldProductPrice {
     margin-right: 10px;
     font-size: 20px;
     text-decoration: line-through;
     opacity: 0.5;
 }
-.productPrice{
+
+.productPrice {
     font-size: 25px;
     font-weight: bolder;
 }
 
 
-.colorCount{
+.colorCount {
     font-size: 12px;
 }
 
-.slideControllers{
+.slideControllers {
     width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media (max-width: 1200px) {
+    .productContainer {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media (max-width: 990px) {
+    .productContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .productContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .productContainer {
+        width:100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .productContainer {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }

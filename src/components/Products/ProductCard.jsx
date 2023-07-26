@@ -73,7 +73,7 @@ const ProductCard = ({
   );
 };
 
-// Add PropTypes validation
+
 ProductCard.propTypes = {
   photoFull: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,

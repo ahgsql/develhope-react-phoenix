@@ -1,109 +1,59 @@
-import ProductCard from "./ProductCard.jsx";
 import products from "../../data/products.js";
 import "./product.css";
-import {
-  faAngleLeft,
-  faAngleRight,
-  faBolt,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import adsVertical from "../../assets/adsVertical.png";
+import Carousel from "./Carousel.jsx";
+import {useEffect, useState} from "react";
 
-const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
 const Products = () => {
-  const shuffledProduct0 = products.slice(0, 5);
-  const shuffledProduct1 = products.slice(6, 12);
-  const shuffledProduct2 = products.slice(12, 18);
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
-  return (
-    <>
-      <div className="productRow">
-        <div className="productHeader">
-          <h2 className="productHeader">
-            <FontAwesomeIcon icon={faBolt} className="faBolt" />
-            Top Deals today
-            <FontAwesomeIcon icon={faBolt} className="faBolt" />
-          </h2>
-          <a href="#">
-            Explore More <FontAwesomeIcon icon={faAngleRight} />
-          </a>
-        </div>
-        <div className="productContainer">
-          {shuffledProduct0.map((product) => (
-            <ProductCard
-              id={product.id}
-              key={product.id}
-              title={product.title}
-              eKnowledge={product.eKnowledge}
-              rating={product.rating}
-              oldPrice={product.oldPrice}
-              price={product.price}
-              photoFull={product.photoFull}
-              color={product.color}
-              ratedPeople={product.ratedPeople}
-            />
-          ))}
-          <img src={adsVertical} alt="" />
-        </div>
-        <div className="slideControllers">
-          <FontAwesomeIcon icon={faAngleLeft} />
-          <FontAwesomeIcon icon={faAngleRight} />
-        </div>
-      </div>
-      <div className="productRow">
-        <h2 className="productHeader">Top Electronics</h2>
-        <div className="productContainer">
-          {shuffledProduct1.map((product) => (
-            <ProductCard
-              id={product.id}
-              key={product.id}
-              title={product.title}
-              eKnowledge={product.eKnowledge}
-              rating={product.rating}
-              oldPrice={product.oldPrice}
-              price={product.price}
-              photoFull={product.photoFull}
-              color={product.color}
-              ratedPeople={product.ratedPeople}
-            />
-          ))}
-        </div>
-        <div className="slideControllers">
-          <FontAwesomeIcon icon={faAngleLeft} />
-          <FontAwesomeIcon icon={faAngleRight} />
-        </div>
-      </div>
-      <div className="productRow">
-        <h2 className="productHeader">Best Offers</h2>
-        <div className="productContainer">
-          {shuffledProduct2.map((product) => (
-            <ProductCard
-              id={product.id}
-              key={product.id}
-              title={product.title}
-              eKnowledge={product.eKnowledge}
-              rating={product.rating}
-              oldPrice={product.oldPrice}
-              price={product.price}
-              photoFull={product.photoFull}
-              color={product.color}
-              ratedPeople={product.ratedPeople}
-            />
-          ))}
-        </div>
-        <div className="slideControllers">
-          <FontAwesomeIcon icon={faAngleLeft} />
-          <FontAwesomeIcon icon={faAngleRight} />
-        </div>
-      </div>
-    </>
-  );
+    const updateScreenWidth = () => {
+        setScreenWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', updateScreenWidth);
+        return () => {
+            window.removeEventListener('resize', updateScreenWidth);
+        };
+    }, []);
+
+    let products1;
+    let products2;
+    let products3
+
+    if (screenWidth >= 1200) {
+        products1=products.slice(0, 5);
+        products2=products.slice(6, 12);
+        products3=products.slice(12, 18);
+    } else if (screenWidth >= 990) {
+        products1=products.slice(0, 4);
+        products2=products.slice(6, 11);
+        products3=products.slice(12, 17);
+    } else if (screenWidth >= 768) {
+        products1=products.slice(0, 4);
+        products2=products.slice(6, 10);
+        products3=products.slice(12, 16);
+    } else if (screenWidth >= 575) {
+        products1=products.slice(0, 3);
+        products2=products.slice(6, 9);
+        products3=products.slice(12, 15);
+    } else if (screenWidth >= 450) {
+        products1=products.slice(0, 2);
+        products2=products.slice(6, 8);
+        products3=products.slice(12, 14);
+    }else {
+        products1=products.slice(0, 1);
+        products2=products.slice(6, 7);
+        products3=products.slice(12, 13);
+    }
+
+    return (
+        <>
+            <Carousel products={products1} isTop={true} header="Top Deals today"/>
+            <Carousel products={products2} isTop={false} header="Top Electronics"/>
+            <Carousel products={products3} isTop={false} header="Best Offers"/>
+        </>
+    );
 };
 
 export default Products;
