@@ -1,0 +1,5 @@
+
+.footerBar{
+    background-color: var(--color-footer-container) ;
+    color: var(--color-footer-text);
+}
