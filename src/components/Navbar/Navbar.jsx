@@ -1,6 +1,7 @@
 import React from "react";
 import burgerMenu from "../../assets/burger-menu.svg";
 import "./styleNavbar.css";
+import CategoriesDropDownMenu from "./CategoriesDropDownMenu";
 export default function Navbar() {
   const navbarMenu = [
     "Home",
@@ -20,6 +21,7 @@ export default function Navbar() {
         </div>
         <div className="category-area">Category</div>
       </div>
+        {/* <CategoriesDropDownMenu /> */}
       <div className="mainNav-right-side">
         <ul className="menu-list">
           {navbarMenu.map((el, i) => (

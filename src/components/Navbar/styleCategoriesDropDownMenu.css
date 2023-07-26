@@ -1,0 +1,28 @@
+:root{
+    --bg-colour: rgb(173, 216, 230);
+    --text-colour: black;
+}
+
+[theme="dark"]{
+    --bg-colour: #0f111a;
+    --text-colour:#ffffff;
+}
+
+.main-container {
+    height: auto;
+    width: 600px;
+    background-color: var(--bg-colour);
+    position:absolute;
+    top: 6.9rem;
+    left: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+}
+ul {
+    list-style: none;
+}
+ul> li {
+    cursor: pointer;
+}
