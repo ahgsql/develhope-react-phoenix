@@ -9,7 +9,7 @@ import { useState } from "react";
 
 
 export default function CustomerExperience() {
-const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false)
   return (
     <>
       <div className="container">
@@ -30,11 +30,11 @@ const [visible, setVisible] = useState(false)
               fontSize: 20,
               padding: "10px 30px",
             }}
-            onClick={()=> setVisible(true)}
+            onClick={() => setVisible(true)}
           >
             Sign up <FontAwesomeIcon icon={faAngleRight} />{" "}
           </Button>
-          <SignUpModal visible={visible} onHide={()=>setVisible(false)}/>
+          <SignUpModal visible={visible} onHide={() => setVisible(false)} />
         </div>
       </div>
     </>
