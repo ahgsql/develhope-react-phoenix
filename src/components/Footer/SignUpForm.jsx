@@ -1,24 +1,83 @@
 import React from 'react'
 import logo from "./assets/logo.png"
 import Button from '../common/Button'
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider } from "firebase/auth";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function SignUpForm() {
-    const handleGoogleLogin = () => {
-        window.location.href = 'https://accounts.google.com/login';
-      };
-    
-      const handleFacebookLogin = () => {
-        window.location.href = 'https://www.facebook.com/login';
-      };
+    const firebaseConfig = {
+        apiKey: "AIzaSyDYiW1HJPursSgqWvq-vRXxHSfcntv__VU",
+        authDomain: "login-5990d.firebaseapp.com",
+        projectId: "login-5990d",
+        storageBucket: "login-5990d.appspot.com",
+        messagingSenderId: "471422538466",
+        appId: "1:471422538466:web:fcf11f42e35ee98cf1c4bb",
+        measurementId: "G-TB9M2ZL56D"
+    };
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+    function call_login_google() {
+        const providerGoogle = new GoogleAuthProvider();
+        signInWithPopup(auth, providerGoogle)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                const credential = GoogleAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                alert(`Correct Login with ${result.user.displayName} `)
+            }).catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    }
+    function call_login_facebook() {
+        const providerFacebook = new FacebookAuthProvider();
+        signInWithPopup(auth, providerFacebook)
+            .then((result) => {
+                // The signed-in user info.
+                const user = result.user;
+
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                const credential = FacebookAuthProvider.credentialFromResult(result);
+                const accessToken = credential.accessToken;
+                alert(`Correct Login with ${result.user.displayName} `)
+
+                // IdP data available using getAdditionalUserInfo(result)
+                // ...
+            })
+            .catch((error) => {
+                // Handle Errors here.
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                // The email of the user's account used.
+                const email = error.customData.email;
+                // The AuthCredential type that was used.
+                const credential = FacebookAuthProvider.credentialFromError(error);
+
+                // ...
+            });
+
+
+    }
+
     return (
         <div className='signUp'>
             <img src={logo} alt="" />
             <h3>Sign Up</h3>
             <p>Create your account today</p>
-            <button onClick={handleGoogleLogin}><FontAwesomeIcon icon={faGoogle} style={{ color: "#e70d0d", marginRight: "5px" }} /> Sign up with Google</button>
-            <button  onClick={handleFacebookLogin}> <FontAwesomeIcon icon={faFacebook} size='lg' style={{ color: "#2760aa", marginRight: "5px" }} />  Sign up with Facebook </button>
+            <button onClick={call_login_google}><FontAwesomeIcon icon={faGoogle} style={{ color: "#e70d0d", marginRight: "5px" }} /> Sign up with Google</button>
+            <button onClick={call_login_facebook} > <FontAwesomeIcon icon={faFacebook} size='lg' style={{ color: "#2760aa", marginRight: "5px" }} />  Sign up with Facebook </button>
             <form className='userCreator'>
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="" />
