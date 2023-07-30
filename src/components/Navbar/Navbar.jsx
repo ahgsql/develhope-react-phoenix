@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import burgerMenu from "../../assets/burger-menu.svg";
 import "./styleNavbar.css";
 import CategoriesDropDownMenu from "./CategoriesDropDownMenu";
 export default function Navbar() {
+  const [dropDown, setDropDown] = useState(false)
   const navbarMenu = [
     "Home",
     "My Favourite Stores",
@@ -13,15 +14,18 @@ export default function Navbar() {
     "Track order",
     "Checkout",
   ];
+  const toggleDropDown = ()=> {
+    setDropDown(!dropDown)
+  }
   return (
     <div className="mainNav">
-      <div className="mainNav-left-side">
+      <div className="mainNav-left-side" onClick={toggleDropDown}>
         <div className="toggle-menu-area">
           <img className="burger-menu" src={burgerMenu} />
         </div>
         <div className="category-area">Category</div>
       </div>
-        {/* <CategoriesDropDownMenu /> */}
+        {dropDown && <CategoriesDropDownMenu setDropDown= {setDropDown}/>}
       <div className="mainNav-right-side">
         <ul className="menu-list">
           {navbarMenu.map((el, i) => (
