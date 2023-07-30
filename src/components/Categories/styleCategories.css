@@ -64,15 +64,19 @@
     filter: var(--svg-color);
 }
 
-@media (max-width: 800px){
+@media (max-width: 1050px){
     .category-li:last-child{
         display: none;
+    }
+    .categories-ul{
+        width: unset;
     }
 }
 @media (max-width: 700px){
     .category-li:nth-last-child(2){
         display: none;
     }
+    
 }
 @media (max-width: 640px){
     .category-li:nth-last-child(3){

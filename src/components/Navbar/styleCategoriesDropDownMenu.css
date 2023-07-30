@@ -1,28 +1,101 @@
 :root{
     --bg-colour: rgb(173, 216, 230);
     --text-colour: black;
+    --li-bg-colour:#eff2f6;
 }
 
 [theme="dark"]{
     --bg-colour: #0f111a;
     --text-colour:#ffffff;
+    --li-bg-colour:#222834;
 }
 
 .main-container {
-    height: auto;
-    width: 600px;
+    border: 1px solid;
+    border-color:  --text-colour;
+    height: 658px;
+    width: 800px;
     background-color: var(--bg-colour);
     position:absolute;
     top: 6.9rem;
-    left: 4rem;
+    left: 10%;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     padding: 25px;
+    z-index: 2;
+    border-radius: 15px;
+    gap: 1rem;
+}
+.categories-top-side{
+    display: flex;
+    flex-wrap: wrap;
+}
+.see-all-categories-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    border-top: 1px solid;
+    border-color: var(--text-colour);
+}
+.see-all-categories-bottom > a{
+    margin-top: 10px;
+}
+.flex-container{
+    background-color: pink;
+    width: 500px;
+    height: auto;
+}
+.first-row, .second-row, .third-row{
+    display: flex;
+    gap: 5px;
 }
 ul {
     list-style: none;
 }
 ul> li {
     cursor: pointer;
+}
+.flex-ul{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.flex-ul > li{
+    width: 100%;
+    text-align: left;
+    padding: 5px 0 5px 5px;
+}
+.flex-ul > li:hover{
+    background-color: var(--li-bg-colour);
+    border-radius: 6px;
+}
+.category-list-container{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 238px;
+    font-size: 14px;
+}
+.list-title-container{
+    display: flex;
+    padding-bottom: 8px;
+}
+.title-svg{
+    padding-right: 5px;
+    filter: invert(38%) sepia(99%) saturate(2501%) hue-rotate(211deg) brightness(100%) contrast(103%);;
+}
+
+@media (max-width: 940px){
+    .main-container{
+        width: 600px;
+        overflow-y: auto;
+    }
+}
+@media (max-width: 460px){
+    .main-container{
+        width: 290px;
+        overflow-y: auto;
+    }
 }

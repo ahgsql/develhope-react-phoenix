@@ -37,7 +37,7 @@ export default function Topbar({ setTheme }) {
     <section className="topbar">
       <div className="logo-container">
         <img className="logo" src={logo}></img>
-        <span>{"phoneix"}</span>
+        <span>{"phoenix"}</span>
       </div>
       <div className="search" ref={resultRef}>
         <InputWithIcon
