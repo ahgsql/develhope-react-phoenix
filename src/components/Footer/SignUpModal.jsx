@@ -12,7 +12,7 @@ export default function SignUpModal({ visible = false, onHide }) {
 
     return (
 
-        <Dialog header="Introduce your info" visible={visible} style={{ width: '75vw', height:"100vw" }} onHide={onHide}>
+        <Dialog header="Introduce your info" dismissableMask={true}  visible={visible} style={{ width: '75vw', height:"100vw" }} onHide={onHide}>
             <SignUpForm className="m-0" />
         </Dialog>
 

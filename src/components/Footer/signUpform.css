@@ -1,12 +1,14 @@
 :root {
   --color-footer-container: #f5f7fa;
   --color-footer-text: black;
+  --button-bg-color: lightgray;
  
 }
 
 [theme="dark"] {
   --color-footer-container: black;
   --color-footer-text: white;
+  --button-bg-color: #1d2332;
   
 }
 .p-dialog .p-dialog-content {
@@ -107,4 +109,7 @@
   width: 100%;
   gap: 15px
 
+}
+.signUp button{
+  background-color: var(--button-bg-color);
 }
