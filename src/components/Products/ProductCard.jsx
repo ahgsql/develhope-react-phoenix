@@ -8,6 +8,7 @@ import {
 import {useContext, useState} from "react";
 import {WishlistContext} from "../../context/WishlistProvider.jsx";
 import RatingStar from "./RatingStar.jsx";
+import {Link} from "react-router-dom";
 
 const ProductCard = ({
                          id,
@@ -36,36 +37,38 @@ const ProductCard = ({
         }
     };
     return (
-        <div className="productCard">
-            <div className="productImage">
-                <button
-                    className={className}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                    onClick={() => handleAddToWishlist(title)}
-                >
-                    <FontAwesomeIcon icon={isHovered ? faHeartSolid : faHeartRegular}/>
-                </button>
-                <img src={photoFull} alt=""/>
-            </div>
-            <div className="productDescription">
-                <h4 className="productName">
-                    <a href="#" style={{fontWeight: "bold"}}>
-                        {title}
-                    </a>
-                </h4>
-                <div className="productRating">
-                    <RatingStar rating={rating}/>
-                    <span>({ratedPeople} people rated)</span>
+        <Link to={'/product/' + id}>
+            <div className="productCard">
+                <div className="productImage">
+                    <button
+                        className={className}
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                        onClick={() => handleAddToWishlist(title)}
+                    >
+                        <FontAwesomeIcon icon={isHovered ? faHeartSolid : faHeartRegular}/>
+                    </button>
+                    <img src={photoFull} alt=""/>
                 </div>
-                <p className="extraKnowledge">{eKnowledge}</p>
-                <div className="prices">
-                    <span className="text-muted oldProductPrice">${oldPrice}</span>
-                    <span className="productPrice">${price}</span>
+                <div className="productDescription">
+                    <h4 className="productName">
+                        <a href="#" style={{fontWeight: "bold"}}>
+                            {title}
+                        </a>
+                    </h4>
+                    <div className="productRating">
+                        <RatingStar rating={rating}/>
+                        <span>({ratedPeople} people rated)</span>
+                    </div>
+                    <p className="extraKnowledge">{eKnowledge}</p>
+                    <div className="prices">
+                        <span className="text-muted oldProductPrice">${oldPrice}</span>
+                        <span className="productPrice">${price}</span>
+                    </div>
+                    <span className="text-muted colorCount">{color} colors</span>
                 </div>
-                <span className="text-muted colorCount">{color} colors</span>
             </div>
-        </div>
+        </Link>
     );
 };
 
