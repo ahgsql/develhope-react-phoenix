@@ -15,6 +15,8 @@ import {
   useNavigate,
 } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import CustomerExperience from "./components/Footer/CustomerExperience";
+import Team from "./components/Misc/Team";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -38,7 +40,15 @@ function App() {
         <Categories />
         <Router>
           <Routes>
-            <Route path="/" element={[<Grid />, <Products />]}></Route>
+            <Route
+              path="/"
+              element={[
+                <Grid />,
+                <Products />,
+                <CustomerExperience />,
+                <Team />,
+              ]}
+            ></Route>
             <Route path="/product/:id" element={<ProductDetail />}></Route>
           </Routes>
         </Router>
