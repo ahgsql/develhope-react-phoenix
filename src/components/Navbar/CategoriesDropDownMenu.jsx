@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, { useRef } from "react";
 import "./styleCategoriesDropDownMenu.css";
 import collectibles from "../../assets/collectibles.svg";
 import homeAndGarden from "../../assets/home&garden.svg";
@@ -9,13 +9,13 @@ import toysAndHobbies from "../../assets/toys&hobbies.svg";
 import fashion from "../../assets/fashion.svg";
 import musicalInstruments from "../../assets/musicalInstruments.svg";
 import otherCategories from "../../assets/other categories.svg";
-import useClickOutside from "../../hooks/useClickOutside";
+import useClickOutside2 from "../../hooks/useClickOutside2";
 
-function CategoriesDropDownMenu({setDropDown}) {
- 
-   const categoriesRef = useRef();
+function CategoriesDropDownMenu({ setDropDown, menuRef }) {
+  const categoriesRef = useRef();
   // useClickOutside(categoriesRef, ()=> setDropDown(false))
-  
+  useClickOutside2(categoriesRef, menuRef, () => setDropDown(false));
+
   return (
     <div className="main-container" ref={categoriesRef}>
       <div className="categories-top-side">
