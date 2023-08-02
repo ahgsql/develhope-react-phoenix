@@ -2,6 +2,7 @@ import products from "../../data/products.js";
 import "./product.css";
 import Carousel from "./Carousel.jsx";
 import { useEffect, useState } from "react";
+import Gallery from "./CarouselAli.jsx";
 
 const Products = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -23,7 +24,7 @@ const Products = () => {
   let ads = true;
 
   if (screenWidth >= 1200) {
-    products1 = products.slice(0, 10);
+    products1 = products.slice(0, 5);
     products2 = products.slice(6, 12);
     products3 = products.slice(12, 18);
   } else if (screenWidth >= 990) {
