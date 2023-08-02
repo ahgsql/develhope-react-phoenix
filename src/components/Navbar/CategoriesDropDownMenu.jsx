@@ -14,7 +14,7 @@ import useClickOutside from "../../hooks/useClickOutside";
 function CategoriesDropDownMenu({setDropDown}) {
  
    const categoriesRef = useRef();
-  // useClickOutside(categoriesRef, ()=> setDropDown(false))
+ // useClickOutside(categoriesRef, ()=> setDropDown(false))
   
   return (
     <div className="main-container" ref={categoriesRef}>
