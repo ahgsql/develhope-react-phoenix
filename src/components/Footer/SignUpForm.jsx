@@ -28,7 +28,7 @@ function SignUpForm() {
                 const credential = GoogleAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 // The signed-in user info.
-                const user = result.user;
+
                 alert(`Correct Login with ${result.user.displayName} `)
             }).catch((error) => {
                 // Handle Errors here.
