@@ -2,6 +2,7 @@
   --color-footer-container: #f5f7fa;
   --color-footer-text: black;
   --button-bg-color: lightgray;
+  --border-button-color: gray;
  
 }
 
@@ -9,6 +10,7 @@
   --color-footer-container: black;
   --color-footer-text: white;
   --button-bg-color: #1d2332;
+  --border-button-color:white;
   
 }
 .p-dialog .p-dialog-content {
@@ -112,4 +114,9 @@
 }
 .signUp button{
   background-color: var(--button-bg-color);
+  outline: none;
+  border: 0.5px solid var(--border-button-color);
+  border-radius: 5px;
+  color: var(--color-footer-text);
+
 }

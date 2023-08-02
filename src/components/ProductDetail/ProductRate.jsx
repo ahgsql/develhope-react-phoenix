@@ -8,6 +8,7 @@ export default function ProductRate({ rate }) {
   for (let i = 0; i < rate; i++) {
     arr.push(
       <FontAwesomeIcon
+        key={i}
         icon={faStar}
         className="faStar"
         style={{ color: "orange !important" }}

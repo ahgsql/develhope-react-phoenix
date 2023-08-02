@@ -7,7 +7,7 @@ import InputWithIcon from "./InputWithIcon.jsx";
 import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
 import clickOutside from "../../hooks/useClickOutside";
-
+import { Link } from "react-router-dom";
 export default function Topbar({ setTheme }) {
   const changeTheme = () => {
     let theme = document.querySelector("body").getAttribute("theme");
@@ -35,10 +35,13 @@ export default function Topbar({ setTheme }) {
     ));
   return (
     <section className="topbar">
-      <div className="logo-container">
-        <img className="logo" src={logo}></img>
-        <span>{"phoenix"}</span>
-      </div>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div className="logo-container">
+          <img className="logo" src={logo}></img>
+          <span>{"phoenix"}</span>
+        </div>
+      </Link>
+
       <div className="search" ref={resultRef}>
         <InputWithIcon
           iconname={faMagnifyingGlass}

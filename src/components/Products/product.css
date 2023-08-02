@@ -125,8 +125,17 @@
 
 .productCard:hover .productName a {
     color: var(--product-blue-color);
-    text-decoration: underline;
+   /* text-decoration: underline; */
 
+}
+a {
+    color : var(--product-text-color)
+}
+a:visited {
+    color:var(--product-text-color);
+}
+a :hover {
+    text-decoration: underline; 
 }
 
 .productRating {

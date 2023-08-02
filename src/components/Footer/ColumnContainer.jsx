@@ -3,7 +3,8 @@ import Column from "./Column";
 import logo from "./assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
-import columContainer from "./columContainer.css"
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
+import "./columContainer.css";
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
   const column1Items = [
@@ -23,14 +24,20 @@ export default function ColumnContainer() {
   const column2Title = "Stay Connected";
   const column2Items = [
     <li key={1} style={{ fontSize: "13px" }}>
-      Blog
+      {" "}
+      <FontAwesomeIcon
+        icon={faBlog}
+        size="lg"
+        style={{ color: "#6188cc" }}
+      />{" "}
+      &nbsp; Blog
     </li>,
     <li key={2} style={{ fontSize: "13px" }}>
-      <FontAwesomeIcon icon={faFacebook} style={{ color: "blue" }} />
+      <FontAwesomeIcon icon={faFacebook} style={{ color: "blue" }} /> &nbsp;
       Facebook
     </li>,
     <li key={3} style={{ fontSize: "13px" }}>
-      <FontAwesomeIcon icon={faTwitter} style={{ color: "#1d9bf0" }} />
+      <FontAwesomeIcon icon={faTwitter} style={{ color: "#1d9bf0" }} /> &nbsp;
       Twitter
     </li>,
   ];
@@ -63,7 +70,8 @@ export default function ColumnContainer() {
   ];
 
   return (
-    <div className="footerBar"
+    <div
+      className="footerBar"
       style={{
         display: "flex",
         padding: "50px",
