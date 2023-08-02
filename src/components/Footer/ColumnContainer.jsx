@@ -3,6 +3,7 @@ import Column from "./Column";
 import logo from "./assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 import "./columContainer.css";
 export default function ColumnContainer() {
   const column1Title = "About Phoenix";
