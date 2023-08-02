@@ -6,7 +6,8 @@ let products = [
       "A cozy and warm blanket for cold nights. This blanket is made of high-quality material and provides excellent comfort.",
     price: 100,
     photo: "https://picsum.photos/id/1/60",
-    photoFull: "https://picsum.photos/id/1/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/1.png",
     rating: 4,
     eKnowledge: "Cozy and warm",
     oldPrice: 90,
@@ -19,7 +20,8 @@ let products = [
     description:
       "A comfortable chair for your living room. It features a modern design and ergonomic support for long sitting sessions.",
     photo: "https://picsum.photos/id/3/60",
-    photoFull: "https://picsum.photos/id/3/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/2.png",
     rating: 3,
     eKnowledge: "Comfortable chair",
     oldPrice: 35,
@@ -33,7 +35,8 @@ let products = [
     description:
       "A sturdy table for various uses. This table is perfect for dining, working, or as a decorative piece in your home.",
     photo: "https://picsum.photos/id/2/60",
-    photoFull: "https://picsum.photos/id/2/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/3.png",
     rating: 5,
     eKnowledge: "Sturdy and versatile",
     oldPrice: 180,
@@ -47,7 +50,8 @@ let products = [
     description:
       "A stylish lamp to brighten up any room. The lamp's warm glow creates a cozy atmosphere.",
     photo: "https://picsum.photos/id/5/60",
-    photoFull: "https://picsum.photos/id/5/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/4.png",
     rating: 4,
     eKnowledge: "Stylish and cozy",
     oldPrice: 25,
@@ -61,7 +65,8 @@ let products = [
     description:
       "Soft and fluffy cushion for your couch or bed. It comes in various colors to match your interior.",
     photo: "https://picsum.photos/id/6/60",
-    photoFull: "https://picsum.photos/id/6/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/5.png",
     rating: 5,
     eKnowledge: "Soft and fluffy",
     oldPrice: 10,
@@ -75,7 +80,8 @@ let products = [
     description:
       "A decorative mirror to add a touch of elegance to your living space. Its sleek design complements any decor.",
     photo: "https://picsum.photos/id/7/60",
-    photoFull: "https://picsum.photos/id/7/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/6.png",
     rating: 3,
     eKnowledge: "Elegant decorative mirror",
     oldPrice: 70,
@@ -89,7 +95,8 @@ let products = [
     description:
       "A spacious bookshelf to organize your books and display your favorite items. It's both functional and visually appealing.",
     photo: "https://picsum.photos/id/8/60",
-    photoFull: "https://picsum.photos/id/8/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/7.png",
     rating: 4,
     eKnowledge: "Functional bookshelf",
     oldPrice: 130,
@@ -103,7 +110,8 @@ let products = [
     description:
       "A soft and durable rug that enhances the comfort of your room while protecting your floors.",
     photo: "https://picsum.photos/id/9/60",
-    photoFull: "https://picsum.photos/id/9/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/8.png",
     rating: 4,
     eKnowledge: "Soft and durable rug",
     oldPrice: 60,
@@ -117,7 +125,8 @@ let products = [
     description:
       "A stylish wall clock that adds a contemporary touch to your home decor.",
     photo: "https://picsum.photos/id/10/60",
-    photoFull: "https://picsum.photos/id/10/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/9.png",
     rating: 5,
     eKnowledge: "Stylish wall clock",
     oldPrice: 15,
@@ -131,7 +140,8 @@ let products = [
     description:
       "An elegant vase to display your fresh flowers or artificial arrangements.",
     photo: "https://picsum.photos/id/11/60",
-    photoFull: "https://picsum.photos/id/11/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/10.png",
     rating: 3,
     eKnowledge: "Elegant flower vase",
     oldPrice: 5,
@@ -145,7 +155,8 @@ let products = [
     description:
       "A spacious and sturdy desk for your office or study room. It provides ample space for your work essentials.",
     photo: "https://picsum.photos/id/12/60",
-    photoFull: "https://picsum.photos/id/12/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/11.png",
     rating: 5,
     eKnowledge: "Spacious and sturdy desk",
     oldPrice: 160,
@@ -159,7 +170,8 @@ let products = [
     description:
       "High-quality curtains that block out light and provide privacy. They come in various sizes and colors.",
     photo: "https://picsum.photos/id/13/60",
-    photoFull: "https://picsum.photos/id/13/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/12.png",
     rating: 4,
     eKnowledge: "High-quality curtains",
     oldPrice: 30,
@@ -173,7 +185,8 @@ let products = [
     description:
       "A comfortable and stylish sofa for your living room. It's designed to accommodate multiple people.",
     photo: "https://picsum.photos/id/14/60",
-    photoFull: "https://picsum.photos/id/14/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/13.png",
     rating: 4,
     eKnowledge: "Comfortable and stylish sofa",
     oldPrice: 320,
@@ -187,7 +200,8 @@ let products = [
     description:
       "A compact side table that complements your seating area. It provides a convenient surface for drinks and snacks.",
     photo: "https://picsum.photos/id/15/60",
-    photoFull: "https://picsum.photos/id/15/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/14.png",
     rating: 3,
     eKnowledge: "Compact side table",
     oldPrice: 50,
@@ -201,7 +215,8 @@ let products = [
     description:
       "A versatile shelf that can be used in the living room, bedroom, or hallway to display your favorite items.",
     photo: "https://picsum.photos/id/16/60",
-    photoFull: "https://picsum.photos/id/16/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/15.png",
     rating: 4,
     eKnowledge: "Versatile display shelf",
     oldPrice: 110,
@@ -215,7 +230,8 @@ let products = [
     description:
       "A beautiful indoor plant that adds a touch of greenery to your home. Low-maintenance and air-purifying.",
     photo: "https://picsum.photos/id/17/60",
-    photoFull: "https://picsum.photos/id/17/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/16.png",
     rating: 5,
     eKnowledge: "Beautiful indoor plant",
     oldPrice: 15,
@@ -229,7 +245,8 @@ let products = [
     description:
       "A high-quality chef's knife for all your culinary needs. Razor-sharp and ergonomic design.",
     photo: "https://picsum.photos/id/18/60",
-    photoFull: "https://picsum.photos/id/18/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/17.png",
     rating: 4,
     eKnowledge: "High-quality chef's knife",
     oldPrice: 70,
@@ -243,7 +260,8 @@ let products = [
     description:
       "Experience a restful sleep with this luxurious queen-sized mattress. Medium-firm and temperature-regulating.",
     photo: "https://picsum.photos/id/19/60",
-    photoFull: "https://picsum.photos/id/19/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/18.png",
     rating: 5,
     eKnowledge: "Luxurious queen mattress",
     oldPrice: 810,
@@ -257,7 +275,8 @@ let products = [
     description:
       "Spoil your feline friend with this cozy cat bed. Plush and machine-washable.",
     photo: "https://picsum.photos/id/20/60",
-    photoFull: "https://picsum.photos/id/20/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/19.png",
     rating: 3,
     eKnowledge: "Cozy cat bed",
     oldPrice: 25,
@@ -271,7 +290,8 @@ let products = [
     description:
       "Improve your gaming experience with this ergonomic gaming chair. Adjustable and supportive.",
     photo: "https://picsum.photos/id/21/60",
-    photoFull: "https://picsum.photos/id/21/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/20.png",
     rating: 4,
     eKnowledge: "Ergonomic gaming chair",
     oldPrice: 220,
@@ -285,7 +305,8 @@ let products = [
     description:
       "Enhance your walls with this captivating wall art. Modern and vibrant.",
     photo: "https://picsum.photos/id/22/60",
-    photoFull: "https://picsum.photos/id/22/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/21.png",
     rating: 5,
     eKnowledge: "Captivating wall art",
     oldPrice: 50,
@@ -299,7 +320,8 @@ let products = [
     description:
       "Ensure clean and purified water with this efficient water filter. Easy to install and maintain.",
     photo: "https://picsum.photos/id/23/60",
-    photoFull: "https://picsum.photos/id/23/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/22.png",
     rating: 4,
     eKnowledge: "Efficient water filter",
     oldPrice: 100,
@@ -313,7 +335,8 @@ let products = [
     description:
       "Host perfect BBQ parties with this high-performance grill. Durable and spacious.",
     photo: "https://picsum.photos/id/24/60",
-    photoFull: "https://picsum.photos/id/24/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/23.png",
     rating: 5,
     eKnowledge: "High-performance grill",
     oldPrice: 320,
@@ -327,7 +350,8 @@ let products = [
     description:
       "Monitor your health and fitness goals with this advanced fitness tracker. Sleek and feature-packed.",
     photo: "https://picsum.photos/id/25/60",
-    photoFull: "https://picsum.photos/id/25/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/24.png",
     rating: 3,
     eKnowledge: "Advanced fitness tracker",
     oldPrice: 60,
@@ -341,7 +365,8 @@ let products = [
     description:
       "Create a calming atmosphere with this set of essential oils. Pure and aromatic.",
     photo: "https://picsum.photos/id/26/60",
-    photoFull: "https://picsum.photos/id/26/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/25.png",
     rating: 5,
     eKnowledge: "Calming essential oils",
     oldPrice: 30,
@@ -355,7 +380,8 @@ let products = [
     description:
       "Illuminate your workspace with this energy-efficient desk lamp. Adjustable brightness levels.",
     photo: "https://picsum.photos/id/27/60",
-    photoFull: "https://picsum.photos/id/27/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/26.png",
     rating: 4,
     eKnowledge: "Energy-efficient desk lamp",
     oldPrice: 20,
@@ -369,7 +395,8 @@ let products = [
     description:
       "Stay warm and cozy with this soft throw blanket. Perfect for chilly evenings.",
     photo: "https://picsum.photos/id/28/60",
-    photoFull: "https://picsum.photos/id/28/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/27.png",
     rating: 4,
     eKnowledge: "Soft and cozy throw blanket",
     oldPrice: 15,
@@ -383,7 +410,8 @@ let products = [
     description:
       "Transform your shower experience with this color-changing LED showerhead. Easy to install.",
     photo: "https://picsum.photos/id/29/60",
-    photoFull: "https://picsum.photos/id/29/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/28.png",
     rating: 3,
     eKnowledge: "Color-changing LED showerhead",
     oldPrice: 35,
@@ -397,7 +425,8 @@ let products = [
     description:
       "Keep your furry friend looking their best with this grooming kit. Includes various grooming tools.",
     photo: "https://picsum.photos/id/30/60",
-    photoFull: "https://picsum.photos/id/30/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/29.png",
     rating: 5,
     eKnowledge: "Complete dog grooming kit",
     oldPrice: 50,
@@ -411,7 +440,8 @@ let products = [
     description:
       "Enjoy the therapeutic benefits of aromatherapy with this stylish diffuser. Auto-shutoff feature.",
     photo: "https://picsum.photos/id/31/60",
-    photoFull: "https://picsum.photos/id/31/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/30.png",
     rating: 4,
     eKnowledge: "Stylish aromatherapy diffuser",
     oldPrice: 20,
@@ -425,7 +455,8 @@ let products = [
     description:
       "Add a melodic touch to your outdoor space with these harmonious wind chimes.",
     photo: "https://picsum.photos/id/32/60",
-    photoFull: "https://picsum.photos/id/32/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/31.png",
     rating: 5,
     eKnowledge: "Harmonious wind chimes",
     oldPrice: 10,
@@ -439,7 +470,8 @@ let products = [
     description:
       "Make your home spotless with this eco-friendly cleaning set. Includes natural cleaning agents.",
     photo: "https://picsum.photos/id/33/60",
-    photoFull: "https://picsum.photos/id/33/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/32.png",
     rating: 4,
     eKnowledge: "Eco-friendly cleaning set",
     oldPrice: 22,
@@ -453,7 +485,8 @@ let products = [
     description:
       "Start your day with a refreshing yoga session using this anti-slip yoga mat.",
     photo: "https://picsum.photos/id/34/60",
-    photoFull: "https://picsum.photos/id/34/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/33.png",
     rating: 5,
     eKnowledge: "Anti-slip yoga mat",
     oldPrice: 30,
@@ -467,7 +500,8 @@ let products = [
     description:
       "Improve your indoor air quality with this high-performance air purifier. Quiet and efficient.",
     photo: "https://picsum.photos/id/35/60",
-    photoFull: "https://picsum.photos/id/35/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/34.png",
     rating: 4,
     eKnowledge: "High-performance air purifier",
     oldPrice: 120,
@@ -481,7 +515,8 @@ let products = [
     description:
       "Create a soothing ambiance for sleep or relaxation with this white noise machine.",
     photo: "https://picsum.photos/id/36/60",
-    photoFull: "https://picsum.photos/id/36/400",
+    photoFull:
+      "https://prium.github.io/phoenix/v1.13.0/assets/img/products/35.png",
     rating: 3,
     eKnowledge: "Soothing white noise machine",
     oldPrice: 25,
