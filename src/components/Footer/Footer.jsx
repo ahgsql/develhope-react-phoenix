@@ -8,8 +8,6 @@ import SignUpModal from "./SignUpModal";
 export default function Footer() {
   return (
     <>
-      <CustomerExperience />
-      <Team />
       <ColumnContainer />
       <hr />
       <TyDate />
