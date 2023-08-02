@@ -35,25 +35,26 @@ function App() {
   return (
     <>
       <WishlistProvider>
-        <Topbar setTheme={setTheme} />
-        <Navbar />
-        <Categories />
         <Router>
+          <Topbar setTheme={setTheme} />
+          <Navbar />
+          <Categories />
+
           <Routes>
             <Route
               path="/"
               element={[
-                <Grid />,
-                <Products />,
-                <CustomerExperience />,
-                <Team />,
+                <Grid key={1} />,
+                <Products key={2} />,
+                <CustomerExperience key={3} />,
+                <Team key={4} />,
               ]}
             ></Route>
             <Route path="/product/:id" element={<ProductDetail />}></Route>
           </Routes>
-        </Router>
 
-        <Footer />
+          <Footer />
+        </Router>
       </WishlistProvider>
     </>
   );

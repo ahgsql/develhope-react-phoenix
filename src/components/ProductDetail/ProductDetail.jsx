@@ -1,11 +1,15 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import { getProductById } from "../../data/products";
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
-
+import { WishlistContext } from "../../context/WishlistProvider";
+import Button from "../common/Button";
 export default function ProductDetail() {
   const { id } = useParams();
   let product = getProductById(parseInt(id));
+  console.log("ProductDetail Rendered");
+  let { wishlist, setWishList } = useContext(WishlistContext);
   return (
     <div className="product-detail-main-container">
       <div className="product-detail-breadcrumb">
@@ -56,6 +60,11 @@ export default function ProductDetail() {
           {product.description}
         </span>
       </div>
+      <Button onClick={() => setWishList([...wishlist, parseInt(id)])}>
+        {wishlist.includes(parseInt(id))
+          ? "Already in Wishlist"
+          : "Add to wishlist"}
+      </Button>
     </div>
   );
 }

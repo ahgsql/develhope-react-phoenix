@@ -21,7 +21,7 @@ export default function Grid() {
   };
   return (
     <section className="grid-container">
-      <Card flexDirection="row" featured={true} bg={card1}>
+      <Card flexDirection="row" featured={true} bg={card1} key={1}>
         <div>
           <span
             className="featured-text"
@@ -43,7 +43,7 @@ export default function Grid() {
         </div>
         <img src="https://prium.github.io/phoenix/v1.13.0/assets/img/e-commerce/whooping_banner_product.png" />
       </Card>
-      <Card bg={card2} flexDirection={"column"}>
+      <Card bg={card2} flexDirection={"column"} key={2}>
         <span
           className="card-text"
           style={{ color: "white", fontWeight: "800" }}
@@ -63,7 +63,7 @@ export default function Grid() {
         </Button>
         <SizedBox height={100} />
       </Card>
-      <Card bg={card3}>
+      <Card bg={card3} key={3}>
         <div>
           <span
             className="card-text"
