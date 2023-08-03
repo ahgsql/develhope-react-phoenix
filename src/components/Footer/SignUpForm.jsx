@@ -8,7 +8,7 @@ import { FacebookAuthProvider } from "firebase/auth";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function SignUpForm() {
+function SignUpForm({ setUser, setVisible }) {
   const firebaseConfig = {
     apiKey: "AIzaSyDYiW1HJPursSgqWvq-vRXxHSfcntv__VU",
     authDomain: "login-5990d.firebaseapp.com",
@@ -28,15 +28,18 @@ function SignUpForm() {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         // The signed-in user info.
+        localStorage.setItem("user", JSON.stringify(result.user));
 
-        alert(`Correct Login with ${result.user.displayName} `);
+        setUser(result.user);
+        setVisible(false);
+        //alert(`Correct Login with ${result.user.displayName} `);
       })
       .catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         // The email of the user's account used.
-        const email = error.customData.email;
+        console.log(error);
         // The AuthCredential type that was used.
         const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
@@ -48,7 +51,9 @@ function SignUpForm() {
       .then((result) => {
         // The signed-in user info.
         const user = result.user;
-
+        //Save the user information to local storage.
+        localStorage.setItem("user", JSON.stringify(user));
+        console.log(user);
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;

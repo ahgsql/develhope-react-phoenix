@@ -3,13 +3,19 @@ import Button from "../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import customerExperience from "./customerExperience.css";
-import React from "react";
+import React, { useEffect } from "react";
 import SignUpModal from "./SignUpModal";
 import { useState } from "react";
 
-
 export default function CustomerExperience() {
-  const [visible, setVisible] = useState(false)
+  const [visible, setVisible] = useState(false);
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const userInfo = localStorage.getItem("user");
+    if (userInfo) {
+      setUser(JSON.parse(userInfo));
+    }
+  }, []);
   return (
     <>
       <div className="container">
@@ -22,19 +28,43 @@ export default function CustomerExperience() {
           <p className="second-paragraph">
             Become a <span style={{ color: "#3874ff" }}>member</span> today!
           </p>
-          <Button
-            bgColor="#3874ff"
-            radius={8}
-            style={{
-              fontFamily: "Nunito Sans",
-              fontSize: 20,
-              padding: "10px 30px",
-            }}
-            onClick={() => setVisible(true)}
-          >
-            Sign up <FontAwesomeIcon icon={faAngleRight} />{" "}
-          </Button>
-          <SignUpModal visible={visible} onHide={() => setVisible(false)} />
+          {user ? (
+            <Button
+              bgColor="#3874ff"
+              radius={8}
+              style={{
+                fontFamily: "Nunito Sans",
+                fontSize: 20,
+                padding: "10px 30px",
+                maxWidth: "500px",
+              }}
+              onClick={() => {
+                localStorage.removeItem("user");
+                setUser(null);
+              }}
+            >
+              Sign Out {"("} {user.displayName} {")"}
+            </Button>
+          ) : (
+            <Button
+              bgColor="#3874ff"
+              radius={8}
+              style={{
+                fontFamily: "Nunito Sans",
+                fontSize: 20,
+                padding: "10px 30px",
+              }}
+              onClick={() => setVisible(true)}
+            >
+              Sign up <FontAwesomeIcon icon={faAngleRight} />{" "}
+            </Button>
+          )}
+          <SignUpModal
+            setUser={setUser}
+            visible={visible}
+            setVisible={setVisible}
+            onHide={() => setVisible(false)}
+          />
         </div>
       </div>
     </>
