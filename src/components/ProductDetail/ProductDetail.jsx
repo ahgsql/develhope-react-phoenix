@@ -5,6 +5,7 @@ import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
 import { WishlistContext } from "../../context/WishlistProvider";
 import Button from "../common/Button";
+import BigImages from "./BigImages";
 export default function ProductDetail() {
   const { id } = useParams();
   let product = getProductById(parseInt(id));
@@ -22,8 +23,10 @@ export default function ProductDetail() {
           <img src={product.photo} />
           <img src={product.photo} />
         </div>
-        <div className="product-detail-featured-image ">
-          <img src={product.photoFull} />
+        <div className="product-detail-featured-image">
+          <BigImages
+            images={[product.photoFull, product.photoFull, product.photoFull]}
+          />
         </div>
       </div>
       <div className="product-detail-features-container">

@@ -2,7 +2,6 @@ import products from "../../data/products.js";
 import "./product.css";
 import Carousel from "./Carousel.jsx";
 import { useEffect, useState } from "react";
-import Gallery from "./CarouselAli.jsx";
 
 const Products = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
