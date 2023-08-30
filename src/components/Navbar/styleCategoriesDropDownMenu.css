@@ -2,17 +2,20 @@
     --bg-colour: rgb(173, 216, 230);
     --text-colour: black;
     --li-bg-colour:#eff2f6;
+    --border-colour:#e3e6ed
 }
 
 [theme="dark"]{
     --bg-colour: #0f111a;
     --text-colour:#ffffff;
     --li-bg-colour:#222834;
+    --border-colour:#31374a
+
 }
 
 .main-container {
-    border: 1px solid;
-    border-color:  --text-colour;
+    border: 0.5px solid;
+    border-color:  var(--border-colour);
     height: 658px;
     width: 800px;
     background-color: var(--bg-colour);
@@ -24,8 +27,28 @@
     justify-content: center;
     padding: 25px;
     z-index: 2;
-    border-radius: 15px;
+    border-radius: 7px;
     gap: 1rem;
+}
+.main-container :after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 1.6rem;
+    height: 1.6rem;
+    background: var(--bg-colour);
+    top: -13px;
+    left: 6.5rem;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: var(--bg-colour);
+    border-radius: .15rem;
+    border-width: 1px 0 0 1px;
+    border-style: solid;
+    border-color: var(--border-colour);
+   
+
 }
 .categories-top-side{
     display: flex;

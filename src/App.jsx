@@ -17,6 +17,7 @@ import {
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import CustomerExperience from "./components/Footer/CustomerExperience";
 import Team from "./components/Misc/Team";
+import FloatingButton from "./components/common/FloatingButton";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -52,7 +53,7 @@ function App() {
             ></Route>
             <Route path="/product/:id" element={<ProductDetail />}></Route>
           </Routes>
-
+          <FloatingButton />
           <Footer />
         </Router>
       </WishlistProvider>
