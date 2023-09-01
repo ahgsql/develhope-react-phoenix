@@ -34,9 +34,7 @@ export default function CustomerExperience() {
               radius={8}
               style={{
                 fontFamily: "Nunito Sans",
-                fontSize: 20,
-                padding: "10px 30px",
-                maxWidth: "500px",
+
               }}
               onClick={() => {
                 localStorage.removeItem("user");
@@ -51,8 +49,9 @@ export default function CustomerExperience() {
               radius={8}
               style={{
                 fontFamily: "Nunito Sans",
-                fontSize: 20,
-                padding: "10px 30px",
+                fontSize: "1rem", 
+                whiteSpace: "nowrap",                
+                textAlign: "center",                               
               }}
               onClick={() => setVisible(true)}
             >
