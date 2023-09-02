@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { getProductById } from "../../data/products";
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
@@ -8,6 +8,26 @@ import Button from "../common/Button";
 import BigImages from "./BigImages";
 export default function ProductDetail() {
   const { id } = useParams();
+  useEffect(() => {
+    const fetchingData = async () => {
+      try {
+        const res = await fetch(`http://localhost:9000/api/products/`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+          .then((data) => {
+            console.log("Raw Response:", data);
+            return data.json();
+          })
+          .then((data) => console.log("BACKEND data:", data));
+      } catch (error) {
+        console.error("Fetch Error:", error);
+      }
+    };
+    fetchingData();
+  }, []);
+
   let product = getProductById(parseInt(id));
   console.log("ProductDetail Rendered");
   let { wishlist, setWishList } = useContext(WishlistContext);

@@ -15,7 +15,8 @@
   width: 305px;
   height: 250px;
   background-image: var(--picture-url);
-  background-size: contain;
+  background-position: center;
+  background-size: cover;
 }
 
 .container {
