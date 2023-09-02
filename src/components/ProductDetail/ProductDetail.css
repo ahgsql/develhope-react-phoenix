@@ -53,6 +53,7 @@
     padding: 15px;
     border: 1px solid grey;
     border-radius: 10px;
+    width: 100%;
   }
 
   .product-detail-small-images > :nth-child(1) {

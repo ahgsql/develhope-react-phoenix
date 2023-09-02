@@ -19,9 +19,9 @@ export default function ProductDetail() {
 
       <div className="product-detail-image-container ">
         <div className="product-detail-small-images ">
-          <img src={product.photo} />
-          <img src={product.photo} />
-          <img src={product.photo} />
+          <img src={product.photoFull} />
+          <img src={product.photoFull} />
+          <img src={product.photoFull} />
         </div>
         <div className="product-detail-featured-image">
           <BigImages
