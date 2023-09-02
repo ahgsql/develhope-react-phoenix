@@ -7,8 +7,12 @@ import InputWithIcon from "./InputWithIcon.jsx";
 import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
 import clickOutside from "../../hooks/useClickOutside";
+import { useAuth } from "../../context/AuthProvider";
+
 import { Link } from "react-router-dom";
 export default function Topbar({ setTheme }) {
+  const { user, login, logout, loginCheck } = useAuth();
+  //loginCheck();
   const changeTheme = () => {
     let theme = document.querySelector("body").getAttribute("theme");
     setTheme(theme == "dark" ? "light" : "dark");
@@ -41,7 +45,21 @@ export default function Topbar({ setTheme }) {
           <span>{"phoenix"}</span>
         </div>
       </Link>
-
+      <div>
+        {user ? (
+          <div>
+            <p>Welcome, {user.username}!</p>
+            <button onClick={logout}>Logout</button>
+          </div>
+        ) : (
+          <div>
+            <p>You are not logged in.</p>
+            <button onClick={() => login("testuser", "AliHaydar!?_1")}>
+              Login
+            </button>
+          </div>
+        )}
+      </div>
       <div className="search" ref={resultRef}>
         <InputWithIcon
           iconname={faMagnifyingGlass}
