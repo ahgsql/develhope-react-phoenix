@@ -45,21 +45,7 @@ export default function Topbar({ setTheme }) {
           <span>{"phoenix"}</span>
         </div>
       </Link>
-      <div>
-        {user ? (
-          <div>
-            <p>Welcome, {user.username}!</p>
-            <button onClick={logout}>Logout</button>
-          </div>
-        ) : (
-          <div>
-            <p>You are not logged in.</p>
-            <button onClick={() => login("testuser", "AliHaydar!?_1")}>
-              Login
-            </button>
-          </div>
-        )}
-      </div>
+
       <div className="search" ref={resultRef}>
         <InputWithIcon
           iconname={faMagnifyingGlass}
