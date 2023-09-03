@@ -1,0 +1,46 @@
+.chat-area{
+    width: 300px;
+    height: 500px;
+    background-color: lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.chat-history{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    max-height: 90%;
+    overflow-y: scroll;
+}
+
+.chat-input{
+    display: flex;
+    flex-direction: column;
+   
+}
+
+.message-input{ border: 1px solid greenyellow;
+}
+
+.message{
+    padding: 5px;
+    background-color: aquamarine;
+    border-radius: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}
+.admin-msg{
+    text-align: right;
+    background-color: blue;
+
+}
+.customer-msg{
+
+text-align: left;
+background-color: brown;
+
+}
