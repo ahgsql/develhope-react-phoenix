@@ -24,10 +24,19 @@ export default function LiveChatFeature() {
 
     const sendMessage = async () => {
         let response = await axios.post(import.meta.env.VITE_BASE_URL + "/api/chat/message", { from: "customer", message })
-        if (response.data.status) {
+        if (response.data.status && message.trim().length > 0) {
             setHistory(prevhistory => [...prevhistory, { from: "customer", message }])
+            setMessage("")
         }
 
+
+
+    }
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault(); 
+            sendMessage();
+        }
     }
     return (
         <>
@@ -38,7 +47,7 @@ export default function LiveChatFeature() {
                     })}
                 </div>
                 <div className="chat-input">
-                    <input type="text" className="message-input" value={message} onChange={(e) => setMessage(e.target.value)} />
+                    <input type="text" className="message-input" value={message} onChange={(e) => setMessage(e.target.value)} onKeyDown={handleKeyDown} />
                     <button onClick={sendMessage}>send</button>
                 </div>
             </div>

@@ -18,7 +18,8 @@ export default function FloatingButton() {
         bottom: "40px",
         right: "50px",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        zIndex: 1
       }}>
         <LiveChatFeature/>
 
