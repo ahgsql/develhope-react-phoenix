@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import logo from "./assets/logo.png";
 import Button from "../common/Button";
 import { initializeApp } from "firebase/app";
@@ -7,7 +7,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FacebookAuthProvider } from "firebase/auth";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import axios from "axios";
 function SignUpForm({ setUser, setVisible }) {
   const firebaseConfig = {
     apiKey: "AIzaSyDYiW1HJPursSgqWvq-vRXxHSfcntv__VU",
@@ -45,6 +45,25 @@ function SignUpForm({ setUser, setVisible }) {
         // ...
       });
   }
+  const registerServer = async function (e) {
+    e.preventDefault();
+    let formData = {
+      userName: userNameRef.current.value,
+      password: passRef.current.value,
+      displayName: nameRef.current.value,
+    };
+    try {
+      let register = await axios.post(
+        import.meta.env.VITE_BASE_URL + "/api/register",
+        formData
+      );
+      if (!register.data.error) {
+        alert("Registration Completed");
+      }
+    } catch (error) {
+      alert(error.response.data.message);
+    }
+  };
   function call_login_facebook() {
     const providerFacebook = new FacebookAuthProvider();
     signInWithPopup(auth, providerFacebook)
@@ -74,7 +93,9 @@ function SignUpForm({ setUser, setVisible }) {
         // ...
       });
   }
-
+  let nameRef = useRef();
+  let userNameRef = useRef();
+  let passRef = useRef();
   return (
     <div className="signUp">
       <img src={logo} alt="" />
@@ -84,26 +105,29 @@ function SignUpForm({ setUser, setVisible }) {
         <FontAwesomeIcon
           icon={faGoogle}
           style={{ color: "#e70d0d", marginRight: "5px" }}
-        />{" "}
+        />
         Sign up with Google
       </button>
       <button onClick={call_login_facebook}>
-        {" "}
         <FontAwesomeIcon
           icon={faFacebook}
           size="lg"
           style={{ color: "#2760aa", marginRight: "5px" }}
-        />{" "}
-        Sign up with Facebook{" "}
+        />
+        Sign up with Facebook
       </button>
-      <form className="userCreator">
-        <label htmlFor="name">Name</label>
-        <input type="text" name="name" id="name" />
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" autoComplete="username" />
+      <form className="userCreator" onSubmit={registerServer}>
+        <label htmlFor="name">Display Name</label>
+        <input type="text" name="name" id="name" ref={nameRef} />
+        <label htmlFor="email">User Name</label>
+        <input
+          type="text"
+          name="userName"
+          ref={userNameRef}
+          autoComplete="username"
+        />
         <div className="password-row-labels">
           <label htmlFor="password">Password</label>
-          <label htmlFor="repeatPassword">Repeat Password</label>
         </div>
         <div className="password-row">
           <input
@@ -111,12 +135,7 @@ function SignUpForm({ setUser, setVisible }) {
             name="password"
             id="password"
             autoComplete="new-password"
-          />
-          <input
-            type="password"
-            name="repeatPassword"
-            id="repeatPassword"
-            autoComplete="new-password"
+            ref={passRef}
           />
         </div>
         <label htmlFor="" id="labelchk">

@@ -82,6 +82,9 @@ export default function ProductDetail() {
         <span style={{ fontSize: 24, textAlign: "left" }}>
           {product.description}
         </span>
+        <Button onClick={() => console.log(1)} bgColor="#4050ff">
+          Buy Now
+        </Button>
       </div>
       <Button onClick={() => setWishList([...wishlist, parseInt(id)])}>
         {wishlist.includes(parseInt(id))
