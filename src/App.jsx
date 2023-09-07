@@ -18,6 +18,7 @@ import ProductDetail from "./components/ProductDetail/ProductDetail";
 import CustomerExperience from "./components/Footer/CustomerExperience";
 import Team from "./components/Misc/Team";
 import FloatingButton from "./components/common/FloatingButton";
+import AuthProvider from "./context/AuthProvider";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -35,28 +36,30 @@ function App() {
   setTheme(theme);
   return (
     <>
-      <WishlistProvider>
-        <Router>
-          <Topbar setTheme={setTheme} />
-          <Navbar />
-          <Categories />
+      <AuthProvider>
+        <WishlistProvider>
+          <Router>
+            <Topbar setTheme={setTheme} />
+            <Navbar />
+            <Categories />
 
-          <Routes>
-            <Route
-              path="/"
-              element={[
-                <Grid key={1} />,
-                <Products key={2} />,
-                <CustomerExperience key={3} />,
-                <Team key={4} />,
-              ]}
-            ></Route>
-            <Route path="/product/:id" element={<ProductDetail />}></Route>
-          </Routes>
-          <FloatingButton />
-          <Footer />
-        </Router>
-      </WishlistProvider>
+            <Routes>
+              <Route
+                path="/"
+                element={[
+                  <Grid key={1} />,
+                  <Products key={2} />,
+                  <CustomerExperience key={3} />,
+                  <Team key={4} />,
+                ]}
+              ></Route>
+              <Route path="/product/:id" element={<ProductDetail />}></Route>
+            </Routes>
+            <FloatingButton />
+            <Footer />
+          </Router>
+        </WishlistProvider>
+      </AuthProvider>
     </>
   );
 }

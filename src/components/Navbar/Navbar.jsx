@@ -1,9 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import burgerMenu from "../../assets/burger-menu.svg";
 import "./styleNavbar.css";
 import CategoriesDropDownMenu from "./CategoriesDropDownMenu";
+import { useAuth } from "../../context/AuthProvider";
+
 export default function Navbar() {
   const [dropDown, setDropDown] = useState(false);
+  const { user, login, logout, loginCheck } = useAuth();
+
   const navbarMenu = [
     "Home",
     "My Favourite Stores",
@@ -18,6 +22,10 @@ export default function Navbar() {
     setDropDown(!dropDown);
   };
   const ref2 = useRef();
+  useEffect(() => {
+    loginCheck();
+  }, []);
+
   return (
     <div className="mainNav">
       <div className="mainNav-left-side" onClick={toggleDropDown} ref={ref2}>
