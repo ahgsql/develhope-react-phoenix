@@ -26,6 +26,7 @@ const Comment = ({productId, userId}) => {
 
     return (
         <div id="CommentContainer">
+            <h2 style={{textAlign:"start"}}>Comments</h2>
             {/*{comments.map((comment) => (*/}
             {/*    <div key={comment._id} id="CommentRow">*/}
             {/*        <h3>{comment.username}</h3>*/}
