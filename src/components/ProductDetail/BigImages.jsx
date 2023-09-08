@@ -24,7 +24,7 @@ export default function BigImages({ images }) {
           {images.map((image, index) => {
             return (
               <motion.div className="bi-item">
-                <img src={image} key={index} />
+                <img src={image.url + "0"} key={index} />
               </motion.div>
             );
           })}
