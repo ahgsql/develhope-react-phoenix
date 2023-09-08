@@ -1,7 +1,6 @@
-
-import {useParams} from "react-router-dom";
-import {useContext, useEffect, useState} from "react";
-import {getProductById} from "../../data/products";
+import { useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { getProductById } from "../../data/products";
 
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
@@ -16,6 +15,7 @@ import getProductComments from "../../hooks/getProductComments.js";
 
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
+  const [comments, setComments] = useState([]);
   const { id } = useParams();
   useEffect(() => {
     (async () => {
@@ -25,12 +25,11 @@ export default function ProductDetail() {
         console.log(product);
       }
     })();
-     (async ()=>{
-            let comments = await getProductComments(id);
-            setComments(comments);
-            console.log(comments)
-        })();
-    
+    (async () => {
+      let comments = await getProductComments(id);
+      setComments(comments);
+      console.log(comments);
+    })();
   }, []);
 
   console.log("ProductDetail Rendered");
@@ -102,9 +101,12 @@ export default function ProductDetail() {
             : "Add to wishlist"}
         </Button>
       </div>
-     <Input id={product.id}/>
-  <Comment comments={comments}/>
+      <Input
+        id={product._id}
+        setComments={setComments}
+        oldComments={comments}
+      />
+      <Comment comments={comments} />
     </>
   );
-
 }

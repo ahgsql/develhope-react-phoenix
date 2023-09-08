@@ -5,7 +5,7 @@ import Pusher from "pusher-js";
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
-export default function LiveChatFeature() {
+export default function LiveChatFeature({ style }) {
   const [history, setHistory] = useState([]);
   const [message, setMessage] = useState("");
   let bind = false;
@@ -56,7 +56,7 @@ export default function LiveChatFeature() {
   };
   return (
     <>
-      <div className="chat-area">
+      <div className="chat-area" style={{ ...style }}>
         <div className="contact bar">
           <div className="pic stark"></div>
           <div className="name">Customer Representative</div>
