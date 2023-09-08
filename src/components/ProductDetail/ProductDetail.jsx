@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useContext, useEffect} from "react";
+import {useContext, useEffect, useState} from "react";
 import {getProductById} from "../../data/products";
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
@@ -8,11 +8,15 @@ import Button from "../common/Button";
 import BigImages from "./BigImages";
 import Comment from "./Comment.jsx";
 import Input from "./Input.jsx";
+import getProductComments from "../../hooks/getProductComments.js";
 
 export default function ProductDetail() {
     const {id} = useParams();
+    const [comments, setComments] = useState([]);
     useEffect(() => {
+        console.log("UseEffect")
         const fetchingData = async () => {
+            return;
             try {
                 const res = await fetch(`http://localhost:9000/api/products/`, {
                     headers: {
@@ -29,9 +33,14 @@ export default function ProductDetail() {
             }
         };
         fetchingData();
+        (async ()=>{
+            let comments = await getProductComments(id);
+            setComments(comments);
+            console.log(comments)
+        })();
     }, []);
 
-    let product = getProductById(parseInt(id));
+    let product = getProductById(3);
     console.log("ProductDetail Rendered");
     let {wishlist, setWishList} = useContext(WishlistContext);
     return (
@@ -95,8 +104,9 @@ export default function ProductDetail() {
                         : "Add to wishlist"}
                 </Button>
             </div>
-            <Input/>
-            <Comment productId={product} userId="1"/>
+            {/*product.id*/}
+            <Input id={product.id}/>
+            <Comment comments={comments}/>
         </>
     );
 }
