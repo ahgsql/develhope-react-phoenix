@@ -27,7 +27,7 @@ export default function FloatingButton() {
             visibility: liveChatOpen ? "visible" : "hidden",
             opacity: liveChatOpen ? 1 : 0,
             position: "fixed",
-            bottom: "190px",
+            bottom: "95px",
             right: "50px",
             display: "flex",
             flexDirection: "column",
