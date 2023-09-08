@@ -28,14 +28,14 @@ const Comment = ({productId, userId}) => {
         <div id="CommentContainer">
             <h2 style={{textAlign:"start"}}>Comments</h2>
             {/*{comments.map((comment) => (*/}
-            {/*    <div key={comment._id} id="CommentRow">*/}
+            {/*    <div key={comment._id} className="CommentRow">*/}
             {/*        <h3>{comment.username}</h3>*/}
             {/*        <p>{comment.text}</p>*/}
             {/*    </div>*/}
             {/*))}*/}
-            <div id="CommentRow">
+            <div className="CommentRow">
                 <h3>Alptekin</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid dolorem, dolores earum ipsum
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquclass dolorem, dolores earum ipsum
                     minima velit. Accusamus alias aliquam aperiam aspernatur at beatae corporis cum, dolorem enim esse
                     facilis fugiat id laborum molestiae quae quasi quia quibusdam quidem quis ratione reiciendis
                     temporibus tenetur ut veritatis voluptates? Delectus eos molestias nemo quisquam? Adipisci aliquam
@@ -43,7 +43,8 @@ const Comment = ({productId, userId}) => {
                     ipsa labore laboriosam magni minima nam natus, nemo non odio officiis optio perspiciatis placeat
                     praesentium quaerat repellendus repudiandae saepe sint temporibus totam velit voluptas voluptates!
                     Accusantium commodi cumque eos facere similique sit vero voluptas.</p>
-            </div><div id="CommentRow">
+            </div>
+            <div className="CommentRow">
                 <h3>Alptekin</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquid dolorem, dolores earum ipsum
                     minima velit. Accusamus alias aliquam aperiam aspernatur at beatae corporis cum, dolorem enim esse
