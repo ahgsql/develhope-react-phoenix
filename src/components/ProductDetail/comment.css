@@ -1,5 +1,5 @@
 #CommentContainer {
-    width:68%;
+    width: 1300px;
     background-color: #f7f7f7;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     gap: 16px;
-    flex-direction:column;
+    flex-direction: column;
     padding: 18px;
     margin-bottom: 10px;
     background: rgba(255, 165, 0, 0.53);
@@ -23,7 +23,7 @@ h3 {
     font-size: 1.2rem;
     margin: 0;
     color: #333;
-    text-align:start;
+    text-align: start;
 }
 
 p {
@@ -31,6 +31,12 @@ p {
     margin: 0;
     color: #666;
     line-height: 1.4;
-    text-align:start;
+    text-align: start;
 
+}
+
+@media (max-width: 1400px) {
+    #CommentContainer {
+        width: 95%;
+    }
 }
