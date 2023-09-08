@@ -47,7 +47,7 @@ export default function ProductDetail() {
         </div>
         <div className="product-detail-features-container">
           <div style={{ textAlign: "left" }}>
-            <ProductRate rate={product.rating} />
+            <ProductRate rate={product.productRating} />
             {product.ratedPeople} People rated and reviewed
           </div>
           <span
