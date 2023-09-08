@@ -1,25 +1,32 @@
 import {useState} from 'react';
 import "./input.css"
+import axios from 'axios';
 
-const Input = () => {
+import {useAuth} from "../../context/AuthProvider.jsx";
+const Input = (id) => {
     const [comment, setComment] = useState('');
-
+    const { user, login, logout, loginCheck } = useAuth();
+    const apiUrl =`http://localhost:9000/api/comments`;
     const handleInputChange = (e) => {
         setComment(e.target.value);
+
     };
 
     const handleFormSubmit = async () => {
         try {
-            const response = await fetch('', {
-                method: 'POST',
+            const response = await axios.post(apiUrl, {
+                userName: user.userName,
+                productId: id,
+                content: comment,
+            }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({comment}),
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 setComment('');
+                console.log('Comment inserted into MongoDB successfully.');
             } else {
                 console.error('Failed to insert comment into MongoDB.');
             }
@@ -29,13 +36,14 @@ const Input = () => {
     };
 
     return (
+
         <div id="InputContainer">
             <div id="InputRow">
                 <div id="Input">
                     <label htmlFor="comment"><h2 style={{textAlign:"start"}}>Enter Your Comment</h2></label>
-                    <textarea id="comment" className="CommentInput" placeholder="Enter your Comment" value={comment} onChange={handleInputChange}/>
+                    <textarea id="comment" className="CommentInput" disabled={!user} placeholder={user ? "Enter your comment":"Please Sign In to Comment"} value={comment} onChange={handleInputChange}/>
                 </div>
-                <button onClick={handleFormSubmit}>Submit</button>
+                <button disabled={!user} onClick={handleFormSubmit}>Submit</button>
             </div>
         </div>
     );
