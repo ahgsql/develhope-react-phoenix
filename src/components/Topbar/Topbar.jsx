@@ -8,8 +8,10 @@ import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
 import clickOutside from "../../hooks/useClickOutside";
 import { useAuth } from "../../context/AuthProvider";
+import debounce from "lodash.debounce";
 
 import { Link } from "react-router-dom";
+import { getProductsSearch } from "../../hooks/getProduct";
 export default function Topbar({ setTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
   //loginCheck();
@@ -19,24 +21,22 @@ export default function Topbar({ setTheme }) {
   };
   const [search, setSearch] = useState("");
   const [searchResultsOpen, setSearchResultsOpen] = useState(false);
+  const [searchResult, setSearchResult] = useState([]);
   const resultRef = useRef();
-  clickOutside(resultRef, () => setSearchResultsOpen(false));
 
-  const searchList = products
-    .filter((product) => {
-      return (
-        product.title
-          .toLocaleLowerCase()
-          .includes(search.toLocaleLowerCase()) ||
-        product.description
-          .toLocaleLowerCase()
-          .includes(search.toLocaleLowerCase())
-      );
-    })
-    .slice(0, 15)
-    .map((product) => (
-      <ProductSearchResult key={product.id} product={product} />
-    ));
+  clickOutside(resultRef, () => setSearchResultsOpen(false));
+  var timeout = useRef();
+
+  useEffect(() => {
+    clearTimeout(timeout.current);
+    timeout.current = setTimeout(handleSearch, 500);
+  }, [search]);
+
+  const handleSearch = async () => {
+    let results = await getProductsSearch("casa");
+    setSearchResult(results);
+  };
+
   return (
     <section className="topbar">
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -54,7 +54,7 @@ export default function Topbar({ setTheme }) {
         />
         {search.length > 0 && searchResultsOpen && (
           <div className="searchResult">
-            {searchList.length > 0 ? searchList : "No Results"}
+            {searchResult.length > 0 ? searchResult : "No Results"}
           </div>
         )}
       </div>
