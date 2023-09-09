@@ -6,10 +6,12 @@ import customerExperience from "./customerExperience.css";
 import React, { useEffect } from "react";
 import SignUpModal from "./SignUpModal";
 import { useState } from "react";
+import { useAuth } from "../../context/AuthProvider";
 
 export default function CustomerExperience() {
   const [visible, setVisible] = useState(false);
-  const [user, setUser] = useState(null);
+  const { user, login, logout, loginCheck } = useAuth();
+
   useEffect(() => {
     const userInfo = localStorage.getItem("user");
     if (userInfo) {
@@ -34,12 +36,9 @@ export default function CustomerExperience() {
               radius={8}
               style={{
                 fontFamily: "Nunito Sans",
-
+                minWidth: "100%",
               }}
-              onClick={() => {
-                localStorage.removeItem("user");
-                setUser(null);
-              }}
+              onClick={logout}
             >
               Sign Out {"("} {user.displayName} {")"}
             </Button>
@@ -49,9 +48,9 @@ export default function CustomerExperience() {
               radius={8}
               style={{
                 fontFamily: "Nunito Sans",
-                fontSize: "1rem", 
-                whiteSpace: "nowrap",                
-                textAlign: "center",                               
+                fontSize: "1rem",
+                whiteSpace: "nowrap",
+                textAlign: "center",
               }}
               onClick={() => setVisible(true)}
             >
@@ -59,7 +58,6 @@ export default function CustomerExperience() {
             </Button>
           )}
           <SignUpModal
-            setUser={setUser}
             visible={visible}
             setVisible={setVisible}
             onHide={() => setVisible(false)}

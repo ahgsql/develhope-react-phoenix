@@ -6,6 +6,7 @@ import adsHorizontal from "../../assets/adsHorizontal.png";
 import PropTypes from "prop-types";
 import "./Carousel.css";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { getRandomPhotoFull } from "../../data/products.js";
 const Carousel = ({ products, isTop, header, ads }) => {
   const adsImageSource = ads ? adsVertical : adsHorizontal;
   console.log(adsImageSource);
@@ -36,15 +37,17 @@ const Carousel = ({ products, isTop, header, ads }) => {
         <div className="productContainer">
           {products.map((product) => (
             <ProductCard
-              id={product.id}
-              key={product.id}
-              title={product.title}
-              eKnowledge={product.eKnowledge}
-              rating={product.rating}
-              oldPrice={product.oldPrice}
-              price={product.price}
-              photoFull={product.photoFull}
-              color={product.color}
+              id={product._id}
+              slug={product.productSlug}
+              key={product._id}
+              title={product.productTitle}
+              eKnowledge={"TEST"}
+              rating={product.productRating}
+              oldPrice={product.productPrice * 2}
+              price={product.productPrice}
+              // photoFull={product.photoFull}
+              photoFull={getRandomPhotoFull()}
+              color={5}
               ratedPeople={product.ratedPeople}
             />
           ))}

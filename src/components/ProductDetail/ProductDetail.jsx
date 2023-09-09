@@ -78,8 +78,9 @@ export default function ProductDetail() {
           </span>
           <span>
             {product ? (
-              <span className="best-seller">Best Seller #1</span> +
-              "in RCommerce statistics"
+              <span className="best-seller">
+                Best Seller #1 in RCommerce statistics
+              </span>
             ) : (
               <Skeleton />
             )}

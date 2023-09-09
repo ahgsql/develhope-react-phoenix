@@ -13,3 +13,18 @@ export default async (slug) => {
     return false;
   }
 };
+
+const getAllProducts = async () => {
+  try {
+    let response = await axios.get(
+      import.meta.env.VITE_BASE_URL + "/api/products"
+    );
+    if (response.data.success) {
+      return response.data.products;
+    }
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+export { getAllProducts };

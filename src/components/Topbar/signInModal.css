@@ -1,0 +1,29 @@
+:root {
+    --color-footer-container: #f5f7fa;
+    --color-footer-text: black;
+    --button-bg-color: lightgray;
+    --border-button-color: gray;
+   
+  }
+  
+  [theme="dark"] {
+    --color-footer-container: black;
+    --color-footer-text: white;
+    --button-bg-color: #1d2332;
+    --border-button-color:white;
+    
+  }
+  .form-container {
+    display:flex;
+    justify-content: center;
+  }
+  .form-container input{
+    padding:5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    background-color:#b7b7b7;
+    border:none;
+    outline:0;
+    border-radius:4px;
+    color:black;
+  }

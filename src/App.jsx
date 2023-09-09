@@ -19,6 +19,9 @@ import CustomerExperience from "./components/Footer/CustomerExperience";
 import Team from "./components/Misc/Team";
 import FloatingButton from "./components/common/FloatingButton";
 import AuthProvider from "./context/AuthProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   function setTheme(theme) {
     //light dark
@@ -57,6 +60,7 @@ function App() {
             </Routes>
             <FloatingButton />
             <Footer />
+            <ToastContainer />
           </Router>
         </WishlistProvider>
       </AuthProvider>

@@ -8,6 +8,7 @@ import { FacebookAuthProvider } from "firebase/auth";
 import { faFacebook, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { toast } from "react-toastify";
 function SignUpForm({ setUser, setVisible }) {
   const firebaseConfig = {
     apiKey: "AIzaSyDYiW1HJPursSgqWvq-vRXxHSfcntv__VU",
@@ -58,10 +59,29 @@ function SignUpForm({ setUser, setVisible }) {
         formData
       );
       if (!register.data.error) {
-        alert("Registration Completed");
+        toast.success("Registered Succesfully", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+        setVisible(false);
       }
     } catch (error) {
-      alert(error.response.data.message);
+      toast.error(error.response.data.message, {
+        position: "top-right",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   };
   function call_login_facebook() {

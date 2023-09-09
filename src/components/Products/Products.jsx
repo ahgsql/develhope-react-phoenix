@@ -2,16 +2,22 @@ import products from "../../data/products.js";
 import "./product.css";
 import Carousel from "./Carousel.jsx";
 import { useEffect, useState } from "react";
+import { getAllProducts } from "../../hooks/getProduct.js";
 
 const Products = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
+  const [products, setProducts] = useState([]);
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
 
   useEffect(() => {
     window.addEventListener("resize", updateScreenWidth);
+    (async () => {
+      let prod = await getAllProducts();
+      console.log(prod);
+      setProducts(prod);
+    })();
     return () => {
       window.removeEventListener("resize", updateScreenWidth);
     };

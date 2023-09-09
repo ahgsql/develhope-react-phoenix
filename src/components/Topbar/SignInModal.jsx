@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useAuth } from "../../context/AuthProvider";
-
+import "./signInModal.css";
 import { faXmarkCircle, faRefresh } from "@fortawesome/free-solid-svg-icons";
 export default function SignInModal({ style, setModalOpen }) {
   const { user, login, logout, loginCheck } = useAuth();
   const [username, setUsername] = useState("testuser");
   const [password, setPassword] = useState("AliHaydar!?_1");
-  const handleLogin = () => {
-    login(username, password);
+  const handleLogin = async () => {
+    let check = await login(username, password);
+    if (check) {
+      setModalOpen(false);
+    } else {
+    }
   };
   return (
     <div className="modal-window" style={{ ...style }}>
-      <div>
+      <div className="form-container">
         <button
           type="button"
           title="Close"
@@ -41,7 +45,9 @@ export default function SignInModal({ style, setModalOpen }) {
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
               <br />
-              <button onClick={handleLogin}>Login</button>
+              <button style={{ minWidth: "100%" }} onClick={handleLogin}>
+                Login
+              </button>
             </div>
           )}
         </div>

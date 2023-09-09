@@ -1,6 +1,7 @@
 // AuthProvider.js
 import React, { createContext, useContext, useState, useEffect } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AuthContext = createContext();
 
@@ -21,12 +22,33 @@ const AuthProvider = ({ children }) => {
         { withCredentials: true }
       );
       if (!response.data.error) {
-        alert("Logged in");
-        console.log(response.data.user);
+        toast.success("Logged In", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
         setUser(response.data.user);
+        return true;
       }
     } catch (error) {
+      toast.error("Check your username and password", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       console.error("Error logging in:", error);
+      return false;
     }
   };
   // Function to check if the user is logged in

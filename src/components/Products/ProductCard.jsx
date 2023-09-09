@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({
   id,
+  slug,
   photoFull,
   title,
   rating,
@@ -35,7 +36,7 @@ const ProductCard = ({
     }
   };
   return (
-    <Link to={"/product/" + id} style={{ textDecoration: "none" }}>
+    <Link to={"/product/" + slug} style={{ textDecoration: "none" }}>
       <div className="productCard">
         <div className="productImage">
           <button
@@ -69,7 +70,6 @@ const ProductCard = ({
 };
 
 ProductCard.propTypes = {
-  id: PropTypes.number.isRequired,
   photoFull: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   rating: PropTypes.number.isRequired,

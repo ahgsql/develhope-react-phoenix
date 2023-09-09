@@ -529,6 +529,9 @@ let products = [
 const getProductById = (id) => {
   return products.filter((product) => product.id === id)[0];
 };
+const getRandomPhotoFull = () => {
+  return products[Math.floor(Math.random() * products.length)].photoFull;
+};
 
 export default products;
-export { getProductById };
+export { getProductById, getRandomPhotoFull };
