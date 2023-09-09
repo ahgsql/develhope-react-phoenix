@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import "./Carousel.css";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { getRandomPhotoFull } from "../../data/products.js";
+import Skeleton from "react-loading-skeleton";
 const Carousel = ({ products, isTop, header, ads }) => {
   const adsImageSource = ads ? adsVertical : adsHorizontal;
   console.log(adsImageSource);
@@ -35,22 +36,35 @@ const Carousel = ({ products, isTop, header, ads }) => {
           </div>
         </div>
         <div className="productContainer">
-          {products.map((product) => (
-            <ProductCard
-              id={product._id}
-              slug={product.productSlug}
-              key={product._id}
-              title={product.productTitle}
-              eKnowledge={"TEST"}
-              rating={product.productRating}
-              oldPrice={product.productPrice * 2}
-              price={product.productPrice}
-              // photoFull={product.photoFull}
-              photoFull={getRandomPhotoFull()}
-              color={5}
-              ratedPeople={product.ratedPeople}
-            />
-          ))}
+          {products.length > 0
+            ? products.map((product) => (
+                <ProductCard
+                  id={product._id}
+                  slug={product.productSlug}
+                  key={product._id}
+                  title={product.productTitle}
+                  eKnowledge={"TEST"}
+                  rating={product.productRating}
+                  oldPrice={product.productPrice * 2}
+                  price={product.productPrice}
+                  // photoFull={product.photoFull}
+                  photoFull={product.productPhotoFull}
+                  color={5}
+                  ratedPeople={product.ratedPeople}
+                />
+              ))
+            : [...Array(isTop ? 5 : 6)].map((e, i) => {
+                return (
+                  <div
+                    key={i}
+                    style={{ display: "flex", flexDirection: "column" }}
+                  >
+                    <Skeleton key={1} height={250} />
+                    <Skeleton key={2} />
+                    <Skeleton key={3} count={3} />
+                  </div>
+                );
+              })}
           {isTop && <img className="ads" src={adsImageSource} alt="" />}
         </div>
       </div>

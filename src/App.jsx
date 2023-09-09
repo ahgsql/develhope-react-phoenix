@@ -21,6 +21,7 @@ import FloatingButton from "./components/common/FloatingButton";
 import AuthProvider from "./context/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Checkout from "./components/Checkout/Checkout";
 
 function App() {
   function setTheme(theme) {
@@ -57,6 +58,7 @@ function App() {
                 ]}
               ></Route>
               <Route path="/product/:id" element={<ProductDetail />}></Route>
+              <Route path="/checkout" element={<Checkout />}></Route>
             </Routes>
             <FloatingButton />
             <Footer />

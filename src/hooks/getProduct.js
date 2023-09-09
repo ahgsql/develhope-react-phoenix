@@ -27,4 +27,17 @@ const getAllProducts = async () => {
     return false;
   }
 };
-export { getAllProducts };
+const getProductsSearch = async (kw) => {
+  try {
+    let response = await axios.get(
+      import.meta.env.VITE_BASE_URL + "/api/products/search/" + kw
+    );
+    if (response.data.success) {
+      return response.data.products;
+    }
+  } catch (error) {
+    console.error(error);
+    return false;
+  }
+};
+export { getAllProducts, getProductsSearch };
