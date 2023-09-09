@@ -67,7 +67,7 @@ export default function ProductDetail() {
             ) : (
               <Skeleton />
             )}
-            {/* { product.ratedPeople}  +" People rated and reviewed" */}
+            {product ? product.ratedPeople + " People rated and reviewed" : ""}
           </div>
           <span
             style={{ fontSize: 30, fontWeight: "bolder", textAlign: "left" }}
@@ -77,7 +77,8 @@ export default function ProductDetail() {
           <span>
             {product ? (
               <span className="best-seller">
-                Best Seller #1 in RCommerce statistics
+                Best Seller #{Math.floor(Math.random() * 10)} in RCommerce
+                statistics
               </span>
             ) : (
               <Skeleton />
