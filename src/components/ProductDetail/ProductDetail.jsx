@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { getProductById } from "../../data/products";
 
@@ -18,6 +18,8 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
   const { id } = useParams();
+  const navigate = useNavigate();
+
   useEffect(() => {
     (async () => {
       let product = await getProduct(id);
@@ -107,7 +109,10 @@ export default function ProductDetail() {
           <span style={{ fontSize: 24, textAlign: "left" }}>
             {product ? product.productDescription : <Skeleton count={4} />}
           </span>
-          <Button onClick={() => console.log(1)} bgColor="#4050ff">
+          <Button
+            onClick={() => navigate("/checkout", { state: { product } })}
+            bgColor="#4050ff"
+          >
             Buy Now
           </Button>
         </div>
