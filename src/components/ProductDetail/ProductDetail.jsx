@@ -1,7 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { getProductById } from "../../data/products";
-
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
 import { WishlistContext } from "../../context/WishlistProvider";
