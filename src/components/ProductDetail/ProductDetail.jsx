@@ -22,6 +22,7 @@ export default function ProductDetail() {
     (async () => {
       let product = await getProduct(id);
       if (product) {
+        product.productImg.unshift({ url: product.productPhotoFull });
         setProduct(product);
         console.log(product);
       }
@@ -56,7 +57,7 @@ export default function ProductDetail() {
           </div>
           <div className="product-detail-featured-image">
             {product ? (
-              <BigImages images={product.productImg} />
+              <BigImages images={[product.productPhotoFull]} />
             ) : (
               <Skeleton height={300} />
             )}
