@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
@@ -6,10 +6,12 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import "./chatArea.css";
 import axios from "axios";
 import LiveChatFeature from "./LiveChatFeature";
-
+import useClickOutside from "../../hooks/useClickOutside";
 export default function FloatingButton() {
   const [liveChatOpen, setLiveChatOpen] = useState(false);
+  const chatAreaRef = useRef();
 
+  useClickOutside(chatAreaRef, () => setLiveChatOpen(false));
   return (
     <>
       <div
@@ -23,6 +25,7 @@ export default function FloatingButton() {
         }}
       >
         <LiveChatFeature
+          innerRef={chatAreaRef}
           style={{
             visibility: liveChatOpen ? "visible" : "hidden",
             opacity: liveChatOpen ? 1 : 0,
