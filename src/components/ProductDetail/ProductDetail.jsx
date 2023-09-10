@@ -11,12 +11,20 @@ import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import getProduct from "../../hooks/getProduct";
 import getProductComments from "../../hooks/getProductComments.js";
-
+import { useCart } from "../../context/CartProvider";
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
+  const [inCart, setIncart] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
+  const {
+    cartItems,
+    toggleCartOpen,
+    isCartOpen,
+    addProductToCart,
+    isProductInCart,
+  } = useCart();
 
   useEffect(() => {
     setProduct(null);
@@ -26,6 +34,8 @@ export default function ProductDetail() {
       if (product) {
         product.productImg.unshift({ url: product.productPhotoFull });
         setProduct(product);
+        let search = cartItems.some((i) => i._id == product._id);
+        setIncart(search);
         console.log(product);
       }
     })();
@@ -111,11 +121,10 @@ export default function ProductDetail() {
           <span style={{ fontSize: 24, textAlign: "left" }}>
             {product ? product.productDescription : <Skeleton count={4} />}
           </span>
-          <Button
-            onClick={() => navigate("/checkout", { state: { product } })}
-            bgColor="#4050ff"
-          >
-            Buy Now
+          <Button onClick={() => addProductToCart(product)} bgColor="#4050ff">
+            {isProductInCart(product ? product._id : 1)
+              ? "Already In Cart (+1)"
+              : "Add To Cart"}
           </Button>
         </div>
         <Button onClick={() => setWishList([...wishlist, parseInt(id)])}>

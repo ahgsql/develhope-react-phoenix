@@ -22,6 +22,8 @@ import AuthProvider from "./context/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Checkout from "./components/Checkout/Checkout";
+import MyOrders from "./components/Checkout/MyOrders";
+import { CartProvider } from "./context/CartProvider";
 
 function App() {
   function setTheme(theme) {
@@ -41,30 +43,32 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <WishlistProvider>
-          <Router>
-            <Topbar setTheme={setTheme} />
-            <Navbar />
-            <Categories />
+        <CartProvider>
+          <WishlistProvider>
+            <Router>
+              <Topbar setTheme={setTheme} />
+              <Navbar />
+              <Categories />
 
-            <Routes>
-              <Route
-                path="/"
-                element={[
-                  <Grid key={1} />,
-                  <Products key={2} />,
-                  <CustomerExperience key={3} />,
-                  <Team key={4} />,
-                ]}
-              ></Route>
-              <Route path="/product/:id" element={<ProductDetail />}></Route>
-              <Route path="/checkout" element={<Checkout />}></Route>
-            </Routes>
-            <FloatingButton />
-            <Footer />
-            <ToastContainer />
-          </Router>
-        </WishlistProvider>
+              <Routes>
+                <Route
+                  path="/"
+                  element={[
+                    <Grid key={1} />,
+                    <Products key={2} />,
+                    <CustomerExperience key={3} />,
+                    <Team key={4} />,
+                  ]}
+                ></Route>
+                <Route path="/product/:id" element={<ProductDetail />}></Route>
+                <Route path="/myorders" element={<MyOrders />}></Route>
+              </Routes>
+              <FloatingButton />
+              <Footer />
+              <ToastContainer />
+            </Router>
+          </WishlistProvider>
+        </CartProvider>
       </AuthProvider>
     </>
   );

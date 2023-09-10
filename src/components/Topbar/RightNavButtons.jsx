@@ -13,6 +13,13 @@ import Button from "../common/Button";
 import { useAuth } from "../../context/AuthProvider";
 
 import SignInModal from "./SignInModal";
+import Cart from "./Cart";
+import {
+  faShoppingBasket,
+  faShoppingCart,
+} from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "../../context/CartProvider";
+
 export default function RightNavButtons({ changeTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
   let { wishlist, setWishList } = useContext(WishlistContext);
@@ -20,7 +27,10 @@ export default function RightNavButtons({ changeTheme }) {
   const [modalOpen, setModalOpen] = useState(false);
   const wishlistResultDivRef = useRef();
   useClickOutside(wishlistResultDivRef, () => setWishListOpen(false));
-
+  const searchResultDivRef = useRef();
+  useClickOutside(searchResultDivRef, () => toggleCartOpen(false));
+  const { cartItems, toggleCartOpen, isCartOpen, removeProductFromCart } =
+    useCart();
   const WishListItems = wishlist
     .slice(0, 10)
     .map((itemid) => (
@@ -46,6 +56,16 @@ export default function RightNavButtons({ changeTheme }) {
         className="circle"
       />
       <IconButton iconname={faBell} className="circle" />
+      <IconButton
+        iconname={faShoppingCart}
+        onClick={() => toggleCartOpen(!isCartOpen)}
+        className="circle"
+      />
+      <text className="cartCount" onClick={() => toggleCartOpen(!isCartOpen)}>
+        {cartItems.length}
+      </text>
+      {isCartOpen && <Cart newRef={searchResultDivRef} />}
+
       <Button
         onClick={() => (user ? logout() : setModalOpen(true))}
         className="team-btn"

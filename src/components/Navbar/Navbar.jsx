@@ -3,6 +3,7 @@ import burgerMenu from "../../assets/burger-menu.svg";
 import "./styleNavbar.css";
 import CategoriesDropDownMenu from "./CategoriesDropDownMenu";
 import { useAuth } from "../../context/AuthProvider";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [dropDown, setDropDown] = useState(false);
@@ -44,6 +45,11 @@ export default function Navbar() {
               <div className="menu-li">{el}</div>
             </li>
           ))}
+          <li key={5}>
+            <Link to="/myorders" style={{ textDecoration: "none" }}>
+              <div className="menu-li">My Orders</div>
+            </Link>
+          </li>
           <div className="more">More</div>
         </ul>
       </div>

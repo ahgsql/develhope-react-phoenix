@@ -227,3 +227,15 @@ box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
   padding-left: 5px;color: rgb(70, 70, 70);
   justify-self: baseline;
 }
+.cartCount{
+  background-color:#0a45db;
+  font-size: 14px;
+  color:white;
+  position: relative;
+  top:-15px;
+  left: -14px;
+  text-align: center;
+  vertical-align: middle;        padding: 0 5px;
+
+  border-radius: 50%; /* may require vendor prefixes */;
+}

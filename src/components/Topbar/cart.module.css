@@ -1,0 +1,106 @@
+.container{
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-content: start;
+    align-items: flex-start;
+    background-color: var(--topbar-search-bg);
+    position: absolute;
+    padding: 10px;
+    top:45px;
+    width: 350px;
+    right:150px;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 22px -6px rgba(0,0,0,0.75);
+}
+
+.wrapper{
+    padding: 0.25rem 1.25rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cartIcon{
+    position: relative;
+}
+
+.cartNumber{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(0, 110, 255);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    bottom: 2.5rem;
+    right: -.5rem;
+}
+
+.cartContainer{
+    top: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cartContainer > h4{
+    font-size: 22px;
+    padding: 10px;
+    font-weight: 500;
+    align-self: flex-start;
+}
+
+.cartContainer > span{
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.productContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 1.75rem;
+}
+
+.product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.productDetails{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.product > img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius:10%;
+}
+
+.controls{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.controls > button{
+    outline: none;
+    border: none;
+    padding: 0.4rem 1rem;
+    background-color: green;
+    color: #fff;
+    border-radius: 7px;
+}
