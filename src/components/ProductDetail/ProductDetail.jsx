@@ -24,6 +24,7 @@ export default function ProductDetail() {
     (async () => {
       let product = await getProduct(id);
       if (product) {
+        product.productImg.unshift({ url: product.productPhotoFull });
         setProduct(product);
         console.log(product);
       }
@@ -58,7 +59,7 @@ export default function ProductDetail() {
           </div>
           <div className="product-detail-featured-image">
             {product ? (
-              <BigImages images={product.productImg} />
+              <BigImages images={[product.productPhotoFull]} />
             ) : (
               <Skeleton height={300} />
             )}
@@ -71,7 +72,7 @@ export default function ProductDetail() {
             ) : (
               <Skeleton />
             )}
-            {/* { product.ratedPeople}  +" People rated and reviewed" */}
+            {product ? product.ratedPeople + " People rated and reviewed" : ""}
           </div>
           <span
             style={{ fontSize: 30, fontWeight: "bolder", textAlign: "left" }}
@@ -81,7 +82,8 @@ export default function ProductDetail() {
           <span>
             {product ? (
               <span className="best-seller">
-                Best Seller #1 in RCommerce statistics
+                Best Seller #{Math.floor(Math.random() * 10)} in RCommerce
+                statistics
               </span>
             ) : (
               <Skeleton />
