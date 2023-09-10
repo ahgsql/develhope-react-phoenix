@@ -149,7 +149,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     background-color: var(--topbar-search-bg);
     position: absolute;
     padding: 20px;
-    top:45px;
+    top:70px;
     width: 30%;
     border-radius: 5px;
     z-index: 1;

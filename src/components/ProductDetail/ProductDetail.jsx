@@ -19,6 +19,8 @@ export default function ProductDetail() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setProduct(null);
+    setComments([]);
     (async () => {
       let product = await getProduct(id);
       if (product) {
@@ -31,7 +33,7 @@ export default function ProductDetail() {
       setComments(comments);
       console.log(comments);
     })();
-  }, []);
+  }, [id]);
 
   let { wishlist, setWishList } = useContext(WishlistContext);
   // if (product === null) {

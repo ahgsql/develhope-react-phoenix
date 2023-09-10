@@ -10,7 +10,7 @@ import clickOutside from "../../hooks/useClickOutside";
 import { useAuth } from "../../context/AuthProvider";
 import debounce from "lodash.debounce";
 
-import { Link } from "react-router-dom";
+import { BrowserRouter, Link } from "react-router-dom";
 import { getProductsSearch } from "../../hooks/getProduct";
 export default function Topbar({ setTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
@@ -33,7 +33,7 @@ export default function Topbar({ setTheme }) {
   }, [search]);
 
   const handleSearch = async () => {
-    let results = await getProductsSearch("casa");
+    let results = await getProductsSearch(search);
     setSearchResult(results);
   };
 
@@ -54,7 +54,11 @@ export default function Topbar({ setTheme }) {
         />
         {search.length > 0 && searchResultsOpen && (
           <div className="searchResult">
-            {searchResult.length > 0 ? searchResult : "No Results"}
+            {searchResult.length > 0
+              ? searchResult.map((e, i) => {
+                  return <ProductSearchResult key={i} product={e} />;
+                })
+              : "No Results"}
           </div>
         )}
       </div>
