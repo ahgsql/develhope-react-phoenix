@@ -78,7 +78,10 @@ export default function ProductDetail() {
         <div className={product ? "product-detail-features-container" : ""}>
           <div style={{ textAlign: "left" }}>
             {product ? (
-              <ProductRate rate={product.productRating} />
+              <ProductRate
+                initalRating={product.productRating}
+                slug={product.productSlug}
+              />
             ) : (
               <Skeleton />
             )}

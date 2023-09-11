@@ -7,6 +7,7 @@ import { useContext, useState } from "react";
 import { WishlistContext } from "../../context/WishlistProvider.jsx";
 import RatingStar from "./RatingStar.jsx";
 import { Link } from "react-router-dom";
+import { Rating } from "react-simple-star-rating";
 
 const ProductCard = ({
   id,
@@ -54,7 +55,7 @@ const ProductCard = ({
             <span style={{ fontWeight: "bold" }}>{title}</span>
           </h4>
           <div className="productRating">
-            <RatingStar rating={rating} />
+            <Rating initialValue={rating} readonly={true} size={20} />
             <span>({ratedPeople} people rated)</span>
           </div>
           <p className="extraKnowledge">{eKnowledge}</p>
