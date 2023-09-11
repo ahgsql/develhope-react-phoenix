@@ -1,9 +1,6 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 export default function Checkout() {
-  const { state } = useLocation();
   const stripePromise = loadStripe(
     `${import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY}`
   );

@@ -6,7 +6,6 @@ import adsHorizontal from "../../assets/adsHorizontal.png";
 import PropTypes from "prop-types";
 import "./Carousel.css";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { getRandomPhotoFull } from "../../data/products.js";
 import Skeleton from "react-loading-skeleton";
 const Carousel = ({ products, isTop, header, ads }) => {
   const adsImageSource = ads ? adsVertical : adsHorizontal;

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import "./styleCategoriesDropDownMenu.css";
 import collectibles from "../../assets/collectibles.svg";
 import homeAndGarden from "../../assets/home&garden.svg";
