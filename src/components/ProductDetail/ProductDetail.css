@@ -31,6 +31,7 @@
   }
 
   .product-detail-image-container {
+    margin: 0 auto;
     display: flex;
     align-items: start;
     gap: 20px;
@@ -195,5 +196,11 @@
   }
   .product-detail-featured-image {
     width: 300px;
+  }
+}
+
+@media (max-width: 340px) {
+  .product-detail-featured-image {
+    width: 280px;
   }
 }
