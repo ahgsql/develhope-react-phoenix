@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import useColorLuminance from "../../hooks/useColorLuminance";
 import "./common.css";
 

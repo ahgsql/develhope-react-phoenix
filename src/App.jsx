@@ -7,10 +7,12 @@ import Products from "./components/Products/Products.jsx";
 
 import Footer from "./components/Footer/Footer.jsx";
 import WishlistProvider from "./context/WishlistProvider";
+import { useState } from "react";
 import {
   Route,
   BrowserRouter as Router,
   Routes,
+  useNavigate,
 } from "react-router-dom";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import CustomerExperience from "./components/Footer/CustomerExperience";
@@ -19,6 +21,7 @@ import FloatingButton from "./components/common/FloatingButton";
 import AuthProvider from "./context/AuthProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Checkout from "./components/Checkout/Checkout";
 import MyOrders from "./components/Checkout/MyOrders";
 import { CartProvider } from "./context/CartProvider";
 

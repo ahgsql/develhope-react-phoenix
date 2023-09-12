@@ -65,7 +65,7 @@
 .productContainer{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: space-between;
     gap: 1.75rem;
 }
 
