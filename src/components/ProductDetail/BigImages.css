@@ -1,7 +1,6 @@
 .bi-item {
-    min-width: 500px;
+    width: 500px;
     padding: 40px;
-    padding-left: 70px;
 }
 
 .bi-item > img {
@@ -19,3 +18,55 @@
     width: 500px;
     overflow: hidden;
 }
+
+
+
+@media (max-width: 1200px) {
+    .bi-item {
+        width: 990px;
+        padding: 20px;
+      }
+      .bi-carousel {
+          width:400px;
+      }
+  }
+  
+  @media (max-width: 990px) {
+    .bi-item {
+        width: 768px;
+        padding: 20px;
+      }
+      .bi-carousel {
+          width:400px;
+      }
+  }
+  
+  @media (max-width: 768px) {
+    .bi-item {
+        width: 576px;
+        padding: 20px;
+      }
+      .bi-carousel {
+          width:400px;
+      }
+  }
+  
+  @media (max-width: 575px) {
+    .bi-item {
+        width:450px;
+        padding: 20px;
+      }
+      .bi-carousel {
+          width:380px;
+      }
+  }
+  
+  @media (max-width: 450px) {
+    .bi-item {
+      width: 350px;
+      padding: 20px;
+    }
+    .bi-carousel {
+        width:240px;
+    }
+  }
