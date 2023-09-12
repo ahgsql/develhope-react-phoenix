@@ -18,7 +18,7 @@
   .product-detail-main-container {
     display: grid;
     gap: 20px;
-    width: 1200px;
+    width: 1100px;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -32,11 +32,15 @@
 
   .product-detail-image-container {
     display: flex;
+    align-items: start;
     gap: 20px;
   }
 
   .product-detail-featured-image {
-    padding: 80px 20px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 4;
     border: 1px solid gray;
     border-radius: 10px;
@@ -85,7 +89,30 @@
   
 @media (max-width: 1200px) {
   .product-detail-main-container {
-    width: 990px;
+    width: 768px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 2;
+  }
+  .product-detail-image-container {
+    width: 400px;
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+  .product-detail-featured-image {
+    width: 400px;
+  }
+
+}
+
+@media (max-width: 990px) {
+  .product-detail-main-container {
+    width: 768px;
     grid-template-columns: 1fr 1fr;
   }
   .product-detail-breadcrumb {
@@ -99,24 +126,8 @@
     height: 200px;
     width: 200px;
   }
-
-}
-
-@media (max-width: 990px) {
-  .product-detail-main-container {
-    width: 768px;
-    grid-template-columns: 1fr;
-  }
-  .product-detail-breadcrumb {
-    grid-column: span 1;
-  }
-  .product-detail-image-container {
-    flex-direction: column;
-  }
-  .product-detail-small-images {
-    flex-direction: row;
-    height: 200px;
-    width: 200px;
+  .product-detail-featured-image {
+    width: 400px;
   }
 }
 
@@ -130,11 +141,15 @@
   }
   .product-detail-image-container {
     flex-direction: column;
+    width: 500px;
   }
   .product-detail-small-images {
     flex-direction: row;
     height: 200px;
     width: 200px;
+  }
+  .product-detail-featured-image {
+    width: 500px;
   }
 }
 
@@ -148,12 +163,16 @@
     grid-column: span 1;
   }
   .product-detail-image-container {
+    width: 400px;
     flex-direction: column;
   }
   .product-detail-small-images {
     flex-direction: row;
     height: 200px;
     width: 200px;
+  }
+  .product-detail-featured-image {
+    width: 400px;
   }
 }
 
@@ -166,11 +185,15 @@
     grid-column: span 1;
   }
   .product-detail-image-container {
+    width: 300px;
     flex-direction: column;
   }
   .product-detail-small-images {
     flex-direction: row;
     height: 200px;
     width: 200px;
+  }
+  .product-detail-featured-image {
+    width: 300px;
   }
 }
