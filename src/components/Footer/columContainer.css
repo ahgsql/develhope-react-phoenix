@@ -1,15 +1,88 @@
 :root {
     --color-footer-container: #f5f7fa;
     --color-footer-text: black;
-   
-  }
-  
-  [theme="dark"] {
+
+}
+
+[theme="dark"] {
     --color-footer-container:#1d2332;
     --color-footer-text: white;
-    
-  }
+
+}
 .footerBar{
     background-color: var(--color-footer-container) ;
     color: var(--color-footer-text);
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.footerText{
+    width:705px;
+    height: 124px;
+    padding: 0 20px;
+}
+
+.footerImage {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerImage img {
+    width: 27px;
+    height: 27px;
+}
+
+.footerImage p {
+    font-size: 26px !important;
+}
+
+.footerText p {
+    font-size: 13px;
+    text-align: left;
+}
+
+.footerList{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+@media (max-width: 800px) {
+    .footerBar{
+        flex-direction:column;
+    }
+    .footerText{
+        width:100%;
+        height:auto;
+    }
+    .footerText p {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .footerList{
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .footerList{
+        display:grid;
+        grid-template-columns: repeat(2,1fr);
+        padding:0 20px
+    }
+}
+
+@media (max-width: 400px) {
+    .footerList{
+        display:grid;
+        grid-template-columns: repeat(1,1fr);
+        padding:0 20px
+    }
 }
