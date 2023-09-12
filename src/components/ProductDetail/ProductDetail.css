@@ -18,7 +18,7 @@
   .product-detail-main-container {
     display: grid;
     gap: 20px;
-    width: 1300px;
+    width: 1200px;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
     margin-bottom: 40px;
@@ -47,6 +47,8 @@
     display: flex;
     gap: 10px;
     flex-direction: column;
+    height: 200px;
+    width: 200px;
   }
 
   .product-detail-small-images > img {
@@ -79,3 +81,96 @@
   .faStar {
     color: orange !important;
   }
+
+  
+@media (max-width: 1200px) {
+  .product-detail-main-container {
+    width: 990px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 2;
+  }
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+
+}
+
+@media (max-width: 990px) {
+  .product-detail-main-container {
+    width: 768px;
+    grid-template-columns: 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 1;
+  }
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-main-container {
+    width: 575px;
+    grid-template-columns: 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 1;
+  }
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 575px) {
+  .product-detail-main-container {
+    width: 450px;
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 1;
+  }
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 450px) {
+  .product-detail-main-container {
+    width: 350px;
+    grid-template-columns: 1fr;
+  }
+  .product-detail-breadcrumb {
+    grid-column: span 1;
+  }
+  .product-detail-image-container {
+    flex-direction: column;
+  }
+  .product-detail-small-images {
+    flex-direction: row;
+    height: 200px;
+    width: 200px;
+  }
+}

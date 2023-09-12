@@ -44,7 +44,7 @@ const Carousel = ({ products, isTop, header, ads }) => {
                   key={product._id}
                   title={product.productTitle}
                   eKnowledge={"TEST"}
-                  rating={product.productRating}
+                  rating={Math.round(product.productRating)}
                   oldPrice={product.productPrice * 2}
                   price={product.productPrice}
                   // photoFull={product.photoFull}
