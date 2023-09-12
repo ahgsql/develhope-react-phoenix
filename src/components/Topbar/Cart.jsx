@@ -1,10 +1,12 @@
+import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import axios from "axios";
 import classes from "./cart.module.css";
-import { AiOutlineClose} from "react-icons/ai";
+import { AiOutlineClose, AiOutlineShoppingCart } from "react-icons/ai";
 import { useCart } from "../../context/CartProvider";
 import createOrder from "../../hooks/createOrder";
 import { useAuth } from "../../context/AuthProvider";
+import { create } from "lodash";
 import { toast } from "react-toastify";
 const Cart = ({ newRef }) => {
   const { user } = useAuth();
