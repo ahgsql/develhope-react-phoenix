@@ -1,4 +1,3 @@
-import React from "react";
 import images from "./index";
 import "./styleCategories.css";
 export default function Categories() {

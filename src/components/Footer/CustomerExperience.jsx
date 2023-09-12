@@ -1,9 +1,7 @@
-import light_30 from "./assets/light_30.png";
 import Button from "../common/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import customerExperience from "./customerExperience.css";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import SignUpModal from "./SignUpModal";
 import { useState } from "react";
 import { useAuth } from "../../context/AuthProvider";
