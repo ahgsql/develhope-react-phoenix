@@ -1,9 +1,8 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useEffect,
-  useRef,
 } from "react";
 import { toast } from "react-toastify";
 

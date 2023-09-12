@@ -1,10 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import "./ProductDetail.css";
 import "./BigImages.css";
 
 export default function BigImages({ images }) {
-  const [width, setWidth] = useState(0);
   const carouselRef = useRef();
   useEffect(() => {
     console.log(carouselRef.current.scrollWidth);
