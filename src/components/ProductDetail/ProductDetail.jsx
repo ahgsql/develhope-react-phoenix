@@ -125,8 +125,39 @@ export default function ProductDetail() {
                 </Button>
             </div>
             {product ? (
-                <Input id={product._id} setComments={setComments} oldComments={comments}/>
-            ) : null}
+              product.productImg.map((e, i) => {
+                return <img src={e.url} key={i} />;
+              })
+            ) : (
+              <Skeleton height={60} width={60} />
+            )}
+          </div>
+          <div className="product-detail-featured-image">
+            {product ? (
+              <BigImages images={[product.productPhotoFull]} />
+            ) : (
+              <Skeleton height={300} />
+            )}
+          </div>
+        </div>
+        <div className={product ? "product-detail-features-container" : ""}>
+          <div style={{ textAlign: "left" }}>
+            {product ? (
+              <ProductRate
+                initalRating={product.productRating}
+                slug={product.productSlug}
+              />
+            ) : (
+              <Skeleton />
+            )}
+            {product ? product.ratedPeople + " People rated and reviewed" : ""}
+          </div>
+          <span
+            style={{ fontSize: 30, fontWeight: "bolder", textAlign: "left" }}
+          >
+            {product ? product.productTitle : <Skeleton />}
+          </span>
+          <span>
             {product ? (
                 <Comment comments={comments}/>
             ) : (

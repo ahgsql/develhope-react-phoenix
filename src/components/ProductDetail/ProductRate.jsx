@@ -1,20 +1,33 @@
-import React from "react";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+
 import "./ProductDetail.css";
+import { Rating } from "react-simple-star-rating";
+import axios from "axios";
 
-export default function ProductRate({ rate }) {
-  const arr = [];
-  for (let i = 0; i < rate; i++) {
-    arr.push(
-      <FontAwesomeIcon
-        key={i}
-        icon={faStar}
-        className="faStar"
-        style={{ color: "orange !important" }}
-      />
-    );
-  }
+export default function ProductRate({ initalRating, slug }) {
+  const [ratingValue, setRatingValue] = useState(Math.round(initalRating));
 
-  return <div> {arr} </div>;
+  const handleRating = (rate) => {
+    axios({
+      method: "put",
+      url: import.meta.env.VITE_BASE_URL + "/api/products/rate/" + slug,
+      data: {
+        rate: rate,
+      },
+    }).then(function (response) {
+      const result = Math.round(response.data.rating);
+      setRatingValue(result);
+      console.log(response.data.rating);
+      console.log(ratingValue);
+    });
+    setRatingValue(rate);
+  };
+
+  return (
+    <Rating
+      onClick={handleRating}
+      initialValue={ratingValue}
+      onPointerLeave={() => setRatingValue(ratingValue)}
+    />
+  );
 }
