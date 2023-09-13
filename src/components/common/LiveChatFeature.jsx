@@ -66,7 +66,10 @@ export default function LiveChatFeature({ style, innerRef }) {
             return (
               <div className={message.from + "-msg message"} key={i}>
                 {" "}
-                {message.from}:{message.message}
+                <div className="messageLabel">
+                  {message.from == "admin" ?'Customer Service': "You"}:
+                </div>
+                <div className="messageBody">{message.message}</div>
               </div>
             );
           })}
