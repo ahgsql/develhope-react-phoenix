@@ -1,42 +1,40 @@
 :root {
-  --topbar-input-color:black ;
-  --circle-button-color:#141824;
-  --topbar-input-color:#31374a;
-  --topbar-input-bg:#f7f7f8;
-  --topbar-input-border:#cbd0dd;
-  --topbar-logo-text:#6e7891;
-  --topbar-search-bg:#ffffff;
-  --topbar-search-text:#141824;
-  --topbar-search-hover:rgb(215, 215, 215);
+  --topbar-input-color: black;
+  --circle-button-color: #141824;
+  --topbar-input-color: #31374a;
+  --topbar-input-bg: #f7f7f8;
+  --topbar-input-border: #cbd0dd;
+  --topbar-logo-text: #6e7891;
+  --topbar-search-bg: #ffffff;
+  --topbar-search-text: #141824;
+  --topbar-search-hover: rgb(215, 215, 215);
 
-  --dev-modal-bg:#f7f7f8;
-  --dev-modal-header:black;
-  --dev-modal-card-bg:#eff2f6;
-  --dev-modal-detail-hover:rgb(0, 57, 228);
-  --dev-modal-detail-border:#eee;
-  --dev-modal-close-btn:#767676;
-  --dev-modal-close-btn-hover:#000;
-
+  --dev-modal-bg: #f7f7f8;
+  --dev-modal-header: black;
+  --dev-modal-card-bg: #eff2f6;
+  --dev-modal-detail-hover: rgb(0, 57, 228);
+  --dev-modal-detail-border: #eee;
+  --dev-modal-close-btn: #767676;
+  --dev-modal-close-btn-hover: #000;
 }
 [theme="dark"] {
-  --topbar-input-color:white;
-  --circle-button-color:#9fa6bc;
-  --topbar-input-color:#9fa6bc;
-  --topbar-input-bg:#141824;
-  --topbar-input-border:#373e53;
-  --topbar-logo-text:#eff2f6;
-  --topbar-search-bg:#373e53;
-  --topbar-search-text:#eff2f6;
-  --topbar-search-hover:#1c1e29;
+  --topbar-input-color: white;
+  --circle-button-color: #9fa6bc;
+  --topbar-input-color: #9fa6bc;
+  --topbar-input-bg: #141824;
+  --topbar-input-border: #373e53;
+  --topbar-logo-text: #eff2f6;
+  --topbar-search-bg: #373e53;
+  --topbar-search-text: #eff2f6;
+  --topbar-search-hover: #1c1e29;
 
-  --dev-modal-bg:#373e53;
-  --dev-modal-header:#eff2f6;
-  --dev-modal-card-bg:#1c1e29;
-  --dev-modal-detail-hover:rgb(253, 184, 135);
-  --dev-modal-detail-border:rgb(0, 0, 0);
-  --dev-modal-close-btn:#e5e4e4;
-  --dev-modal-close-btn-hover:#fff;
-
+  --dev-modal-bg: #373e53;
+  --dev-modal-header: #eff2f6;
+  --dev-modal-card-bg: #1c1e29;
+  --dev-modal-detail-hover: rgb(253, 184, 135);
+  --dev-modal-detail-border: rgb(0, 0, 0);
+  --dev-modal-close-btn: #e5e4e4;
+  --dev-modal-close-btn-hover: #fff;
 }
 
 .team-section {
@@ -44,7 +42,7 @@
   width: 100%;
   justify-content: center;
   padding: 10px;
-  margin: 20px;
+  margin: 20px 0;
 }
 .team-btn {
   font-size: 20px;
@@ -163,7 +161,6 @@
   flex-direction: column;
   padding-left: 20px;
   justify-content: flex-start;
-  
 }
 .team-member .details a {
   color: var(--dev-modal-header);

@@ -1,14 +1,13 @@
 :root {
   --color-footer-container: #f5f7fa;
   --color-footer-text: black;
-  --picture-url: url("https://prium.github.io/phoenix/v1.13.0/assets/img/spot-illustrations/light_30.png"
-    )
+  --picture-url: url("https://prium.github.io/phoenix/v1.13.0/assets/img/spot-illustrations/light_30.png");
 }
 
 [theme="dark"] {
   --color-footer-container: black;
   --color-footer-text: white;
-  --picture-url: url("https://prium.github.io/phoenix/v1.13.0/assets/img/spot-illustrations/dark_30.png")
+  --picture-url: url("https://prium.github.io/phoenix/v1.13.0/assets/img/spot-illustrations/dark_30.png");
 }
 
 .imageContainer {
@@ -67,5 +66,8 @@
 
   .texto {
     align-items: center;
+  }
+  .container {
+    padding: 0 7px;
   }
 }

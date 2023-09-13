@@ -1,3 +1,5 @@
-
-.productRow{
+@media (max-width: 450px) {
+  .productRow {
+    padding: 0 7px;
+  }
 }
