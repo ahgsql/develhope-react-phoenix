@@ -32,6 +32,7 @@
 
   .product-detail-image-container {
     display: flex;
+    margin: 0 auto;
     align-items: start;
     gap: 20px;
   }
