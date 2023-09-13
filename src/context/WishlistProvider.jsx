@@ -1,29 +1,88 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
+import { useAuth } from "./AuthProvider.jsx";
+import axios from "axios";
+import getWishlist from "../hooks/getWishlist.js";
 
-import React from "react";
-let WishlistContext;
-export default function WishlistProvider({ children }) {
-  let check = localStorage.getItem("wishlist");
-  let wishListState;
-  if (check == null || undefined) {
-    // In first place we need to create
-    localStorage.setItem("wishlist", JSON.stringify([]));
-    wishListState = [];
-  } else {
-    let wishListFromLocal = localStorage.getItem("wishlist");
-    wishListState = JSON.parse(wishListFromLocal);
-  }
+const WishlistContext = createContext();
 
-  WishlistContext = createContext();
-  const [wishlist, setWishList] = useState(wishListState);
+// Custom hook to access the WishlistContext
+export function useWishlist() {
+  return useContext(WishlistContext);
+}
+
+export function WishlistProvider({ children }) {
+  const { user } = useAuth();
+  const [wishlist, setWishlist] = useState([]);
+  const [number, setNumber] = useState(0);
+
+  const addProductToWishlist = async (productId) => {
+    console.log(productId, "add");
+    try {
+      if (!user) {
+        return console.log("User not logged in.");
+      }
+
+      const response = await axios.post(
+        import.meta.env.VITE_BASE_URL + "/api/wishlist",
+        { productId },
+        { withCredentials: true }
+      );
+
+      if (response.data.status === true) {
+        setWishlist(response.data.wishlist);
+        console.log("Product added to wishlist");
+      }
+      setNumber(number + 1);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const removeProductFromWishlist = async (productId) => {
+    try {
+      if (!user) {
+        return console.log("User not logged in.");
+      }
+
+      const response = await axios.delete(
+        import.meta.env.VITE_BASE_URL + `/api/wishlist/${productId}`,
+        { withCredentials: true }
+      );
+
+      if (response.data) {
+        setWishlist(response.data);
+        console.log("Product removed from wishlist");
+      }
+      setNumber(number - 1);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    console.log("run");
-    localStorage.setItem("wishlist", JSON.stringify([...wishlist]));
-  }, [wishlist]);
+    (async () => {
+      if (!user) {
+        setWishlist([]);
+        return;
+      }
+
+      const wishlistFromDb = await getWishlist();
+      if (wishlistFromDb) {
+        setWishlist(wishlistFromDb);
+        console.log("UpdatedList", number, wishlistFromDb);
+      }
+    })();
+  }, [user, number]);
+
   return (
-    <WishlistContext.Provider value={{ wishlist, setWishList }}>
+    <WishlistContext.Provider
+      value={{
+        wishlist,
+        addProductToWishlist,
+        removeProductFromWishlist,
+      }}
+    >
       {children}
     </WishlistContext.Provider>
   );
 }
-export { WishlistContext };

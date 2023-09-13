@@ -6,7 +6,6 @@ import {
   faSun,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
-import { WishlistContext } from "../../context/WishlistProvider";
 import WishlitItem from "./WishlitItem";
 import useClickOutside from "../../hooks/useClickOutside";
 import Button from "../common/Button";
@@ -19,29 +18,28 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { useCart } from "../../context/CartProvider";
+import { useWishlist } from "../../context/WishlistProvider";
 
 export default function RightNavButtons({ changeTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
-  let { wishlist, setWishList } = useContext(WishlistContext);
   const [wishListOpen, setWishListOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const wishlistResultDivRef = useRef();
+  const { wishlist } = useWishlist();
+
   useClickOutside(wishlistResultDivRef, () => setWishListOpen(false));
   const searchResultDivRef = useRef();
   useClickOutside(searchResultDivRef, () => toggleCartOpen(false));
   const { cartItems, toggleCartOpen, isCartOpen, removeProductFromCart } =
     useCart();
-  const WishListItems = wishlist
-    .slice(0, 10)
-    .map((itemid) => (
-      <WishlitItem
-        setWishList={setWishList}
-        wishlist={wishlist}
-        setWishListOpen={setWishListOpen}
-        key={itemid}
-        id={itemid}
-      />
+
+  let WishListItems = [];
+
+  if (wishlist?.products?.length > 0) {
+    WishListItems = wishlist.products.map((product) => (
+      <WishlitItem id={product.id} title={product.title} />
     ));
+  }
 
   return (
     <>
@@ -84,7 +82,11 @@ export default function RightNavButtons({ changeTheme }) {
       />
       {wishListOpen && (
         <div className="wishListDiv" ref={wishlistResultDivRef}>
-          {WishListItems.length < 1 ? "No Items In Wishlist" : WishListItems}
+          {!user
+            ? "You Need To Login"
+            : WishListItems.length < 1
+            ? "No Items In Wishlist"
+            : WishListItems}
         </div>
       )}
     </>

@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
-import { WishlistContext } from "../../context/WishlistProvider";
+// import { WishlistContext } from "../../context/WishlistProvider";
 import Button from "../common/Button";
 import BigImages from "./BigImages";
 import Comment from "./Comment.jsx";
@@ -12,6 +12,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import getProduct from "../../hooks/getProduct";
 import getProductComments from "../../hooks/getProductComments.js";
 import { useCart } from "../../context/CartProvider";
+import { useWishlist } from "../../context/WishlistProvider";
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
@@ -25,7 +26,7 @@ export default function ProductDetail() {
     addProductToCart,
     isProductInCart,
   } = useCart();
-
+  const { addProductToWishlist } = useWishlist();
   useEffect(() => {
     setProduct(null);
     setComments([]);
@@ -46,10 +47,6 @@ export default function ProductDetail() {
     })();
   }, [id]);
 
-  let { wishlist, setWishList } = useContext(WishlistContext);
-  // if (product === null) {
-  //   return <h1>Loading..</h1>;
-  // }
   return (
     <>
       <div className="product-detail-main-container">
@@ -130,10 +127,8 @@ export default function ProductDetail() {
               : "Add To Cart"}
           </Button>
         </div>
-        <Button onClick={() => setWishList([...wishlist, parseInt(id)])}>
-          {wishlist.includes(parseInt(id))
-            ? "Already in Wishlist"
-            : "Add to wishlist"}
+        <Button onClick={() => addProductToWishlist(product._id)}>
+          add to wishlist
         </Button>
       </div>
       {product ? (
