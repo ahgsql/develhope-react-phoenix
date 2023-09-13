@@ -5,9 +5,13 @@ import Pusher from "pusher-js";
 import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../../context/AuthProvider";
 export default function LiveChatFeature({ style, innerRef }) {
   const [history, setHistory] = useState([]);
   const [message, setMessage] = useState("");
+
+  const { user } = useAuth();
+
   let bind = false;
   let historyRef = useRef();
   useEffect(() => {
@@ -16,7 +20,7 @@ export default function LiveChatFeature({ style, innerRef }) {
     });
     const channel = pusher.subscribe("liveChat");
     if (!bind) {
-      channel.bind("admin-message", function (data) {
+      channel.bind("admin-message-to-" + user?.userName, function (data) {
         setHistory((prevhistory) => [
           ...prevhistory,
           { from: "admin", message: data.message },
@@ -25,7 +29,7 @@ export default function LiveChatFeature({ style, innerRef }) {
       });
       bind = true;
     }
-  }, []);
+  }, [user]);
 
   const scrollToLast = () => {
     const scrollHeight = historyRef.current?.scrollHeight;
@@ -35,11 +39,12 @@ export default function LiveChatFeature({ style, innerRef }) {
   };
 
   const sendMessage = async () => {
-    let response = await axios.post(
-      import.meta.env.VITE_BASE_URL + "/api/chat/message",
-      { from: "customer", message }
-    );
-    if (response.data.status && message.trim().length > 0) {
+    if (message.trim().length > 0) {
+      await axios.post(import.meta.env.VITE_BASE_URL + "/api/chat/message", {
+        from: "customer",
+        message,
+        userName: user?.userName,
+      });
       setHistory((prevhistory) => [
         ...prevhistory,
         { from: "customer", message },
@@ -67,7 +72,7 @@ export default function LiveChatFeature({ style, innerRef }) {
               <div className={message.from + "-msg message"} key={i}>
                 {" "}
                 <div className="messageLabel">
-                  {message.from == "admin" ?'Customer Service': "You"}:
+                  {message.from == "admin" ? "Customer Service" : "You"}:
                 </div>
                 <div className="messageBody">{message.message}</div>
               </div>
