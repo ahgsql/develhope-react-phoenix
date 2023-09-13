@@ -6,7 +6,7 @@ import Grid from "./components/Grid/Grid.jsx";
 import Products from "./components/Products/Products.jsx";
 
 import Footer from "./components/Footer/Footer.jsx";
-import WishlistProvider from "./context/WishlistProvider";
+import {WishlistProvider} from "./context/WishlistProvider";
 import { useState } from "react";
 import {
   Route,

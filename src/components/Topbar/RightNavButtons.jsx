@@ -6,8 +6,8 @@ import {
   faSun,
   faUser,
 } from "@fortawesome/free-regular-svg-icons";
-import { WishlistContext } from "../../context/WishlistProvider";
-import WishlitItem from "./WishlitItem";
+// import { WishlistContext } from "../../context/WishlistProvider";
+// import WishlitItem from "./WishlitItem";
 import useClickOutside from "../../hooks/useClickOutside";
 import Button from "../common/Button";
 import { useAuth } from "../../context/AuthProvider";
@@ -22,7 +22,7 @@ import { useCart } from "../../context/CartProvider";
 
 export default function RightNavButtons({ changeTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
-  let { wishlist, setWishList } = useContext(WishlistContext);
+  // let { wishlist, setWishList } = useContext(WishlistContext);
   const [wishListOpen, setWishListOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const wishlistResultDivRef = useRef();
@@ -31,17 +31,19 @@ export default function RightNavButtons({ changeTheme }) {
   useClickOutside(searchResultDivRef, () => toggleCartOpen(false));
   const { cartItems, toggleCartOpen, isCartOpen, removeProductFromCart } =
     useCart();
-  const WishListItems = wishlist
-    .slice(0, 10)
-    .map((itemid) => (
-      <WishlitItem
-        setWishList={setWishList}
-        wishlist={wishlist}
-        setWishListOpen={setWishListOpen}
-        key={itemid}
-        id={itemid}
-      />
-    ));
+  // const WishListItems = wishlist
+  //   .slice(0, 10)
+  //   .map((itemid) => (
+  //     <WishlitItem
+  //       setWishList={setWishList}
+  //       wishlist={wishlist}
+  //       setWishListOpen={setWishListOpen}
+  //       key={itemid}
+  //       id={itemid}
+  //     />
+  //   ));
+
+    const WishListItems =["item1", "item2"];
 
   return (
     <>

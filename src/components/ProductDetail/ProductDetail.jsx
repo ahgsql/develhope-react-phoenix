@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
-import { WishlistContext } from "../../context/WishlistProvider";
+// import { WishlistContext } from "../../context/WishlistProvider";
 import Button from "../common/Button";
 import BigImages from "./BigImages";
 import Comment from "./Comment.jsx";
@@ -46,10 +46,6 @@ export default function ProductDetail() {
     })();
   }, [id]);
 
-  let { wishlist, setWishList } = useContext(WishlistContext);
-  // if (product === null) {
-  //   return <h1>Loading..</h1>;
-  // }
   return (
     <>
       <div className="product-detail-main-container">
@@ -130,10 +126,8 @@ export default function ProductDetail() {
               : "Add To Cart"}
           </Button>
         </div>
-        <Button onClick={() => setWishList([...wishlist, parseInt(id)])}>
-          {wishlist.includes(parseInt(id))
-            ? "Already in Wishlist"
-            : "Add to wishlist"}
+        <Button>
+          add to wishlist
         </Button>
       </div>
       {product ? (
