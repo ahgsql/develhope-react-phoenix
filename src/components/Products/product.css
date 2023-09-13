@@ -31,7 +31,7 @@
 .productCard {
     position: relative;
     border-radius: .5rem;
-    padding: 0px;
+    padding: 0;
     text-align: left;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -63,6 +63,7 @@
     font-size: 16px;
     color: var(--product-blue-color);
     transition: background-color 0.3s, color 0.3s;
+    z-index:10;
 }
 
 .wishlistButton:hover {
@@ -74,14 +75,15 @@
     background-color: var(--product-blue-color);
     color: var(--product-white-color);
     position: absolute;
-    padding: 8px;
+    padding: 5px;
     top: 10px;
     right: 10px;
     border: 1px solid var(--product-blue-color);
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
+    z-index:10;
 }
 
 .productName a {
