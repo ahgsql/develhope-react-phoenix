@@ -75,14 +75,15 @@
     background-color: var(--product-blue-color);
     color: var(--product-white-color);
     position: absolute;
-    padding: 8px;
+    padding: 5px;
     top: 10px;
     right: 10px;
     border: 1px solid var(--product-blue-color);
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
+    z-index:10;
 }
 
 .productName a {
