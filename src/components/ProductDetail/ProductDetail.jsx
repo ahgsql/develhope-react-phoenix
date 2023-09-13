@@ -12,6 +12,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import getProduct from "../../hooks/getProduct";
 import getProductComments from "../../hooks/getProductComments.js";
 import { useCart } from "../../context/CartProvider";
+import { useWishlist } from "../../context/WishlistProvider";
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
@@ -25,7 +26,7 @@ export default function ProductDetail() {
     addProductToCart,
     isProductInCart,
   } = useCart();
-
+  const { addProductToWishlist } = useWishlist();
   useEffect(() => {
     setProduct(null);
     setComments([]);
@@ -126,7 +127,7 @@ export default function ProductDetail() {
               : "Add To Cart"}
           </Button>
         </div>
-        <Button>
+        <Button onClick={() => addProductToWishlist(product._id)}>
           add to wishlist
         </Button>
       </div>
