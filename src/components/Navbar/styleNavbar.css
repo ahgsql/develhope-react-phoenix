@@ -1,13 +1,15 @@
 :root {
   --mainNav-bg-colour: #fff;
   --mainNav-text-colour: black;
-  --burger-menu-svg: invert(0%) sepia(99%) saturate(7490%) hue-rotate(69deg) brightness(97%) contrast(97%);
+  --burger-menu-svg: invert(0%) sepia(99%) saturate(7490%) hue-rotate(69deg)
+    brightness(97%) contrast(97%);
 }
 
 [theme="dark"] {
   --mainNav-bg-colour: #1d2332;
   --mainNav-text-colour: #ffffff;
-  --burger-menu-svg: invert(100%) sepia(8%) saturate(0%) hue-rotate(165deg) brightness(108%) contrast(107%);
+  --burger-menu-svg: invert(100%) sepia(8%) saturate(0%) hue-rotate(165deg)
+    brightness(108%) contrast(107%);
 }
 
 * {
@@ -16,10 +18,9 @@
   box-sizing: border-box;
 }
 
-body { 
+body {
   color: var(--mainNav-text-colour);
 }
-
 
 .mainNav {
   width: 100%;
@@ -70,6 +71,9 @@ body {
   .menu-list > li:nth-last-child(2) {
     display: none;
   }
+  .menu-list {
+    gap: 1px;
+  }
   .more {
     display: block;
     cursor: pointer;
@@ -79,6 +83,9 @@ body {
 @media (max-width: 700px) {
   .menu-list > li:nth-last-child(3) {
     display: none;
+  }
+  .menu-list {
+    font-size: 10px;
   }
 }
 @media (max-width: 640px) {
@@ -100,5 +107,4 @@ body {
   .menu-list > li:nth-last-child(7) {
     display: none;
   }
-  
 }
