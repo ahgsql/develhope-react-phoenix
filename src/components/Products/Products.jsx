@@ -15,7 +15,7 @@ const Products = () => {
     window.addEventListener("resize", updateScreenWidth);
     (async () => {
       let prod = await getAllProducts();
-      console.log(prod);
+      //  console.log(prod);
       setProducts(prod);
     })();
     return () => {

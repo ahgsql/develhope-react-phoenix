@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/AuthProvider";
 import getChatHistory from "../../hooks/getChatHistory";
+import ScrollableFeed from "react-scrollable-feed";
 export default function LiveChatFeature({ style, innerRef }) {
   const [history, setHistory] = useState([]);
   const [message, setMessage] = useState("");
@@ -15,6 +16,7 @@ export default function LiveChatFeature({ style, innerRef }) {
 
   let bind = false;
   let historyRef = useRef();
+  let scrollableRef = useRef();
   useEffect(() => {
     const pusher = new Pusher("cc9492824097dabab1e1", {
       cluster: "eu",
@@ -39,15 +41,11 @@ export default function LiveChatFeature({ style, innerRef }) {
           { from: message.from, message: message.message },
         ]);
       });
-
     })();
   }, [user]);
 
   const scrollToLast = () => {
-    const scrollHeight = historyRef.current?.scrollHeight;
-    const height = historyRef.current?.clientHeight;
-    const maxScrollTop = scrollHeight - height;
-    historyRef.current.scrollTop = historyRef.current?.scrollHeight + 1000;
+    scrollableRef.current.scrollToBottom();
   };
 
   const sendMessage = async () => {
@@ -62,7 +60,6 @@ export default function LiveChatFeature({ style, innerRef }) {
         { from: "customer", message },
       ]);
       setMessage("");
-      scrollToLast();
     }
   };
   const handleKeyDown = (e) => {
@@ -78,11 +75,11 @@ export default function LiveChatFeature({ style, innerRef }) {
           <div className="pic stark"></div>
           <div className="name">Customer Representative</div>
         </div>
-        <div className="chat-history" ref={historyRef}>
+
+        <ScrollableFeed forceScroll={true} ref={scrollableRef}>
           {history.map((message, i) => {
             return (
               <div className={message.from + "-msg message"} key={i}>
-                {" "}
                 <div className="messageLabel">
                   {message.from == "admin" ? "Customer Service" : "You"}:
                 </div>
@@ -90,7 +87,8 @@ export default function LiveChatFeature({ style, innerRef }) {
               </div>
             );
           })}
-        </div>
+        </ScrollableFeed>
+
         <div
           className="chat-input"
           style={{

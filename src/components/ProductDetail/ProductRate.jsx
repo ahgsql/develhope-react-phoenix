@@ -17,8 +17,8 @@ export default function ProductRate({ initalRating, slug }) {
     }).then(function (response) {
       const result = Math.round(response.data.rating);
       setRatingValue(result);
-      console.log(response.data.rating);
-      console.log(ratingValue);
+      // console.log(response.data.rating);
+      //  console.log(ratingValue);
     });
     setRatingValue(rate);
   };

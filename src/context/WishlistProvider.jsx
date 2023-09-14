@@ -68,7 +68,7 @@ export function WishlistProvider({ children }) {
 
       if (response.data) {
         setWishlist(response.data);
-        console.log("Product removed from wishlist");
+        // console.log("Product removed from wishlist");
       }
       setNumber(number - 1);
     } catch (error) {
@@ -86,7 +86,7 @@ export function WishlistProvider({ children }) {
       const wishlistFromDb = await getWishlist();
       if (wishlistFromDb) {
         setWishlist(wishlistFromDb);
-        console.log("UpdatedList", number, wishlistFromDb);
+        // console.log("UpdatedList", number, wishlistFromDb);
       }
     })();
   }, [user, number]);

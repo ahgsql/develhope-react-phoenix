@@ -10,7 +10,7 @@ import { getRandomPhotoFull } from "../../data/products.js";
 import Skeleton from "react-loading-skeleton";
 const Carousel = ({ products, isTop, header, ads }) => {
   const adsImageSource = ads ? adsVertical : adsHorizontal;
-  console.log(adsImageSource);
+  // console.log(adsImageSource);
   // TODO:Change it to real carousel.
   return (
     <>

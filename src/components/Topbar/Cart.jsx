@@ -46,13 +46,13 @@ const Cart = ({ newRef }) => {
       import.meta.env.VITE_BASE_URL + "/api/checkout",
       { lineItems }
     );
-    console.log(data);
+    // console.log(data);
     let order = await createOrder({
       basket: lineItems,
       orderId: data.id,
       userName: user ? user.userName : "testUser",
     });
-    console.log(order);
+    // console.log(order);
     if (!order) return;
     const stripe = await stripePromise;
 

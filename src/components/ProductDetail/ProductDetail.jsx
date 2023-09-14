@@ -41,14 +41,14 @@ export default function ProductDetail() {
         setProduct(product);
         let search = cartItems.some((i) => i._id == product._id);
         setIncart(search);
-        console.log(product);
+        //  console.log(product);
       }
     })();
 
     (async () => {
       let comments = await getProductComments(id);
       setComments(comments);
-      console.log(comments);
+      // console.log(comments);
     })();
   }, [id]);
 
@@ -57,10 +57,10 @@ export default function ProductDetail() {
       if (wishlist?.products?.length > 0) {
         if (wishlist.products.filter((p) => p.id == product._id).length > 0) {
           setIsInWishList(true);
-          console.log("Wishlistte Var");
+          //  console.log("Wishlistte Var");
         } else {
           setIsInWishList(false);
-          console.log("Wishlistte Yok");
+          //  console.log("Wishlistte Yok");
         }
       }
     }

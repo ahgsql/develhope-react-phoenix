@@ -61,7 +61,7 @@ const AuthProvider = ({ children }) => {
           withCredentials: true, // Include credentials (cookies) with requests
         }
       );
-      console.log("rdata", response.data);
+      // ("rdata", response.data);
       if (response.data.success) {
         setUser(response.data.user);
       }

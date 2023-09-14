@@ -93,7 +93,7 @@ export function CartProvider({ children }) {
 
   // Update localStorage whenever cartItems change
   useEffect(() => {
-    console.log(cartItems, "savings");
+    // console.log(cartItems, "savings");
     localStorage.setItem("cartItems", JSON.stringify([...cartItems]));
   }, [cartItems]);
 
