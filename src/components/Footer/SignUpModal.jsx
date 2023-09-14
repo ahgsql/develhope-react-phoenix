@@ -4,7 +4,7 @@ import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import SignUpForm from "./SignUpForm";
-import signUpform from "./signUpform.css?inline";
+import signUpform from "./signUpform.css";
 
 export default function SignUpModal({
   visible = false,
