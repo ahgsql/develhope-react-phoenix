@@ -1,6 +1,6 @@
 :root {
   --bg-chat-area: white;
-  --bg-chat-history: white;
+  --bg-chat-history: rgb(223, 217, 217);
   --bg-admin-message: #333;
   --admin-text-color: white;
   --bg-client-message: white;
@@ -28,7 +28,7 @@
   justify-content: start;
   width: 24rem;
   height: 38rem;
-  z-index: 2;
+  z-index: 99;
   box-sizing: border-box;
   border-radius: 1rem;
   background: var(--bg-chat-area);
@@ -93,9 +93,8 @@
   padding: 0.3rem 1rem;
   margin-right: 1rem;
   border-radius: 1.125rem;
-  flex-grow: 1;
+  flex-grow:1;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.2);
-
   letter-spacing: 0.025em;
   color: black;
 }
@@ -130,7 +129,7 @@
 
 .messageLabel {
   font-weight: bold;
-  text-transform: capitalize;
+  ;
   text-align: left;
 }
 
