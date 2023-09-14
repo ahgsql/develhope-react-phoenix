@@ -7,7 +7,6 @@ export default function Checkout() {
   const stripePromise = loadStripe(
     `${import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY}`
   );
-  console.log(`${import.meta.env.STRIPE_PUBLISHABLE_KEY}`);
   const handleCheckout = async () => {
     const lineItems = [
       {

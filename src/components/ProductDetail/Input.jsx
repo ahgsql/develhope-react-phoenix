@@ -31,7 +31,7 @@ const Input = ({ id, setComments, oldComments }) => {
         setComment("");
         let justAddedComment = response.data.comment;
         setComments([justAddedComment, ...oldComments]);
-        console.log("Comment inserted into MongoDB successfully.");
+        // console.log("Comment inserted into MongoDB successfully.");
       } else {
         console.error("Failed to insert comment into MongoDB.");
       }

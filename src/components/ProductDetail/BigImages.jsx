@@ -6,9 +6,7 @@ import "./BigImages.css";
 export default function BigImages({ images }) {
   const [width, setWidth] = useState(0);
   const carouselRef = useRef();
-  useEffect(() => {
-    console.log(carouselRef.current.scrollWidth);
-  }, []);
+  useEffect(() => {}, []);
   return (
     // <div className="product-detail-featured-image ">
     //   <img src={images} />

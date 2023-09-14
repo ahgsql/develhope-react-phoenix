@@ -92,7 +92,6 @@ function SignUpForm({ setUser, setVisible }) {
         const user = result.user;
         //Save the user information to local storage.
         localStorage.setItem("user", JSON.stringify(user));
-        console.log(user);
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         const credential = FacebookAuthProvider.credentialFromResult(result);
         const accessToken = credential.accessToken;

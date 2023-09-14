@@ -12,7 +12,6 @@ const CategoryPage = () => {
   let activeShortUrl = pathname.split("/").pop();
   let pageTitle = categories.filter((c) => c.shortUrl === activeShortUrl)[0]
     .title;
-  console.log();
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
