@@ -6,6 +6,7 @@ import Button from "./Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { useAuth } from "../../context/AuthProvider";
+import getChatHistory from "../../hooks/getChatHistory";
 export default function LiveChatFeature({ style, innerRef }) {
   const [history, setHistory] = useState([]);
   const [message, setMessage] = useState("");
@@ -29,6 +30,17 @@ export default function LiveChatFeature({ style, innerRef }) {
       });
       bind = true;
     }
+
+    (async () => {
+      let history = await getChatHistory(user.userName);
+      history.map((message) => {
+        setHistory((prevhistory) => [
+          ...prevhistory,
+          { from: message.from, message: message.message },
+        ]);
+      });
+
+    })();
   }, [user]);
 
   const scrollToLast = () => {
@@ -94,6 +106,7 @@ export default function LiveChatFeature({ style, innerRef }) {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={handleKeyDown}
+            placeholder="Ask us if you have any question..."
           />
           <Button
             bgColor="#7fe1d9"
