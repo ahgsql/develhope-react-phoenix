@@ -38,16 +38,23 @@
     cursor: pointer;
    
 }
-.category-li-container:hover {
+.category-li-container:hover  {
     background-color: #3874ff;
     color: white;
-   
 }
+.category-active{
+    background-color: #3874ff!important;
+    color: white!important;
+}
+
 .category-li-container:hover  img{
    filter: brightness(0) invert(1);
     -webkit-filter: brightness(0) invert(1);
-   
 }
+.category-active img{
+    filter: brightness(0) invert(1);
+     -webkit-filter: brightness(0) invert(1);
+ }
 .category-li-container{
     background-color: var(--svg-bg-colour);
     width: 50px;

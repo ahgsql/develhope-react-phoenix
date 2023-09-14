@@ -26,12 +26,16 @@ export default function ProductDetail() {
     addProductToCart,
     isProductInCart,
   } = useCart();
-  const { addProductToWishlist } = useWishlist();
+  const { addProductToWishlist, wishlist, removeProductFromWishlist } =
+    useWishlist();
+  const [isInWishList, setIsInWishList] = useState(false);
   useEffect(() => {
     setProduct(null);
+
     setComments([]);
     (async () => {
       let product = await getProduct(id);
+
       if (product) {
         product.productImg.unshift({ url: product.productPhotoFull });
         setProduct(product);
@@ -40,12 +44,27 @@ export default function ProductDetail() {
         console.log(product);
       }
     })();
+
     (async () => {
       let comments = await getProductComments(id);
       setComments(comments);
       console.log(comments);
     })();
   }, [id]);
+
+  useEffect(() => {
+    if (product) {
+      if (wishlist?.products?.length > 0) {
+        if (wishlist.products.filter((p) => p.id == product._id).length > 0) {
+          setIsInWishList(true);
+          console.log("Wishlistte Var");
+        } else {
+          setIsInWishList(false);
+          console.log("Wishlistte Yok");
+        }
+      }
+    }
+  }, [wishlist, product]);
 
   return (
     <>
@@ -127,8 +146,14 @@ export default function ProductDetail() {
               : "Add To Cart"}
           </Button>
         </div>
-        <Button onClick={() => addProductToWishlist(product._id)}>
-          add to wishlist
+        <Button
+          onClick={() => {
+            isInWishList
+              ? removeProductFromWishlist(product._id)
+              : addProductToWishlist(product._id);
+          }}
+        >
+          {isInWishList ? "Remove From Wishlist" : "Add To Wishlist"}
         </Button>
       </div>
       {product ? (

@@ -6,7 +6,7 @@ import Grid from "./components/Grid/Grid.jsx";
 import Products from "./components/Products/Products.jsx";
 
 import Footer from "./components/Footer/Footer.jsx";
-import {WishlistProvider} from "./context/WishlistProvider";
+import { WishlistProvider } from "./context/WishlistProvider";
 import { useState } from "react";
 import {
   Route,
@@ -24,7 +24,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Checkout from "./components/Checkout/Checkout";
 import MyOrders from "./components/Checkout/MyOrders";
 import { CartProvider } from "./context/CartProvider";
-
+import CategoryPage from "./components/Categories/CategoryPage";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -56,6 +56,14 @@ function App() {
                   element={[
                     <Grid key={1} />,
                     <Products key={2} />,
+                    <CustomerExperience key={3} />,
+                    <Team key={4} />,
+                  ]}
+                ></Route>
+                <Route
+                  path="/category/:shortUrl"
+                  element={[
+                    <CategoryPage key={2} />,
                     <CustomerExperience key={3} />,
                     <Team key={4} />,
                   ]}

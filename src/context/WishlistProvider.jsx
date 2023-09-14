@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useAuth } from "./AuthProvider.jsx";
 import axios from "axios";
 import getWishlist from "../hooks/getWishlist.js";
-
+import { toast } from "react-toastify";
 const WishlistContext = createContext();
 
 // Custom hook to access the WishlistContext
@@ -16,10 +16,18 @@ export function WishlistProvider({ children }) {
   const [number, setNumber] = useState(0);
 
   const addProductToWishlist = async (productId) => {
-    console.log(productId, "add");
     try {
       if (!user) {
-        return console.log("User not logged in.");
+        return toast.error("You Need To login", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
 
       const response = await axios.post(
@@ -30,7 +38,16 @@ export function WishlistProvider({ children }) {
 
       if (response.data.status === true) {
         setWishlist(response.data.wishlist);
-        console.log("Product added to wishlist");
+        return toast.info("Product is now In Your Wishlist", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
       setNumber(number + 1);
     } catch (error) {

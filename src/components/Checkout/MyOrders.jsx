@@ -7,7 +7,6 @@ import { useAuth } from "../../context/AuthProvider";
 // English.
 import en from "javascript-time-ago/locale/en";
 import Skeleton from "react-loading-skeleton";
-TimeAgo.addDefaultLocale(en);
 const timeAgo = new TimeAgo("en-US");
 
 export default function MyOrders() {
