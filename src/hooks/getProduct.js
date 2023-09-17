@@ -19,7 +19,9 @@ const getAllProducts = async () => {
     let response = await axios.get(
       import.meta.env.VITE_BASE_URL + "/api/products"
     );
+
     if (response.data.success) {
+      response.data.products["meta"] = response.headers;
       return response.data.products;
     }
   } catch (error) {

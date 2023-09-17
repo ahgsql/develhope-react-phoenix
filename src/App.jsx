@@ -25,6 +25,8 @@ import Checkout from "./components/Checkout/Checkout";
 import MyOrders from "./components/Checkout/MyOrders";
 import { CartProvider } from "./context/CartProvider";
 import CategoryPage from "./components/Categories/CategoryPage";
+import Debugger from "./components/Debugger/Debugger";
+import { DebuggerProvider } from "./context/DebuggerProvider";
 function App() {
   function setTheme(theme) {
     //light dark
@@ -42,42 +44,48 @@ function App() {
   setTheme(theme);
   return (
     <>
-      <AuthProvider>
-        <CartProvider>
-          <WishlistProvider>
-            <Router>
-              <Topbar setTheme={setTheme} />
-              <Navbar />
-              <Categories />
+      <DebuggerProvider>
+        <AuthProvider>
+          <CartProvider>
+            <WishlistProvider>
+              <Router>
+                <Topbar setTheme={setTheme} />
+                <Debugger />
+                <Navbar />
+                <Categories />
 
-              <Routes>
-                <Route
-                  path="/"
-                  element={[
-                    <Grid key={1} />,
-                    <Products key={2} />,
-                    <CustomerExperience key={3} />,
-                    <Team key={4} />,
-                  ]}
-                ></Route>
-                <Route
-                  path="/category/:shortUrl"
-                  element={[
-                    <CategoryPage key={2} />,
-                    <CustomerExperience key={3} />,
-                    <Team key={4} />,
-                  ]}
-                ></Route>
-                <Route path="/product/:id" element={<ProductDetail />}></Route>
-                <Route path="/myorders" element={<MyOrders />}></Route>
-              </Routes>
-              <FloatingButton />
-              <Footer />
-              <ToastContainer />
-            </Router>
-          </WishlistProvider>
-        </CartProvider>
-      </AuthProvider>
+                <Routes>
+                  <Route
+                    path="/"
+                    element={[
+                      <Grid key={1} />,
+                      <Products key={2} />,
+                      <CustomerExperience key={3} />,
+                      <Team key={4} />,
+                    ]}
+                  ></Route>
+                  <Route
+                    path="/category/:shortUrl"
+                    element={[
+                      <CategoryPage key={2} />,
+                      <CustomerExperience key={3} />,
+                      <Team key={4} />,
+                    ]}
+                  ></Route>
+                  <Route
+                    path="/product/:id"
+                    element={<ProductDetail />}
+                  ></Route>
+                  <Route path="/myorders" element={<MyOrders />}></Route>
+                </Routes>
+                <FloatingButton />
+                <Footer />
+                <ToastContainer />
+              </Router>
+            </WishlistProvider>
+          </CartProvider>
+        </AuthProvider>
+      </DebuggerProvider>
     </>
   );
 }

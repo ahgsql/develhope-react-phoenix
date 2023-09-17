@@ -3,6 +3,7 @@ import "./product.css";
 import Carousel from "./Carousel.jsx";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../hooks/getProduct.js";
+import { useDebugger } from "../../context/DebuggerProvider";
 
 const Products = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -10,11 +11,13 @@ const Products = () => {
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
-
+  const { debugMsg, setDebugMsg } = useDebugger();
   useEffect(() => {
     window.addEventListener("resize", updateScreenWidth);
     (async () => {
       let prod = await getAllProducts();
+      console.log(prod.meta);
+      setDebugMsg("Response time" + prod.meta["x-response-time"]);
       //  console.log(prod);
       setProducts(prod);
     })();
