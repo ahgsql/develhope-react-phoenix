@@ -77,7 +77,16 @@ export default function ProductDetail() {
           <div className="product-detail-small-images ">
             {product ? (
               product.productImg.map((e, i) => {
-                return <img src={e.url} key={i} />;
+                return (
+                  <img
+                    src={e.url}
+                    key={i}
+                    onError={(e) => {
+                      e.target.src =
+                        "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081";
+                    }}
+                  />
+                );
               })
             ) : (
               <Skeleton height={60} width={60} />

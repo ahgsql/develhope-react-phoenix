@@ -4,10 +4,13 @@ import "./styleNavbar.css";
 import CategoriesDropDownMenu from "./CategoriesDropDownMenu";
 import { useAuth } from "../../context/AuthProvider";
 import { Link } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 export default function Navbar() {
   const [dropDown, setDropDown] = useState(false);
   const { user, login, logout, loginCheck } = useAuth();
+  const { pathname } = useLocation();
+
+  let activeShortUrl = pathname.split("/").pop();
 
   const navbarMenu = [
     "Home",
@@ -22,6 +25,11 @@ export default function Navbar() {
   const toggleDropDown = () => {
     setDropDown(!dropDown);
   };
+
+  useEffect(() => {
+    setDropDown(false);
+  }, [activeShortUrl]);
+
   const ref2 = useRef();
   useEffect(() => {
     loginCheck();

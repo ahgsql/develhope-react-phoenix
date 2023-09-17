@@ -22,7 +22,13 @@ export default function BigImages({ images }) {
           {images.map((image, index) => {
             return (
               <motion.div className="bi-item" key={index}>
-                <img src={image} />
+                <img
+                  src={image}
+                  onError={(e) => {
+                    e.target.src =
+                      "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081";
+                  }}
+                />
               </motion.div>
             );
           })}
