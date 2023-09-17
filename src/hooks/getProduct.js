@@ -6,6 +6,8 @@ export default async (slug) => {
       import.meta.env.VITE_BASE_URL + "/api/products/slug/" + slug
     );
     if (response.data.success) {
+      response.data.product["meta"] = response.headers;
+
       return response.data.product;
     }
   } catch (error) {

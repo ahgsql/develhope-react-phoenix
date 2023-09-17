@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { getAllProducts } from "../../hooks/getProduct.js";
 import categories from "./categorydata";
+import { useDebugger } from "../../context/DebuggerProvider.jsx";
 const CategoryPage = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [products, setProducts] = useState([]);
@@ -15,8 +16,21 @@ const CategoryPage = () => {
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
-
+  const { debugMsg, resetDebugMessage, setDebugMsg, createDebugMessage } =
+    useDebugger();
   useEffect(() => {
+    createDebugMessage([
+      {
+        type: "route",
+        title: "Route Loaded",
+        value: "/category/" + activeShortUrl,
+      },
+      {
+        type: "info",
+        title: "Category Name",
+        value: pageTitle,
+      },
+    ]);
     window.addEventListener("resize", updateScreenWidth);
     (async () => {
       let prod = await getAllProducts();

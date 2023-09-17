@@ -50,6 +50,7 @@ function App() {
             <WishlistProvider>
               <Router>
                 <Topbar setTheme={setTheme} />
+
                 <Debugger />
                 <Navbar />
                 <Categories />

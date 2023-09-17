@@ -11,6 +11,7 @@ import { useAuth } from "../../context/AuthProvider";
 
 import { BrowserRouter, Link } from "react-router-dom";
 import { getProductsSearch } from "../../hooks/getProduct";
+import { useDebugger } from "../../context/DebuggerProvider";
 export default function Topbar({ setTheme }) {
   const { user, login, logout, loginCheck } = useAuth();
   //loginCheck();
@@ -18,6 +19,18 @@ export default function Topbar({ setTheme }) {
     let theme = document.querySelector("body").getAttribute("theme");
     setTheme(theme == "dark" ? "light" : "dark");
   };
+  const { debugMsg, resetDebugMessage, setDebugMsg, createDebugMessage } =
+    useDebugger();
+  useEffect(() => {
+    createDebugMessage([
+      {
+        type: "system",
+        title: "Checking User",
+        value: user ? "User Logged In as " + user.userName : "Not Logged In",
+      },
+    ]);
+  }, [user]);
+
   const [search, setSearch] = useState("");
   const [searchResultsOpen, setSearchResultsOpen] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
