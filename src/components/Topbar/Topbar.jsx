@@ -8,7 +8,6 @@ import RightNavButtons from "./RightNavButtons";
 import ProductSearchResult from "./ProductSearchResult";
 import clickOutside from "../../hooks/useClickOutside";
 import { useAuth } from "../../context/AuthProvider";
-import debounce from "lodash.debounce";
 
 import { BrowserRouter, Link } from "react-router-dom";
 import { getProductsSearch } from "../../hooks/getProduct";

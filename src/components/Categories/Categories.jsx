@@ -6,11 +6,11 @@ import categories from "./categorydata";
 export default function Categories() {
   const { pathname } = useLocation();
   let activeShortUrl = pathname.split("/").pop();
-
+  let categories2 = categories.filter((category) => !category.upperMenu);
   return (
     <div className="mainCategories">
       <ul className="categories-ul">
-        {categories.map((category, i) => (
+        {categories2.map((category, i) => (
           <Link
             to={"/category/" + category.shortUrl}
             style={{ textDecoration: "none" }}

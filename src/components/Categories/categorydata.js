@@ -10,4 +10,14 @@ export default [
   { title: "Tools", shortUrl: "tools" },
   { title: "Travel", shortUrl: "travel" },
   { title: "Others", shortUrl: "others" },
+  {
+    title: "Collectibles",
+    shortUrl: "collectibles",
+    upperMenu: "Collectibles & Art",
+  },
+  {
+    title: "Antiques",
+    shortUrl: "antiques",
+    upperMenu: "Collectibles & Art",
+  },
 ];

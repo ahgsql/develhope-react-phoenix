@@ -10,11 +10,16 @@ import fashion from "../../assets/fashion.svg";
 import musicalInstruments from "../../assets/musicalInstruments.svg";
 import otherCategories from "../../assets/other categories.svg";
 import useClickOutside2 from "../../hooks/useClickOutside2";
-
+import categories from "../Categories/categorydata";
+import { Link } from "react-router-dom";
 function CategoriesDropDownMenu({ setDropDown, menuRef }) {
   const categoriesRef = useRef();
   // useClickOutside(categoriesRef, ()=> setDropDown(false))
   useClickOutside2(categoriesRef, menuRef, () => setDropDown(false));
+
+  let collectiblesArray = categories.filter(
+    (c) => c.upperMenu == "Collectibles & Art"
+  );
 
   return (
     <div className="main-container" ref={categoriesRef}>
@@ -27,10 +32,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Collectibles</li>
-            <li>Antiques</li>
-            <li>Sports memorabilia</li>
-            <li>Art</li>
+            {collectiblesArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
