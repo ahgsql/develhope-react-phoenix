@@ -20,6 +20,26 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
   let collectiblesArray = categories.filter(
     (c) => c.upperMenu == "Collectibles & Art"
   );
+  let homeAndGardenArray = categories.filter(
+    (c) => c.upperMenu == "Home & Garden"
+  );
+  let sportingGoodsArray = categories.filter(
+    (c) => c.upperMenu == "Sporting Goods"
+  );
+  let electronicsArray = categories.filter((c) => c.upperMenu == "Electronics");
+  let autoPartsAndAccessoriesArray = categories.filter(
+    (c) => c.upperMenu == "Auto Parts & Accessories"
+  );
+  let toysAndHobbiesArray = categories.filter(
+    (c) => c.upperMenu == "Toys & Hobbies"
+  );
+  let fashionArray = categories.filter((c) => c.upperMenu == "Fashion");
+  let musicalInstrumentsAndGearArray = categories.filter(
+    (c) => c.upperMenu == "Musical Instruments & Gear"
+  );
+  let otherCategoriesArray = categories.filter(
+    (c) => c.upperMenu == "Other Categories"
+  );
 
   return (
     <div className="main-container" ref={categoriesRef}>
@@ -50,10 +70,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Yard, Garden & Outdoor</li>
-            <li>Crafts</li>
-            <li>Home Improvement</li>
-            <li>Pet Supplies</li>
+            {homeAndGardenArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
@@ -64,10 +88,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Outdoor Sports</li>
-            <li>Team Sports</li>
-            <li>Exercise & Fitness</li>
-            <li>Golf</li>
+            {sportingGoodsArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
 
@@ -79,10 +107,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Computers & Tablets</li>
-            <li>Camera & Photo</li>
-            <li>TV, Audio & Surveillance</li>
-            <li>Cell Phone & Accessories</li>
+            {electronicsArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
@@ -93,10 +125,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>GPS & Security Devices</li>
-            <li>Radar & Laser Detectors</li>
-            <li>Care & Detailing</li>
-            <li>Scooter Parts & Accessories</li>
+            {autoPartsAndAccessoriesArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
@@ -107,10 +143,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Radio Control</li>
-            <li>Kids Toys</li>
-            <li>Action Figures</li>
-            <li>Dolls & Bears</li>
+            {toysAndHobbiesArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
 
@@ -122,10 +162,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Women</li>
-            <li>Men</li>
-            <li>Jewelry & Watches</li>
-            <li>Shoes</li>
+            {fashionArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
@@ -136,10 +180,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Guitar</li>
-            <li>Pro Audio Equipment</li>
-            <li>String</li>
-            <li>Stage Lighting & Effects</li>
+            {musicalInstrumentsAndGearArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="category-list-container">
@@ -150,10 +198,14 @@ function CategoriesDropDownMenu({ setDropDown, menuRef }) {
             </p>
           </div>
           <ul className="flex-ul">
-            <li>Video Games & Consoles</li>
-            <li>Health & Beauty</li>
-            <li>Baby</li>
-            <li>Business & Industrial</li>
+            {otherCategoriesArray.map((subcategory) => (
+              <Link
+                style={{ textDecoration: "none" }}
+                to={"/category/" + subcategory.shortUrl}
+              >
+                <li> {subcategory.title}</li>
+              </Link>
+            ))}
           </ul>
         </div>
       </div>
