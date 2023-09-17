@@ -3,6 +3,7 @@ import "./product.css";
 import Carousel from "./Carousel.jsx";
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../hooks/getProduct.js";
+import { useDebugger } from "../../context/DebuggerProvider";
 
 const Products = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -10,12 +11,33 @@ const Products = () => {
   const updateScreenWidth = () => {
     setScreenWidth(window.innerWidth);
   };
+  const { debugMsg, resetDebugMessage, setDebugMsg, createDebugMessage } =
+    useDebugger();
 
   useEffect(() => {
+    createDebugMessage([
+      {
+        type: "route",
+        title: "Route Loaded",
+        value: "/",
+      },
+    ]);
     window.addEventListener("resize", updateScreenWidth);
     (async () => {
       let prod = await getAllProducts();
-      //  console.log(prod);
+
+      createDebugMessage([
+        {
+          type: "system",
+          title: "Get Products Response Time",
+          value: prod.meta["x-response-time"],
+        },
+        {
+          type: "info",
+          title: "Product Count",
+          value: prod.length,
+        },
+      ]);
       setProducts(prod);
     })();
     return () => {

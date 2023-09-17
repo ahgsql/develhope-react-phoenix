@@ -12,6 +12,7 @@ import getProduct from "../../hooks/getProduct";
 import getProductComments from "../../hooks/getProductComments.js";
 import { useCart } from "../../context/CartProvider";
 import { useWishlist } from "../../context/WishlistProvider";
+import { useDebugger } from "../../context/DebuggerProvider";
 export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [comments, setComments] = useState([]);
@@ -25,18 +26,39 @@ export default function ProductDetail() {
     addProductToCart,
     isProductInCart,
   } = useCart();
+  const { debugMsg, resetDebugMessage, setDebugMsg, createDebugMessage } =
+    useDebugger();
   const { addProductToWishlist, wishlist, removeProductFromWishlist } =
     useWishlist();
   const [isInWishList, setIsInWishList] = useState(false);
   useEffect(() => {
     setProduct(null);
-
+    createDebugMessage([
+      {
+        type: "route",
+        title: "Route Loaded",
+        value: "/product/" + id,
+      },
+    ]);
     setComments([]);
     (async () => {
       let product = await getProduct(id);
 
       if (product) {
         product.productImg.unshift({ url: product.productPhotoFull });
+        createDebugMessage([
+          {
+            type: "system",
+            title: "Get Single Product Response Time",
+            value: product.meta["x-response-time"],
+          },
+          {
+            type: "info",
+            title: "Product Info",
+            value: product.productTitle,
+          },
+        ]);
+
         setProduct(product);
         let search = cartItems.some((i) => i._id == product._id);
         setIncart(search);
@@ -93,7 +115,13 @@ export default function ProductDetail() {
           </div>
           <div className="product-detail-featured-image">
             {product ? (
-              <img src={product.productPhotoFull} />
+              <img
+                src={product.productPhotoFull}
+                onError={(e) => {
+                  e.target.src =
+                    "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081";
+                }}
+              />
             ) : (
               <Skeleton height={300} />
             )}

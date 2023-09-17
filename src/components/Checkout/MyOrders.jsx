@@ -7,6 +7,7 @@ import { useAuth } from "../../context/AuthProvider";
 // English.
 import en from "javascript-time-ago/locale/en";
 import Skeleton from "react-loading-skeleton";
+import { useDebugger } from "../../context/DebuggerProvider";
 const timeAgo = new TimeAgo("en-US");
 
 export default function MyOrders() {
@@ -17,8 +18,17 @@ export default function MyOrders() {
   );
   const { user } = useAuth();
   let { emptyCart } = useCart();
-
+  const { debugMsg, resetDebugMessage, setDebugMsg, createDebugMessage } =
+    useDebugger();
   useEffect(() => {
+    createDebugMessage([
+      {
+        type: "route",
+        title: "Route Loaded",
+        value: "/myorders",
+      },
+    ]);
+
     // Simulate a GET request to /api/orders/my
     (async () => {
       setOrders([]);
@@ -26,6 +36,13 @@ export default function MyOrders() {
       if (!orders) return setLoading(false);
       setLoading(false);
       setOrders(orders);
+      createDebugMessage([
+        {
+          type: "info",
+          title: "Users Total Orders",
+          value: orders.length,
+        },
+      ]);
     })(); //
     if (checkEmptyCart != null) {
       emptyCart();
