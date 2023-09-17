@@ -4,7 +4,6 @@ import "./ProductDetail.css";
 import ProductRate from "./ProductRate";
 // import { WishlistContext } from "../../context/WishlistProvider";
 import Button from "../common/Button";
-import BigImages from "./BigImages";
 import Comment from "./Comment.jsx";
 import Input from "./Input.jsx";
 import Skeleton from "react-loading-skeleton";
@@ -85,7 +84,7 @@ export default function ProductDetail() {
           </div>
           <div className="product-detail-featured-image">
             {product ? (
-              <BigImages images={[product.productPhotoFull]} />
+              <img src={product.productPhotoFull} />
             ) : (
               <Skeleton height={300} />
             )}

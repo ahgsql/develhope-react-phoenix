@@ -50,7 +50,7 @@
   font-size: 35px;
 }
 
-img {
+.grid-container img {
   max-width: 700px;
   max-height: 300px;
 }
@@ -71,7 +71,7 @@ img {
     font-size: 30px;
   }
 
-  img {
+  .grid-container img {
     max-width: 500px;
     max-height: 200px;
   }
@@ -89,7 +89,7 @@ img {
     font-size: 25px;
   }
 
-  img {
+  .grid-container img {
     max-width: 500px;
     max-height: 200px;
   }
@@ -107,7 +107,7 @@ img {
     font-size: 20px;
   }
 
-  img {
+  .grid-container img {
     max-width: 400px;
     max-height: 200px;
   }
@@ -127,7 +127,7 @@ img {
   .card {
     gap: unset;
   }
-  img {
+  .grid-container img {
     max-width: 170px;
     max-height: 200px;
   }
