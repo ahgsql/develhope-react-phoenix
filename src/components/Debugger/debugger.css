@@ -1,0 +1,11 @@
+.debugger{
+    width: 75%;
+    height: 100px;
+    border-radius: 10px;
+    bottom: 0;
+    background-color: lightslategray;
+    position: fixed;
+    z-index: 100;
+    margin: 10px 10px;
+    padding: 0 auto;
+}

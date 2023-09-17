@@ -93,7 +93,13 @@ export default function ProductDetail() {
           </div>
           <div className="product-detail-featured-image">
             {product ? (
-              <img src={product.productPhotoFull} />
+              <img
+                src={product.productPhotoFull}
+                onError={(e) => {
+                  e.target.src =
+                    "https://cdn.shopify.com/s/files/1/0533/2089/files/placeholder-images-image_large.png?format=jpg&quality=90&v=1530129081";
+                }}
+              />
             ) : (
               <Skeleton height={300} />
             )}
