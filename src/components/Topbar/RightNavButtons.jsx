@@ -62,17 +62,46 @@ export default function RightNavButtons({ changeTheme }) {
       <text className="cartCount" onClick={() => toggleCartOpen(!isCartOpen)}>
         {cartItems.length}
       </text>
-      {isCartOpen && <Cart newRef={searchResultDivRef} />}
+      {user ? (
+        <>
+          {" "}
+          <span style={{ fontSize: 15, marginRight: "20px" }}>
+            {" "}
+            {user.userName}
+          </span>{" "}
+          <Button
+            onClick={() => logout()}
+            className="team-btn"
+            radius={5}
+            bgColor="#8b49f4"
+            style={{
+              width: "20%",
+              padding: "5px",
+              fontSize: 14,
+              maxHeight: "30",
+            }}
+          >
+            {"Logout"}
+          </Button>
+        </>
+      ) : (
+        ""
+      )}
 
-      <Button
-        onClick={() => (user ? logout() : setModalOpen(true))}
-        className="team-btn"
-        radius={5}
-        bgColor="#8b49f4"
-        style={{ width: "50%", padding: "1px" }}
-      >
-        {user ? "Logout (" + user.userName + ")" : "Sign In"}
-      </Button>
+      {isCartOpen && <Cart newRef={searchResultDivRef} />}
+      {!user ? (
+        <Button
+          onClick={() => setModalOpen(true)}
+          className="team-btn"
+          radius={5}
+          bgColor="#8b49f4"
+          style={{ width: "50%", padding: "1px" }}
+        >
+          {"Sign In"}
+        </Button>
+      ) : (
+        ""
+      )}
       <SignInModal
         style={{
           visibility: modalOpen ? "visible" : "hidden",
