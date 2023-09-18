@@ -37,6 +37,13 @@ flex: 1 4 1
 display: flex;
 
 }
+
+.right-nav{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .topbar span {
     font-weight: 600;
     font-size: 1.5rem;
